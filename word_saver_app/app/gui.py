@@ -4,10 +4,9 @@ Module for the PyQt GUI.
 This module defines a PromptDialog which shows two input fields (for prompt word and context)
 and a submit button. When the user submits, the dialog emits the entered data.
 """
+from PyQt5.QtWidgets import QDialog, QVBoxLayout, QLineEdit, QLabel, QPushButton, QApplication
+from PyQt5.QtCore import pyqtSignal, Qt, QTimer
 
-from PyQt5.QtWidgets import QDialog, QVBoxLayout, QLineEdit, QLabel, QPushButton
-from PyQt5.QtCore import pyqtSignal
-from typing import Tuple
 
 class PromptDialog(QDialog):
     """
@@ -23,9 +22,11 @@ class PromptDialog(QDialog):
         Initialize the prompt dialog.
         """
         super().__init__(parent)
-        self.setWindowTitle("Enter Prompt Data")
         self.setup_ui()
-
+        
+        # Set window flags to ensure the dialog appears on top
+        self.setWindowFlags(self.windowFlags() | Qt.WindowStaysOnTopHint)
+        
     def setup_ui(self) -> None:
         """
         Set up the user interface components.
@@ -49,7 +50,7 @@ class PromptDialog(QDialog):
         layout.addWidget(self.submit_button)
 
         self.setLayout(layout)
-
+    
     def submit_data(self) -> None:
         """
         Emit the entered data and close the dialog.
