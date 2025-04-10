@@ -6,6 +6,7 @@ and a submit button. When the user submits, the dialog emits the entered data.
 """
 from PyQt5.QtWidgets import QDialog, QVBoxLayout, QLineEdit, QLabel, QPushButton, QApplication
 from PyQt5.QtCore import pyqtSignal, Qt, QTimer
+from PyQt5.QtGui import QClipboard  # Added for clipboard access
 
 
 class PromptDialog(QDialog):
@@ -26,6 +27,9 @@ class PromptDialog(QDialog):
         
         # Set window flags to ensure the dialog appears on top
         self.setWindowFlags(self.windowFlags() | Qt.WindowStaysOnTopHint)
+        
+        # Get clipboard content and insert it into both fields
+        self.insert_clipboard_content()
         
     def setup_ui(self) -> None:
         """
@@ -51,6 +55,20 @@ class PromptDialog(QDialog):
 
         self.setLayout(layout)
     
+    def insert_clipboard_content(self) -> None:
+        """
+        Get text from clipboard and insert it into both input fields.
+        """
+        clipboard = QApplication.clipboard()
+        clipboard_text = clipboard.text()
+        
+        if clipboard_text:
+            self.line_edit_word.setText(clipboard_text)
+            self.line_edit_context.setText(clipboard_text)
+            
+            # Select all text in the word field for easy editing
+            self.line_edit_word.selectAll()
+        
     def submit_data(self) -> None:
         """
         Emit the entered data and close the dialog.
