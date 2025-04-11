@@ -30,6 +30,22 @@ class PromptDialog(QDialog):
         
         # Get clipboard content and insert it into both fields
         self.insert_clipboard_content()
+
+        # Set focus to the dialog after a short delay
+        QTimer.singleShot(100, self.force_focus)
+    
+    def force_focus(self) -> None:
+        """
+        Force focus on the dialog window and the first input field.
+        """
+        # Activate the window to bring it to the front
+        self.activateWindow()
+        # Raise it to the top of the window stack
+        self.raise_()
+        # Set focus on the first input field
+        self.line_edit_word.setFocus()
+        # On some platforms, we might need to force the window to be the active one
+        self.setWindowState(self.windowState() & ~Qt.WindowMinimized | Qt.WindowActive)
         
     def setup_ui(self) -> None:
         """

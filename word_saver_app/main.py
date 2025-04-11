@@ -27,8 +27,8 @@ def show_prompt_dialog(storage_manager: StorageManager) -> None:
     dialog.data_entered.connect(storage_manager.save)
     
     # Ensure dialog is on top and focused
-    dialog.activateWindow()
-    dialog.raise_()
+    dialog.show()
+    dialog.force_focus()
     dialog.exec_()
 
 def handle_signal(signum, frame) -> None:
