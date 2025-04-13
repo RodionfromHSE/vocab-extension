@@ -1,0 +1,1 @@
+"""Text generation component for enriching vocabulary entries with structured information."""

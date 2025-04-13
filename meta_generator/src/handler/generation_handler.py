@@ -1,16 +1,21 @@
 import time
 import logging
 from typing import Dict, Any, Optional, List, Union, TypeVar, Generic
-import json
 
 from src.handler.base_handler import BaseHandler
 from src.model.base_model import BaseModel
 from src.prompter.template_prompter import TemplatePrompter
 from src.processors.base_processor import BaseProcessor
+from src.processors.default_processor import DefaultProcessor
 from src.validators.base_validator import BaseValidator
+from src.validators.default_validator import DefaultValidator
 
 # Type for processed data - typically a dictionary (JSON) or string
 T = TypeVar('T', Dict[str, Any], str)
+
+# Default handler settings (moved from config.yaml)
+DEFAULT_RETRIES = 3
+DEFAULT_SLEEP_TIME = 2
 
 
 class GenerationHandler(BaseHandler[T]):
@@ -43,12 +48,23 @@ class GenerationHandler(BaseHandler[T]):
         super().__init__(config)
         self.model = model
         self.prompter = prompter
-        self.processor = processor
-        self.validator = validator
+        
+        # Initialize processor and validator with default implementations if not provided
+        self.processor = processor if processor is not None else DefaultProcessor(config)
+        self.validator = validator if validator is not None else DefaultValidator(config)
+        
+        # Initialize retry settings from either config or defaults
+        self.retries = config.get("handler", {}).get("retries", DEFAULT_RETRIES)
+        self.sleep_time = config.get("handler", {}).get("sleep_time", DEFAULT_SLEEP_TIME)
         
     def handle(self, input_data: Dict[str, Any], **kwargs) -> T:
         """
         Handle the generation workflow with input data.
+        
+        By default, if no custom processor or validator is provided in the constructor,
+        the handler uses built-in default implementations:
+        - DefaultProcessor: Attempts to parse responses as JSON, falls back to returning the string
+        - DefaultValidator: Simply checks if the response is not None
         
         Args:
             input_data: Input data for the generation (e.g., word, part_of_speech)
@@ -75,8 +91,8 @@ class GenerationHandler(BaseHandler[T]):
                 # Process the response
                 processed_response = self._process_response(response)
                 
-                # Validate the processed response if a validator is available
-                if self.validator and not self._validate_response(processed_response):
+                # Validate the processed response
+                if not self._validate_response(processed_response):
                     raise ValueError(f"Invalid response: {processed_response}")
                 
                 return processed_response
@@ -96,7 +112,7 @@ class GenerationHandler(BaseHandler[T]):
     
     def _process_response(self, response: str) -> T:
         """
-        Process the raw response from the model.
+        Process the raw response from the model by delegating to the processor.
         
         Args:
             response: Raw response string from the model
@@ -104,22 +120,11 @@ class GenerationHandler(BaseHandler[T]):
         Returns:
             T: Processed response (dictionary or string)
         """
-        if not response:
-            raise ValueError("Empty response from model")
-            
-        if self.processor:
-            return self.processor.process(response)
-        
-        # Default processing: attempt to parse as JSON
-        try:
-            return json.loads(response)
-        except json.JSONDecodeError:
-            # If not JSON, return as string
-            return response
+        return self.processor.process(response)
     
     def _validate_response(self, processed_response: T) -> bool:
         """
-        Validate the processed response.
+        Validate the processed response by delegating to the validator.
         
         Args:
             processed_response: The processed response to validate
@@ -127,8 +132,4 @@ class GenerationHandler(BaseHandler[T]):
         Returns:
             bool: True if the response is valid, False otherwise
         """
-        if self.validator:
-            return self.validator.validate(processed_response)
-        
-        # Default validation: check if response exists
-        return processed_response is not None
+        return self.validator.validate(processed_response)

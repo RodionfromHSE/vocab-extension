@@ -46,11 +46,46 @@ class JsonResponseValidator(BaseValidator[Union[Dict[str, Any], str]]):
         """
         Validate that the response is valid JSON and optionally conforms to schema.
         
+        This method validates responses in two steps:
+        1. Ensures the response is valid JSON (if string) or already a dictionary
+        2. If a schema is provided, validates the JSON structure against that schema
+        
         Args:
             response: The processed response to validate (dict or string)
             
         Returns:
             bool: True if the response is valid, False otherwise
+            
+        Examples:
+            Basic JSON validation with a dictionary:
+            >>> validator = JsonResponseValidator({"validators": {"json": {}}})
+            >>> validator.validate({"word": "example", "definition": "a thing"})
+            True
+            
+            Validation with a string containing JSON:
+            >>> validator.validate('{"word": "example", "definition": "a thing"}')
+            True
+            
+            Validation with an invalid JSON string:
+            >>> validator.validate('{"word": "example", "definition": missing quotes}')
+            False
+            
+            Schema validation - with valid response:
+            >>> schema = {
+            ...     "type": "object",
+            ...     "required": ["word", "definition"],
+            ...     "properties": {
+            ...         "word": {"type": "string"},
+            ...         "definition": {"type": "string"}
+            ...     }
+            ... }
+            >>> validator = JsonResponseValidator({"validators": {"json": {}}}, schema=schema)
+            >>> validator.validate({"word": "example", "definition": "a thing"})
+            True
+            
+            Schema validation - with invalid response (missing required field):
+            >>> validator.validate({"word": "example"})
+            False
         """
         # If response is already a dictionary, we know it's valid JSON
         if isinstance(response, dict):
@@ -88,6 +123,14 @@ class JsonResponseValidator(BaseValidator[Union[Dict[str, Any], str]]):
             
         Returns:
             bool: True if the string is valid JSON, False otherwise
+            
+        Examples:
+            >>> JsonResponseValidator.is_valid_json('{"key": "value"}')
+            True
+            >>> JsonResponseValidator.is_valid_json('{"key": value}')  # Missing quotes
+            False
+            >>> JsonResponseValidator.is_valid_json(123)  # Not a string
+            False
         """
         if not isinstance(json_str, str):
             return False
