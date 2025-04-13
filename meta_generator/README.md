@@ -1,125 +1,186 @@
-# Text Generation Component
-
-This component converts raw input (e.g., word entries with properties like word, part of speech, and translation) into enriched text (e.g., definitions, examples) by interfacing with OpenAI’s API. The output is a JSON-formatted result ready for downstream applications such as flashcard creation.
+# Vocabulary Meta Generator
 
 ## Overview
 
-- **Purpose:**  
-  Generate enriched textual content from raw input using configurable prompts and robust error handling.
-  
-- **Key Features:**  
-  - **Modular Design:** Decoupled layers including model API, prompt templating, response handling, post-processing, and validation.  
-  - **Single Configuration:** A single `config.yaml` centralizes API settings, model parameters, and runtime behaviors.  
-  - **External Prompt File:** Prompts are stored as Markdown in `prompt.md`, making prompt edits easy without touching code.
-  - **Error Resilience:** Built-in retry logic, custom error handlers, and response validation ensure robustness against unstable APIs.
+The Vocabulary Meta Generator enriches vocabulary words with comprehensive information using AI. It transforms basic word entries into structured data containing definitions, examples, synonyms, antonyms, and more.
 
-## Folder Structure
+## How It Works
 
-```
-text-generation-component/
-├── config.yaml                     # Component settings (API, model, handler parameters, prompt file path)
-├── prompt.md                 # Markdown file containing the prompt template
-├── main.py                         # Entry point script to run the generation workflow
-├── README.md                       # This documentation file
-├── requirements.txt                # Python dependency list
-├── src/
-│   ├── __init__.py
-│   ├── model/                      # Contains the API model definitions
-│   │   ├── __init__.py
-│   │   ├── base_model.py           # Abstract base class defining text generation interface
-│   │   └── openai_model.py         # OpenAI-specific implementation extending BaseModel
-│   ├── prompter/                   # Handles prompt templating from the external Markdown file
-│   │   ├── __init__.py
-│   │   └── template_prompter.py    # Loads prompt.md, performs substitution (e.g., {word}, {part_of_speech})
-│   ├── handler/                    # Manages API calls, retry logic, and error handling
-│   │   ├── __init__.py
-│   │   ├── base_handler.py         # Defines a generic handler interface for generation workflows
-│   │   └── generation_handler.py   # Implements retry logic and orchestrates processing and validation
-│   ├── processors/                 # Post-processes API responses (e.g., code block extraction)
-│   │   ├── __init__.py
-│   │   ├── base_processor.py       # Base class for response processing tasks
-│   │   └── codeblock_extractor_processor.py  # Extracts valid JSON or cleaned text from code blocks
-│   ├── validators/                # Validates processed responses
-│   │   ├── __init__.py
-│   │   ├── base_validator.py       # Base validator class interface
-│   │   └── json_response_validator.py  # Confirms JSON validity and schema compliance
-│   └── utils/                      # Utility functions used throughout the component
-│       ├── __init__.py
-│       └── smart_format.py         # Robust string substitution for prompt formatting
-└── tests/                          # Unit and integration tests
-    ├── __init__.py
-    ├── test_base_model.py          # Tests for BaseModel and its implementations
-    ├── test_template_prompter.py   # Validation for prompt templating and substitution
-    ├── test_generation_handler.py  # Tests for retry logic and error scenarios in GenerationHandler
-    └── test_processors_validators.py  # Tests for processor and validator functions
+**Input (JSON file):**
+```json
+[
+  {
+    "word": "example",
+    "part_of_speech": "noun",
+    "translation": "an instance that illustrates something"
+  }
+]
 ```
 
-## Getting Started
+**Output (Enriched JSON):**
+```json
+{
+  "word": "example",
+  "part_of_speech": "noun",
+  "definition": "A representation or instance of something that serves to illustrate a concept or principle.",
+  "examples": [
+    "This painting is an example of cubist art.",
+    "The teacher provided an example to help students understand the concept.",
+    "His behavior is a perfect example of good sportsmanship."
+  ],
+  "synonyms": ["instance", "sample", "illustration", "case", "demonstration"],
+  "antonyms": ["exception", "anomaly", "deviation"],
+  "etymology": "From Latin 'exemplum', meaning 'sample' or 'pattern'.",
+  "collocations": ["clear example", "perfect example", "set an example", "follow the example of", "give an example"]
+}
+```
 
-1. **Clone the Repository & Install Dependencies**
+## Features
 
+- **Powerful Enrichment**: Transform simple word entries into comprehensive vocabulary resources
+- **Batch Processing**: Process entire word lists in JSON format
+- **Flexible Configuration**: Easy to configure with API settings, prompt adjustments, and processing parameters
+- **Modular Architecture**: Well-structured codebase that's easy to extend and modify
+- **Error Handling**: Robust retry mechanisms and error handling for reliable processing
+- **Structured Output**: Returns clean JSON data ready for use in applications
+
+## Installation
+
+### Prerequisites
+
+- Python 3.8 or higher
+- Poetry (recommended)
+
+### Setup with Poetry
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd vocab_extension/meta_generator
+
+# Install dependencies with Poetry
+poetry install
+
+# Activate the virtual environment
+poetry shell
+```
+
+## Configuration
+
+### OpenAI API Setup
+
+You need an OpenAI API key to use this tool. You can provide it in one of two ways:
+
+1. **Environment Variable (Recommended)**:
    ```bash
-   git clone <repository_url>
-   cd text-generation-component
-   pip install -r requirements.txt
-   ```
-
-2. **Configure the Component**
-
-   - **`config.yaml`**  
-     Define all necessary settings including API key, model parameters, retries, and the prompt file path.  
-     Example snippet:
-     ```yaml
-     api:
-       key: "your_openai_api_key"
-       model: "gpt-3.5-turbo"
-     prompt_path: "prompt.md"
-     handler:
-       retries: 3
-       sleep_time: 3600
-     ```
+   # On macOS/Linux
+   export OPENAI_API_KEY="your-api-key-here"
    
-   - **`prompt.md`**  
-     Edit your prompt template here. For example:
-     ```markdown
-     You are a wonderful English teacher who explains the meaning of the word to a student.
-     
-     **User:** {word} ({part_of_speech})
-     
-     **Model:**
-     ```
-
-3. **Run the Component**
-
-   Use the entry point script:
-   ```bash
-   python main.py
+   # On Windows (PowerShell)
+   $env:OPENAI_API_KEY="your-api-key-here"
    ```
 
-## Developing and Extending
+2. **Configuration File**:
+   Edit `config.yaml` and add your API key:
+   ```yaml
+   api:
+     type: "openai"
+     key: "your-api-key-here"
+     model: "gpt-3.5-turbo"
+     params:
+       temperature: 0.7
+       max_tokens: 1000
+   ```
 
-- **Model Module:**  
-  Extend `BaseModel` in `src/model/base_model.py` to support additional APIs or custom parameters.  
-  Modify or extend `openai_model.py` if you need to adjust OpenAI-specific behaviors.
+### General Configuration
 
-- **Prompter:**  
-  The `TemplatePrompter` in `src/prompter/template_prompter.py` handles external Markdown loading and substitutions. Customize it if additional formatting or variable processing is needed.
+The `config.yaml` file controls model parameters, API settings, and processing options:
 
-- **Handler and Processors:**  
-  - Create new handlers by extending `BaseHandler` in `src/handler/base_handler.py`.  
-  - Add custom processors by extending `BaseProcessor` in `src/processors/base_processor.py` and ensuring they integrate with `GenerationHandler`.
+```yaml
+api:
+  type: "openai"
+  model: "gpt-3.5-turbo"  # Change to a different model if needed
+  params:
+    temperature: 0.7
+    max_tokens: 1000  # Increase if responses are incomplete
+prompt_path: "prompt.md"
+handler:
+  retries: 3
+  sleep_time: 2
+```
 
-- **Validators:**  
-  Extend `BaseValidator` in `src/validators/base_validator.py` to implement new validation rules for output formats.
+### Customizing the Prompt Template
 
-- **Utilities:**  
-  Leverage helper functions in `src/utils/` (such as `smart_format.py`) for common tasks during prompt substitution.
+The `prompt.md` file defines how the model generates word information. You can modify this file to change the output structure or the type of information requested.
 
-- **Testing:**  
-  New changes should be covered by unit tests in the `tests/` directory.
+Important considerations:
+- Make sure to escape curly braces `{` and `}` when writing JSON templates in the prompt
+- Use double curly braces for template parts that should appear in the final prompt (e.g., `{{word}}`)
+- Use single curly braces for variables to be replaced from input data (e.g., `{word}`)
 
-## Summary
+Example section from `prompt.md`:
+```
+Format your response as a valid JSON object with the following structure:
 
-This text generation component provides a clear, modular architecture ideal for evolving requirements. Its separation into model, prompter, handler, processors, and validators, combined with a single configuration file and external Markdown prompt, ensures a maintainable, scalable design that mid-level developers can readily extend.
+```json
+{{
+  "word": "{{word}}",
+  "part_of_speech": "{{part_of_speech}}",
+  "definition": "Clear definition here",
+  "examples": [
+    "First example sentence",
+    "Second example sentence",
+    "Third example sentence"
+  ]
+}}
+```
+```
 
-For further details or contributions, please refer to the inline documentation and test cases across the codebase.
+## Usage
+
+### Process a JSON File of Words
+
+```bash
+python main.py --file "data/words_raw.json" --output "data/words_enriched.json"
+```
+
+The input JSON file should have this structure:
+```json
+[
+  {
+    "word": "example",
+    "part_of_speech": "noun",
+    "translation": "an instance that illustrates something"
+  },
+  {
+    "word": "sample",
+    "part_of_speech": "noun",
+    "translation": "a small part of something"
+  }
+]
+```
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Incomplete JSON Responses**: If the model returns incomplete JSON:
+   - Increase the `max_tokens` parameter in the configuration
+   - Simplify the requested output structure in the prompt template
+
+2. **Prompt Template Issues**: Ensure curly braces are properly escaped in JSON examples within the prompt template
+
+3. **API Rate Limiting**: When processing large datasets, adjust the retry settings in the configuration:
+   ```yaml
+   handler:
+     retries: 5
+     sleep_time: 10
+   ```
+
+## Extending the Tool
+
+The modular architecture makes the tool easy to extend:
+
+1. **Add New Models**: Implement a new model in `src/model/` by extending `BaseModel`
+2. **Custom Processors**: Create additional processors in `src/processors/` by extending `BaseProcessor`
+3. **Different Validators**: Add new validators in `src/validators/` by extending `BaseValidator`
