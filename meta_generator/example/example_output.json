@@ -1,0 +1,31 @@
+[
+  {
+    "word": "ubiquitous",
+    "part_of_speech": "adjective",
+    "definition": "Present, appearing, or found everywhere; omnipresent.",
+    "examples": [
+      "Cell phones have become ubiquitous in modern society.",
+      "The ubiquitous smell of coffee filled the entire office building.",
+      "Plastic pollution has become a ubiquitous problem in our oceans."
+    ],
+    "synonyms": [
+      "omnipresent",
+      "pervasive",
+      "universal",
+      "widespread"
+    ],
+    "antonyms": [
+      "rare",
+      "scarce",
+      "uncommon",
+      "infrequent"
+    ],
+    "etymology": "From Latin 'ubique' meaning 'everywhere', derived from 'ubi' meaning 'where'.",
+    "collocations": [
+      "ubiquitous presence",
+      "ubiquitous technology",
+      "become ubiquitous",
+      "increasingly ubiquitous"
+    ]
+  }
+]
