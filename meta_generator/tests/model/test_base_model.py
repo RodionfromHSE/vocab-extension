@@ -1,8 +1,10 @@
-import unittest
-from unittest.mock import patch, MagicMock
+"""Tests for the BaseModel abstract class that defines the interface for text generation models."""
 import os
 import json
 from typing import Dict, Any
+
+import pytest
+from unittest.mock import patch, MagicMock
 
 from src.model.base_model import BaseModel
 
@@ -21,36 +23,39 @@ class MockModel(BaseModel):
         return True
 
 
-class TestBaseModel(unittest.TestCase):
-    """Test cases for the BaseModel abstract class"""
-    
-    def setUp(self):
-        self.config = {"api": {"key": "test_key", "model": "test-model"}}
-        self.mock_model = MockModel(self.config)
-    
-    def test_base_model_initialization(self):
-        """Test that the base model initializes correctly with config"""
-        self.assertEqual(self.mock_model.config, self.config)
-    
-    def test_mock_model_generate(self):
-        """Test that our mock implementation works as expected"""
-        prompt = "Hello, world!"
-        response = self.mock_model.generate(prompt)
-        self.assertEqual(response, f"Mock response for: {prompt}")
-        self.assertEqual(self.mock_model.call_count, 1)
-    
-    def test_model_without_config(self):
-        """Test handling of empty or invalid config"""
-        # Empty config
-        empty_config = {}
-        mock_model = MockModel(empty_config)
-        self.assertEqual(mock_model.config, {})
-        
-        # None config (should default to empty dict)
-        with self.assertRaises(TypeError):
-            # The BaseModel requires a dict for config
-            mock_model = MockModel(None)
+@pytest.fixture
+def mock_model():
+    """Fixture providing a MockModel instance with test config"""
+    config = {"api": {"key": "test_key", "model": "test-model"}}
+    return MockModel(config), config
 
 
-if __name__ == '__main__':
-    unittest.main()
+def test_base_model_initialization(mock_model):
+    """Test that the base model initializes correctly with config"""
+    model, config = mock_model
+    assert model.config == config
+
+
+def test_mock_model_generate(mock_model):
+    """Test that our mock implementation works as expected"""
+    model, _ = mock_model
+    prompt = "Hello, world!"
+    response = model.generate(prompt)
+    assert response == f"Mock response for: {prompt}"
+    assert model.call_count == 1
+
+
+def test_model_with_empty_config():
+    """Test handling of empty config"""
+    # Empty config
+    empty_config = {}
+    mock_model = MockModel(empty_config)
+    assert mock_model.config == {}
+
+
+def test_model_with_none_config():
+    """Test handling of None config (should raise TypeError)"""
+    # None config (should raise TypeError)
+    with pytest.raises(TypeError):
+        # The BaseModel requires a dict for config
+        mock_model = MockModel(None)
