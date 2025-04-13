@@ -1,9 +1,17 @@
 import os
-from typing import Dict, Any, Optional, List
-import openai
+from typing import Dict, Any
+from openai import OpenAI
 import logging
 
 from src.model.base_model import BaseModel
+
+# Global variable for default parameters
+DEFAULT_PARAMS = {
+    "model": "gpt-3.5-turbo",
+    "max_tokens": 100,
+    "temperature": 0.7,
+    "timeout": 30,
+}
 
 
 class OpenAIModel(BaseModel):
@@ -23,11 +31,15 @@ class OpenAIModel(BaseModel):
                    including API key, model name, and other settings.
         """
         super().__init__(config)
-        self.setup_client()
+        self.client = self.setup_client()
+        self.generation_params = self.initialize_generation_params()
     
-    def setup_client(self) -> None:
+    def setup_client(self) -> OpenAI:
         """
         Set up the OpenAI client with API key from config.
+        
+        Returns:
+            OpenAI: The initialized OpenAI client
         
         Raises:
             ValueError: If the API key is not provided
@@ -36,13 +48,36 @@ class OpenAIModel(BaseModel):
         
         # Use API key from config or environment variable
         if api_key and api_key != "your_openai_api_key":
-            openai.api_key = api_key
+            client = OpenAI(api_key=api_key)
         else:
             # Try to get API key from environment variable
             api_key = os.environ.get("OPENAI_API_KEY")
             if not api_key:
                 raise ValueError("OpenAI API key not provided in config or environment variables")
-            openai.api_key = api_key
+            client = OpenAI(api_key=api_key)
+        
+        return client
+    
+    def initialize_generation_params(self) -> Dict[str, Any]:
+        """
+        Initialize generation parameters from the configuration or use defaults.
+        
+        Returns:
+            Dict[str, Any]: A dictionary of generation parameters.
+        """
+        params = DEFAULT_PARAMS.copy()
+        
+        # Get API section and its params subsection
+        api_config = self.config.get("api", {})
+        api_params = api_config.get("params", {})
+        
+        # Override default parameters with config values if provided
+        params["model"] = api_config.get("model", params["model"])
+        params["max_tokens"] = api_params.get("max_tokens", params["max_tokens"])
+        params["temperature"] = api_params.get("temperature", params["temperature"])
+        params["timeout"] = api_params.get("timeout", params["timeout"])
+        
+        return params
     
     def validate_config(self) -> bool:
         """
@@ -51,8 +86,8 @@ class OpenAIModel(BaseModel):
         Returns:
             bool: True if the configuration is valid, False otherwise
         """
-        # Check if API key is available
-        if not openai.api_key:
+        # Check if API key is available (client was created successfully)
+        if not hasattr(self, 'client'):
             return False
         
         # Check if model name is specified
@@ -62,13 +97,12 @@ class OpenAIModel(BaseModel):
             
         return True
     
-    def generate(self, prompt: str, **kwargs) -> str:
+    def generate(self, prompt: str) -> str:
         """
         Generate text using the OpenAI API based on the provided prompt.
         
         Args:
             prompt: The input prompt for text generation
-            **kwargs: Additional parameters for the OpenAI API call
             
         Returns:
             str: The generated text response
@@ -80,27 +114,16 @@ class OpenAIModel(BaseModel):
             raise ValueError("Invalid configuration for OpenAI model")
         
         try:
-            model_name = self.config.get("api", {}).get("model", "gpt-3.5-turbo")
-            max_tokens = self.config.get("handler", {}).get("max_tokens", 1000)
-            temperature = self.config.get("handler", {}).get("temperature", 0.7)
-            timeout = self.config.get("handler", {}).get("timeout", 30)
-            
-            # Override config with kwargs if provided
-            model_name = kwargs.get("model", model_name)
-            max_tokens = kwargs.get("max_tokens", max_tokens)
-            temperature = kwargs.get("temperature", temperature)
-            timeout = kwargs.get("timeout", timeout)
-            
             # Create message payload for the API call
             messages = [{"role": "user", "content": prompt}]
             
-            # Make the API call
-            response = openai.ChatCompletion.create(
-                model=model_name,
+            # Make the API call using the new client API
+            response = self.client.chat.completions.create(
+                model=self.generation_params["model"],
                 messages=messages,
-                max_tokens=max_tokens,
-                temperature=temperature,
-                timeout=timeout
+                max_tokens=self.generation_params["max_tokens"],
+                temperature=self.generation_params["temperature"],
+                timeout=self.generation_params["timeout"]
             )
             
             # Extract the generated text from the response

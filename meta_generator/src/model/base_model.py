@@ -16,7 +16,12 @@ class BaseModel(ABC):
         
         Args:
             config: Dictionary containing configuration parameters for the model
+            
+        Raises:
+            TypeError: If config is not a dictionary
         """
+        if not isinstance(config, dict):
+            raise TypeError("Config must be a dictionary")
         self.config = config
     
     @abstractmethod
