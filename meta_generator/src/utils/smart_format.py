@@ -1,14 +1,18 @@
-from typing import Dict, Any, Optional
+"""Utility functions for string formatting and template variable management."""
+from typing import Dict, Any, Optional, List, Set
 import string
 import re
+import logging
+import warnings
 
 
 def smart_format(template: str, variables: Dict[str, Any]) -> str:
     """
-    A robust string substitution utility that safely handles variable substitutions.
+    A strict string substitution utility that requires all template variables to be provided.
     
     This function performs substitution of variables in a template string,
-    gracefully handling missing variables and providing fallbacks.
+    requiring all variables to be present in the provided dictionary.
+    It also warns about any unused variables.
     
     Args:
         template: The template string with placeholders like {variable}
@@ -17,22 +21,40 @@ def smart_format(template: str, variables: Dict[str, Any]) -> str:
     Returns:
         str: The formatted string with variables substituted
         
+    Raises:
+        KeyError: If any template variable is missing from the variables dictionary
+        
     Examples:
         >>> smart_format("Hello, {name}!", {"name": "World"})
         'Hello, World!'
-        >>> smart_format("Hello, {name}!", {})
-        'Hello, {name}!'
+        >>> smart_format("Hello, {name}!", {"name": "World", "unused": "value"})  # Warns about unused variable
+        'Hello, World!'
+        >>> smart_format("Hello, {name}!", {})  # Raises KeyError
+        Traceback (most recent call last):
+            ...
+        KeyError: "Missing required template variable: 'name'"
     """
-    # Create a custom formatter that handles missing keys
-    class SafeFormatter(string.Formatter):
-        def get_value(self, key, args, kwargs):
-            # Return the key name if the key is not found
-            if isinstance(key, str):
-                return kwargs.get(key, "{" + key + "}")
-            return super().get_value(key, args, kwargs)
+    # Extract all variable names from the template
+    required_variables = extract_variables(template)
     
-    formatter = SafeFormatter()
-    return formatter.format(template, **variables)
+    # Check if all required variables are present
+    for var in required_variables:
+        if var not in variables:
+            raise KeyError(f"Missing required template variable: '{var}'")
+    
+    # Check for unused variables and issue warnings
+    used_variables = set(required_variables)
+    all_variables = set(variables.keys())
+    unused_variables = all_variables - used_variables
+    
+    if unused_variables:
+        warnings.warn(
+            f"Unused variables provided that are not in the template: {', '.join(unused_variables)}",
+            UserWarning
+        )
+    
+    # Use standard string formatting
+    return template.format(**variables)
 
 
 def format_with_fallbacks(template: str, variables: Dict[str, Any], 
@@ -47,6 +69,9 @@ def format_with_fallbacks(template: str, variables: Dict[str, Any],
         
     Returns:
         str: The formatted string with variables substituted
+        
+    Raises:
+        KeyError: If any template variable is missing from both dictionaries
     """
     if fallbacks is None:
         fallbacks = {}
@@ -57,7 +82,7 @@ def format_with_fallbacks(template: str, variables: Dict[str, Any],
     return smart_format(template, combined)
 
 
-def extract_variables(template: str) -> list:
+def extract_variables(template: str) -> List[str]:
     """
     Extract variable names from a template string.
     
@@ -65,7 +90,7 @@ def extract_variables(template: str) -> list:
         template: The template string with placeholders like {variable}
         
     Returns:
-        list: List of variable names found in the template
+        List[str]: List of variable names found in the template
     """
     # Find all patterns like {variable_name}
     pattern = r'\{([^{}]+)\}'
