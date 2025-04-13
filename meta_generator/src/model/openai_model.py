@@ -8,7 +8,7 @@ from src.model.base_model import BaseModel
 # Global variable for default parameters
 DEFAULT_PARAMS = {
     "model": "gpt-3.5-turbo",
-    "max_tokens": 100,
+    "max_tokens": 1000,  # Increased from 100 to 1000 to allow for complete responses
     "temperature": 0.7,
     "timeout": 30,
 }
