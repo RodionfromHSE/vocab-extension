@@ -29,8 +29,7 @@ def smart_format(template: str, variables: Dict[str, Any]) -> str:
             # Return the key name if the key is not found
             if isinstance(key, str):
                 return kwargs.get(key, "{" + key + "}")
-            else:
-                return super().get_value(key, args, kwargs)
+            return super().get_value(key, args, kwargs)
     
     formatter = SafeFormatter()
     return formatter.format(template, **variables)
