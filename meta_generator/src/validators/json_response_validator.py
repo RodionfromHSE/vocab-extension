@@ -7,6 +7,10 @@ from jsonschema import validate, ValidationError, Draft7Validator
 
 from src.validators.base_validator import BaseValidator
 
+# Default validator settings (moved from config.yaml)
+DEFAULT_REQUIRE_SCHEMA = False
+DEFAULT_SCHEMA_PATH = ""
+
 
 class JsonResponseValidator(BaseValidator[Union[Dict[str, Any], str]]):
     """
@@ -30,9 +34,9 @@ class JsonResponseValidator(BaseValidator[Union[Dict[str, Any], str]]):
         """
         super().__init__(config)
         self.schema = schema
-        self.require_schema = config.get("validators", {}).get("json", {}).get("require_schema", False)
+        self.require_schema = config.get("validators", {}).get("json", {}).get("require_schema", DEFAULT_REQUIRE_SCHEMA)
         
-        schema_path = config.get("validators", {}).get("json", {}).get("schema_path", "")
+        schema_path = config.get("validators", {}).get("json", {}).get("schema_path", DEFAULT_SCHEMA_PATH)
         if not self.schema and schema_path and os.path.exists(schema_path):
             try:
                 with open(schema_path, 'r', encoding='utf-8') as file:

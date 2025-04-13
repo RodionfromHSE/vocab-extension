@@ -39,7 +39,7 @@ The Vocabulary Meta Generator enriches vocabulary words with comprehensive infor
 
 - **Powerful Enrichment**: Transform simple word entries into comprehensive vocabulary resources
 - **Batch Processing**: Process entire word lists in JSON format
-- **Flexible Configuration**: Easy to configure with API settings, prompt adjustments, and processing parameters
+- **Flexible Configuration**: Easy to configure with API settings and prompt adjustments
 - **Modular Architecture**: Well-structured codebase that's easy to extend and modify
 - **Error Handling**: Robust retry mechanisms and error handling for reliable processing
 - **Structured Output**: Returns clean JSON data ready for use in applications
@@ -92,22 +92,72 @@ You need an OpenAI API key to use this tool. You can provide it in one of two wa
        max_tokens: 1000
    ```
 
-### General Configuration
+### Detailed Configuration Reference
 
-The `config.yaml` file controls model parameters, API settings, and processing options:
+The `config.yaml` file has been streamlined to focus only on essential API settings and the prompt path. This simplifies configuration management while maintaining flexibility where it matters most.
 
 ```yaml
 api:
-  type: "openai"
-  model: "gpt-3.5-turbo"  # Change to a different model if needed
-  params:
-    temperature: 0.7
-    max_tokens: 1000  # Increase if responses are incomplete
-prompt_path: "prompt.md"
-handler:
-  retries: 3
-  sleep_time: 2
+  type: "openai"           # The API provider to use (currently only OpenAI is supported)
+  model: "gpt-3.5-turbo"   # The specific model to use for generation
+  params:                  # Model-specific parameters
+    temperature: 0.7       # Controls randomness (0.0 = deterministic, 1.0 = creative)
+    max_tokens: 1000       # Maximum length of the generated response
+prompt_path: "prompt.md"   # Path to the prompt template file
 ```
+
+#### API Configuration Fields:
+
+| Field | Description | Default | Notes |
+|-------|-------------|---------|-------|
+| `api.type` | The API provider to use | `"openai"` | Currently only OpenAI is supported |
+| `api.key` | Your API key | None | Can be provided via environment variable instead |
+| `api.model` | The model to use | `"gpt-3.5-turbo"` | Options include `"gpt-3.5-turbo"`, `"gpt-4"`, etc. |
+| `api.params.temperature` | Controls output randomness | `0.7` | Range: 0.0-1.0 (lower is more deterministic) |
+| `api.params.max_tokens` | Maximum response length | `1000` | Increase for more complex/lengthy responses |
+| `prompt_path` | Path to prompt template | `"prompt.md"` | Can be absolute or relative path |
+
+### Global Configuration Constants
+
+Instead of using the configuration file for every setting, we've moved certain operational parameters into code-level constants.
+
+#### Handler Constants (in `generation_handler.py`):
+
+```python
+# Default handler settings for retry behavior
+DEFAULT_RETRIES = 3        # Number of retry attempts for API calls
+DEFAULT_SLEEP_TIME = 2     # Delay between retries in seconds
+```
+
+These constants control the retry behavior when API calls fail. The generator will:
+- Make up to `DEFAULT_RETRIES` attempts to get a valid response
+- Wait `DEFAULT_SLEEP_TIME` seconds between each attempt
+- Log detailed information about each failure
+- Raise the final error if all attempts fail
+
+#### Validator Constants (in `json_response_validator.py`):
+
+```python
+# Default validator settings for JSON schema validation
+DEFAULT_REQUIRE_SCHEMA = False     # Whether a schema is required for validation
+DEFAULT_SCHEMA_PATH = ""           # Default path to JSON schema file
+```
+
+These constants control JSON validation behavior:
+- `DEFAULT_REQUIRE_SCHEMA`: When `True`, responses must match a provided schema
+- `DEFAULT_SCHEMA_PATH`: Path to a JSON schema file for validation
+
+#### When to Modify Constants vs. Config File
+
+- **Modify config.yaml when**:
+  - Changing API credentials
+  - Adjusting model parameters
+  - Using different prompt templates
+
+- **Modify code constants when**:
+  - Changing system behavior (like retry logic)
+  - Implementing different validation requirements
+  - Extending the tool with new capabilities
 
 ### Customizing the Prompt Template
 
@@ -160,6 +210,16 @@ The input JSON file should have this structure:
 ]
 ```
 
+### Command-Line Options
+
+The entry script uses Click for command-line interface management:
+
+| Option | Description | Required | Default |
+|--------|-------------|----------|---------|
+| `--config` | Path to configuration file | No | `"config.yaml"` |
+| `--file` | Path to input JSON file | Yes | N/A |
+| `--output` | Path for output JSON file | No | Input filename with `_enriched` suffix |
+
 ## Troubleshooting
 
 ### Common Issues
@@ -170,12 +230,16 @@ The input JSON file should have this structure:
 
 2. **Prompt Template Issues**: Ensure curly braces are properly escaped in JSON examples within the prompt template
 
-3. **API Rate Limiting**: When processing large datasets, adjust the retry settings in the configuration:
-   ```yaml
-   handler:
-     retries: 5
-     sleep_time: 10
+3. **API Rate Limiting**: When processing large datasets, you may need to modify the retry settings in the `src/handler/generation_handler.py` file by adjusting the `DEFAULT_RETRIES` and `DEFAULT_SLEEP_TIME` constants:
+   ```python
+   # For aggressive retry behavior with longer wait times
+   DEFAULT_RETRIES = 5      # Increase number of attempts
+   DEFAULT_SLEEP_TIME = 10  # Longer wait between retries (in seconds)
    ```
+
+4. **JSON Validation Issues**: If you need stricter JSON validation:
+   - Create a JSON schema file
+   - Modify the `DEFAULT_REQUIRE_SCHEMA` and `DEFAULT_SCHEMA_PATH` constants in `json_response_validator.py`
 
 ## Extending the Tool
 
@@ -184,3 +248,7 @@ The modular architecture makes the tool easy to extend:
 1. **Add New Models**: Implement a new model in `src/model/` by extending `BaseModel`
 2. **Custom Processors**: Create additional processors in `src/processors/` by extending `BaseProcessor`
 3. **Different Validators**: Add new validators in `src/validators/` by extending `BaseValidator`
+
+## Example Usage
+
+Check out the `example/` directory for sample input files and expected output files. Each example comes with a README explaining how to use it.

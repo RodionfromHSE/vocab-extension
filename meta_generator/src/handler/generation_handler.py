@@ -42,8 +42,8 @@ class GenerationHandler(BaseHandler[T]):
             config: Dictionary containing configuration parameters
             model: The text generation model to use
             prompter: The prompter for formatting input prompts
-            processor: Optional processor for post-processing responses
-            validator: Optional validator for validating processed responses
+            processor: Optional processor for post-processing responses (defaults to DefaultProcessor)
+            validator: Optional validator for validating processed responses (defaults to DefaultValidator)
         """
         super().__init__(config)
         self.model = model
