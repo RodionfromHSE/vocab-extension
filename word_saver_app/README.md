@@ -9,7 +9,7 @@ This application lets you quickly save text prompts with context information by 
 ## Features
 
 - Global hotkey triggering (`Cmd+Shift+P` by default)
-- Application-specific activation (works only in Yandex Browser)
+- Application-specific activation (works only in Yandex Browser (adjustable, see configuration))
 - Automatic clipboard content retrieval
 - Incremental JSON storage system
 - Cross-platform support (macOS, Windows, Linux)
@@ -42,7 +42,8 @@ setup.py                    # Packaging configuration
 Edit `app/config.py` to change:
 - `ALLOWED_APPLICATIONS`: List of applications where the hotkey works
 - `HOTKEY`: The global hotkey combination
-- `SAVE_DIRECTORY`: Where prompt data is saved
+- `SAVE_DIRECTORY`: Where prompt data is saved (use `WORD_SAVER_SAVE_DIRECTORY` environment variable; by default, `~/Documents/word_saver`)
+- `DEBUG`: Set to `True` for debugging information
 
 ## How to Run
 
