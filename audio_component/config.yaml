@@ -1,3 +1,5 @@
 language: en
 save_directory: ~/Library/Application Support/Anki2/User 1/collection.media
-media_subdirectory: decca1
+media_subdirectory: deck_test
+input_file: data/sample_input.json
+output_file: data/sample_input_with_audio.json
