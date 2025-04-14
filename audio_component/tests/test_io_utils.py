@@ -6,11 +6,12 @@ import json
 import tempfile
 import pytest
 from pathlib import Path
-from io_utils import (
+from src.io_utils import (
     read_input_json,
     create_target_directory,
     save_audio_file,
-    write_output_json
+    write_output_json,
+    TEXT_KEY
 )
 
 class TestReadInputJson:
@@ -20,16 +21,16 @@ class TestReadInputJson:
         """Test reading a valid JSON file with sentences."""
         with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.json') as f:
             json.dump([
-                {"sentence": "Hello, world!"},
-                {"sentence": "This is a test."}
+                {TEXT_KEY: "Hello, world!"},
+                {TEXT_KEY: "This is a test."}
             ], f)
             temp_file = f.name
         
         try:
             result = read_input_json(temp_file)
             assert len(result) == 2
-            assert result[0]["sentence"] == "Hello, world!"
-            assert result[1]["sentence"] == "This is a test."
+            assert result[0][TEXT_KEY] == "Hello, world!"
+            assert result[1][TEXT_KEY] == "This is a test."
         finally:
             os.unlink(temp_file)
     
@@ -54,13 +55,13 @@ class TestReadInputJson:
         """Test handling of JSON objects missing the 'sentence' field."""
         with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.json') as f:
             json.dump([
-                {"text": "Hello, world!"},  # Missing 'sentence' field
-                {"sentence": "This is a test."}
+                {TEXT_KEY + "something": "Hello, world!"},  # Missing 'TEXT_KEY' field
+                {TEXT_KEY: "This is a test."}
             ], f)
             temp_file = f.name
         
         try:
-            with pytest.raises(ValueError, match="missing the 'sentence' field"):
+            with pytest.raises(ValueError, match=f"missing the '{TEXT_KEY}' field"):
                 read_input_json(temp_file)
         finally:
             os.unlink(temp_file)
@@ -142,8 +143,8 @@ class TestWriteOutputJson:
         with tempfile.TemporaryDirectory() as temp_dir:
             output_file = os.path.join(temp_dir, "output.json")
             data = [
-                {"sentence": "Hello", "audio_absolute_path": "/path/to/hello.mp3"},
-                {"sentence": "World", "audio_absolute_path": "/path/to/world.mp3"}
+                {TEXT_KEY: "Hello", "audio_absolute_path": "/path/to/hello.mp3"},
+                {TEXT_KEY: "World", "audio_absolute_path": "/path/to/world.mp3"}
             ]
             
             write_output_json(data, output_file)
@@ -161,7 +162,7 @@ class TestWriteOutputJson:
         with tempfile.TemporaryDirectory() as temp_dir:
             nested_dir = os.path.join(temp_dir, "nested", "dir")
             output_file = os.path.join(nested_dir, "output.json")
-            data = [{"sentence": "Test"}]
+            data = [{TEXT_KEY: "Test"}]
             
             write_output_json(data, output_file)
             

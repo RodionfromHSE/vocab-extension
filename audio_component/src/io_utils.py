@@ -1,14 +1,25 @@
 """
 I/O utilities for the Audio Companion Component.
 
-This module provides functions for reading input JSON, validating the existence
-of the "sentence" field, creating target directories, and writing output JSON
-with updated media file paths.
+This module provides functions for reading input JSON, validating content,
+creating target directories, and writing output JSON with media file paths.
 """
 import json
 import os
-from pathlib import Path
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any
+# import TEXT_KEY from main.py
+from main import TEXT_KEY
+
+def _validate_json_data(data: Any) -> None:
+    """Validate that JSON data contains a list of objects with sentence fields."""
+    if not isinstance(data, list):
+        raise ValueError("Input JSON must contain a list of objects")
+        
+    for idx, item in enumerate(data):
+        if not isinstance(item, dict):
+            raise ValueError(f"Item at index {idx} is not an object")
+        if TEXT_KEY not in item:
+            raise ValueError(f"Object at index {idx} is missing the '{TEXT_KEY}' field")
 
 def read_input_json(file_path: str) -> List[Dict[str, Any]]:
     """
@@ -29,15 +40,7 @@ def read_input_json(file_path: str) -> List[Dict[str, Any]]:
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
             
-        if not isinstance(data, list):
-            raise ValueError("Input JSON must contain a list of objects")
-            
-        for idx, item in enumerate(data):
-            if not isinstance(item, dict):
-                raise ValueError(f"Item at index {idx} is not an object")
-            if "sentence" not in item:
-                raise ValueError(f"Object at index {idx} is missing the 'sentence' field")
-                
+        _validate_json_data(data)
         return data
     except FileNotFoundError:
         raise FileNotFoundError(f"Input file not found: {file_path}")
@@ -46,7 +49,7 @@ def read_input_json(file_path: str) -> List[Dict[str, Any]]:
 
 def create_target_directory(save_directory: str, media_subdirectory: str) -> str:
     """
-    Create the target directory by combining save_directory and media_subdirectory.
+    Create and return the target directory path.
     
     Args:
         save_directory: The base directory where media files will be stored.
@@ -82,10 +85,8 @@ def save_audio_file(target_dir: str, file_name: str, audio_data: bytes) -> Dict[
     if not file_name.endswith('.mp3'):
         file_name += '.mp3'
     
-    # Create the absolute path to the file
+    # Create paths
     abs_path = os.path.join(target_dir, file_name)
-    
-    # Get the relative path (just the filename with the media_subdirectory)
     rel_path = os.path.join(os.path.basename(target_dir), file_name)
     
     # Save the audio data to the file

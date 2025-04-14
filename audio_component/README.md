@@ -27,16 +27,16 @@ git clone <repository-url>
 cd audio-component
 ```
 
-2. Activate the virtual environment:
-
-```bash
-source .venv/bin/activate
-```
-
-3. Install dependencies using Poetry:
+2. Install dependencies using Poetry:
 
 ```bash
 poetry install
+```
+
+3. Activate the virtual environment:
+
+```bash
+poetry shell
 ```
 
 ## Configuration
