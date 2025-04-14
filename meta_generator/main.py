@@ -12,7 +12,7 @@ from tqdm import tqdm
 # Set up logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    format='%(asctime)s - %(name)s - %(levelname)s\n%(message)s\nLocation: %(pathname)s:%(lineno)d\n\n------\n',
     handlers=[logging.StreamHandler(sys.stdout)]
 )
 

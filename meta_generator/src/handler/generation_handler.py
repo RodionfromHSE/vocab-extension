@@ -77,7 +77,11 @@ class GenerationHandler(BaseHandler[T]):
             Exception: If handling fails after all retries
         """
         # Format the prompt template with input data
-        formatted_prompt = self.prompter.format_prompt(input_data)
+        try:
+            formatted_prompt = self.prompter.format_prompt(input_data)
+        except Exception as e:
+            logging.error(f"Error formatting prompt: {e}")
+            raise
         
         # Try to generate with retries
         attempt = 0

@@ -174,3 +174,11 @@ class TestExtractVariables:
         
         assert set(variables) == {"dict[key]", "list[0]"}
         assert len(variables) == 2
+    
+    def test_extract_with_escaped_braces(self):
+        """Test extracting variables with escaped braces."""
+        template = "Hello, {{name}}! You are {age} years old."
+        
+        variables = extract_variables(template)
+        
+        assert set(variables) == {"age"}, "Variables in escaped braces should not be extracted"

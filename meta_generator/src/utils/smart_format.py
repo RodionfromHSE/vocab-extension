@@ -91,9 +91,16 @@ def extract_variables(template: str) -> List[str]:
         
     Returns:
         List[str]: List of variable names found in the template
+        
+    Note:
+        Ignores escaped variables like {{not_a_variable}}
     """
+    # Replace double braces temporarily (to avoid matching them)
+    temp_template = template.replace('{{', '<<<').replace('}}', '>>>')
+    
     # Find all patterns like {variable_name}
     pattern = r'\{([^{}]+)\}'
-    variables = re.findall(pattern, template)
+    variables = re.findall(pattern, temp_template)
     
+    # Remove the debug print statement
     return variables
