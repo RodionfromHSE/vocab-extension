@@ -94,7 +94,7 @@ You need an OpenAI API key to use this tool. You can provide it in one of two wa
 
 ### Detailed Configuration Reference
 
-The `config.yaml` file has been streamlined to focus only on essential API settings and the prompt path. This simplifies configuration management while maintaining flexibility where it matters most.
+The `config.yaml` file includes essential API settings, the prompt path, and default input/output paths. This provides both flexibility and convenience.
 
 ```yaml
 api:
@@ -104,6 +104,8 @@ api:
     temperature: 0.7       # Controls randomness (0.0 = deterministic, 1.0 = creative)
     max_tokens: 1000       # Maximum length of the generated response
 prompt_path: "prompt.md"   # Path to the prompt template file
+input: "data/words.json"   # Default input file path (optional)
+output: "data/words_enriched.json" # Default output file path (optional)
 ```
 
 #### API Configuration Fields:
@@ -116,6 +118,8 @@ prompt_path: "prompt.md"   # Path to the prompt template file
 | `api.params.temperature` | Controls output randomness | `0.7` | Range: 0.0-1.0 (lower is more deterministic) |
 | `api.params.max_tokens` | Maximum response length | `1000` | Increase for more complex/lengthy responses |
 | `prompt_path` | Path to prompt template | `"prompt.md"` | Can be absolute or relative path |
+| `input` | Default input file path | `"data/words.json"` | Can be overridden with --input/-i option |
+| `output` | Default output file path | `"data/words_enriched.json"` | Can be overridden with --output/-o option |
 
 ### Global Configuration Constants
 
@@ -153,6 +157,7 @@ These constants control JSON validation behavior:
   - Changing API credentials
   - Adjusting model parameters
   - Using different prompt templates
+  - Changing default input/output paths
 
 - **Modify code constants when**:
   - Changing system behavior (like retry logic)
@@ -191,7 +196,19 @@ Format your response as a valid JSON object with the following structure:
 ### Process a JSON File of Words
 
 ```bash
-python main.py --file "data/words_raw.json" --output "data/words_enriched.json"
+# Using the command line options
+python main.py --input "data/words_raw.json" --output "data/words_enriched.json"
+
+# Using the short form options
+python main.py -i "data/words_raw.json" -o "data/words_enriched.json"
+
+# Using default paths from config.yaml
+python main.py
+
+# Process all entries in the file
+python main.py --input "data/words_raw.json" --all
+# or with short form
+python main.py -i "data/words_raw.json" -all
 ```
 
 The input JSON file should have this structure:
@@ -214,11 +231,14 @@ The input JSON file should have this structure:
 
 The entry script uses Click for command-line interface management:
 
-| Option | Description | Required | Default |
-|--------|-------------|----------|---------|
-| `--config` | Path to configuration file | No | `"config.yaml"` |
-| `--file` | Path to input JSON file | Yes | N/A |
-| `--output` | Path for output JSON file | No | Input filename with `_enriched` suffix |
+| Option | Short | Description | Required | Default |
+|--------|-------|-------------|----------|---------|
+| `--config` | | Path to configuration file | No | `"config.yaml"` |
+| `--input` | `-i` | Path to input JSON file | No* | Value from config.yaml |
+| `--output` | `-o` | Path for output JSON file | No | Value from config or input filename with `_enriched` suffix |
+| `--all` | `-all` | Process all entries in the input file | No | `False` |
+
+*Either `--input`/`-i` or the `input` field in the config file must be provided.
 
 ## Troubleshooting
 

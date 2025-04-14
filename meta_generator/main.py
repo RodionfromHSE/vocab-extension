@@ -4,8 +4,7 @@ import os
 import sys
 import json
 import logging
-from typing import Dict, Any, List
-import yaml
+from typing import Dict, Any, List, Optional
 import click
 from tqdm import tqdm
 
@@ -22,25 +21,7 @@ from src.prompter.template_prompter import TemplatePrompter
 from src.processors.codeblock_extractor_processor import CodeBlockExtractorProcessor
 from src.validators.json_response_validator import JsonResponseValidator
 from src.handler.generation_handler import GenerationHandler
-
-
-def load_config(config_path: str = "config.yaml") -> Dict[str, Any]:
-    """
-    Load configuration from YAML file.
-    
-    Args:
-        config_path: Path to the configuration file
-        
-    Returns:
-        Dict[str, Any]: Configuration dictionary
-    """
-    try:
-        with open(config_path, 'r', encoding='utf-8') as file:
-            config = yaml.safe_load(file)
-        return config
-    except Exception as e:
-        logging.error(f"Error loading configuration: {e}")
-        sys.exit(1)
+from src.utils.config import read_config, config_to_dict
 
 
 def create_components(config: Dict[str, Any]):
@@ -114,6 +95,21 @@ def process_input_file(handler: GenerationHandler, input_path: str, output_path:
         sys.exit(1)
 
 
+def get_default_paths(config):
+    """
+    Get default input and output paths from config if available.
+    
+    Args:
+        config: Configuration object
+        
+    Returns:
+        tuple: (input_path, output_path)
+    """
+    input_path = config.get("input", None)
+    output_path = config.get("output", None)
+    return input_path, output_path
+
+
 @click.command()
 @click.option(
     "--config", 
@@ -121,25 +117,44 @@ def process_input_file(handler: GenerationHandler, input_path: str, output_path:
     help="Path to the configuration file"
 )
 @click.option(
-    "--file", 
-    required=True,
+    "--input", "-i",
     help="Path to input JSON file containing vocabulary entries"
 )
 @click.option(
-    "--output", 
+    "--output", "-o",
     help="Path to output JSON file"
 )
-def main(config, file, output):
+@click.option(
+    "--all", "-all", "process_all", is_flag=True,
+    help="Process all entries in the input file"
+)
+def main(config, input, output, process_all):
     """Main entry point for the text generation component."""
     # Load configuration
-    config_data = load_config(config)
+    config_data = read_config(config)
+    
+    # Get input and output paths - CLI args override config values
+    default_input, default_output = get_default_paths(config_data)
+    input_path = input or default_input
+    
+    # If no input is provided either through CLI or config, exit
+    if not input_path:
+        logging.error("No input file specified. Use --input/-i option or set 'input' in config.yaml")
+        sys.exit(1)
+    
+    # Determine output path
+    if output:
+        output_path = output
+    elif default_output:
+        output_path = default_output
+    else:
+        output_path = input_path.replace(".json", "_enriched.json")
     
     # Create components
     _, _, _, _, handler = create_components(config_data)
     
     # Process input file
-    output_path = output or file.replace(".json", "_enriched.json")
-    process_input_file(handler, file, output_path)
+    process_input_file(handler, input_path, output_path)
 
 
 if __name__ == "__main__":

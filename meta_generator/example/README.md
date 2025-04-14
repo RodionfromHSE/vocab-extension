@@ -6,6 +6,7 @@ This directory contains example files demonstrating how to use the Vocabulary Me
 
 - **example_input.json**: Sample input file containing basic vocabulary entries
 - **example_output.json**: Sample output file showing the enriched vocabulary data
+- **config.yaml**: Example configuration file with default input/output paths
 
 ## How to Run the Example
 
@@ -14,7 +15,14 @@ This directory contains example files demonstrating how to use the Vocabulary Me
 3. Run the following command from the project root:
 
 ```bash
-python main.py --file "example/example_input.json" --output "example/your_output.json" --config "example/config.yaml"
+# Using the command line options
+python main.py --input "example/example_input.json" --output "example/your_output.json" --config "example/config.yaml"
+
+# Using the short form options
+python main.py -i "example/example_input.json" -o "example/your_output.json" --config "example/config.yaml"
+
+# Or simply use the defaults from the example config.yaml (which already includes input/output paths)
+python main.py --config "example/config.yaml"
 ```
 
 4. Compare your output with the provided `example_output.json` file to verify the generator is working correctly

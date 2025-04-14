@@ -5,3 +5,6 @@ api:
     temperature: 0.7
     max_tokens: 1000  # Increased from 100 to 1000 to allow for complete responses
 prompt_path: "prompt.md"
+# Default input and output paths (optional)
+input: "data/words.json"
+output: "data/words_enriched.json"
