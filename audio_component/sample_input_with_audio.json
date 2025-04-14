@@ -1,0 +1,12 @@
+[
+  {
+    "sentence": "Hello, this is a test sentence.",
+    "audio_absolute_path": "/Users/Rodion.Khvorostov/Library/Application Support/Anki2/User 1/collection.media/decca1/audio_0.mp3",
+    "audio_relative_path": "decca1/audio_0.mp3"
+  },
+  {
+    "sentence": "The quick brown fox jumps over the lazy dog.",
+    "audio_absolute_path": "/Users/Rodion.Khvorostov/Library/Application Support/Anki2/User 1/collection.media/decca1/audio_1.mp3",
+    "audio_relative_path": "decca1/audio_1.mp3"
+  }
+]
