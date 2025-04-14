@@ -124,11 +124,7 @@ def get_default_paths(config):
     "--output", "-o",
     help="Path to output JSON file"
 )
-@click.option(
-    "--all", "-all", "process_all", is_flag=True,
-    help="Process all entries in the input file"
-)
-def main(config, input, output, process_all):
+def main(config, input, output):
     """Main entry point for the text generation component."""
     # Load configuration
     config_data = read_config(config)
