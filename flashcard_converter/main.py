@@ -11,6 +11,7 @@ import logging
 import sys
 from pathlib import Path
 from typing import Dict, List, Any
+import click
 from omegaconf import DictConfig
 from tqdm import tqdm
 
@@ -81,7 +82,8 @@ def create_flashcards(meta_data: List[Dict[str, Any]],
                     "back": back
                 })
             except KeyError as e:
-                logger.warning(f"Missing key in record: {e}. Skipping this flashcard.")
+                logger.error(f"Missing key in record: {e}. Skipping this flashcard.")
+                raise
             except Exception as e:
                 logger.warning(f"Error processing record: {e}. Skipping this flashcard.")
     
@@ -123,26 +125,39 @@ def add_to_anki(flashcards: List[Dict[str, str]], deck_name: str) -> None:
         raise
 
 
-def main() -> None:
+@click.command()
+@click.option('--input-file', '-i', type=click.Path(exists=True), help='Path to the input JSON file')
+@click.option('--config', '-c', type=click.Path(exists=True), default="config.yaml", help='Path to the configuration file')
+def main(input_file, config) -> None:
     """
-    Main function to process the conversion from JSON to Anki flashcards.
+    Convert JSON meta data to Anki flashcards.
+    
+    If input-file is provided, it will override the value in the config file.
     """
     try:
         # Load configuration
-        config = setup_config()
-        logger.info(f"Loaded configuration. Input file: {config.input_file}, Deck: {config.deck_name}")
+        config_obj = setup_config(config)
+        
+        # Override input file from command line if provided
+        if input_file:
+            logger.info(f"Using input file from command line: {input_file}")
+            input_path = Path(input_file).expanduser().resolve()
+        else:
+            logger.info(f"Using input file from config: {config_obj.input_file}")
+            input_path = Path(config_obj.input_file).expanduser().resolve()
+        
+        logger.info(f"Loaded configuration. Input file: {input_path}, Deck: {config_obj.deck_name}")
         
         # Load meta data
-        input_path = Path(config.input_file).expanduser().resolve()
         meta_data = read_json(str(input_path))
         logger.info(f"Loaded {len(meta_data)} records from {input_path}")
         
         # Create flashcards
-        flashcards = create_flashcards(meta_data, config.flashcard_template)
+        flashcards = create_flashcards(meta_data, config_obj.flashcard_template)
         logger.info(f"Created {len(flashcards)} flashcards")
         
         # Add to Anki
-        add_to_anki(flashcards, config.deck_name)
+        add_to_anki(flashcards, config_obj.deck_name)
         
         logger.info("Conversion completed successfully")
     

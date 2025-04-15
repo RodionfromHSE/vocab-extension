@@ -12,11 +12,13 @@ deck_name: "My Flashcard Deck"
 # - back: Template string for the back of the flashcard
 flashcard_template:
   - front: |-
-      {word} <br>
-      {example}
+      {word_ru} <br>
+      {example_ru} <br> <br>
+      Definition: {definition} 
     back: |-
-      {definition} <br> <br>
-      [sound:{audio}]
+      {word} <br>
+      {example} <br> <br>
+      [sound:{audio_relative_path}]
   
   # You can add more templates for different types of flashcards
   # - front: "{word}"

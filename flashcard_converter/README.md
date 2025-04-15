@@ -11,24 +11,19 @@ This tool allows you to:
 
 ## Prerequisites
 
-- Python 3.6+
+- Python 3.10+
 - Anki desktop application
 - AnkiConnect add-on installed in Anki
 
 ## Installation
 
-1. Clone this repository:
-   ```
-   git clone https://github.com/yourusername/flashcard-converter.git
-   cd flashcard-converter
-   ```
 
-2. Install the required dependencies:
+1. Install the required dependencies:
    ```
    pip install -r requirements.txt
    ```
 
-3. Make sure the AnkiConnect add-on is installed in Anki:
+2. Make sure the AnkiConnect add-on is installed in Anki:
    - Open Anki
    - Go to Tools > Add-ons > Get Add-ons
    - Enter code: 2055492159
@@ -65,6 +60,9 @@ The input JSON file should contain an array of objects with the fields you want 
   ...
 ]
 ```
+
+*Note:* The keys in the JSON objects should match the placeholders used in your YAML configuration. \
+Though, you're not obligated to use the keys as above (they are for demonstration purposes).
 
 ## Usage
 

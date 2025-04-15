@@ -21,7 +21,7 @@ from src.prompter.template_prompter import TemplatePrompter
 from src.processors.codeblock_extractor_processor import CodeBlockExtractorProcessor
 from src.validators.json_response_validator import JsonResponseValidator
 from src.handler.generation_handler import GenerationHandler
-from src.utils.config import read_config, config_to_dict
+from src.utils.config import read_config
 
 
 def create_components(config: Dict[str, Any]):

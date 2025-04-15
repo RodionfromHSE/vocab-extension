@@ -12,7 +12,7 @@ import click
 import omegaconf
 from tqdm import tqdm
 from src.audio_generator import generate_audio
-from src import io_utils
+import src.io_utils as io_utils
 
 TEXT_KEY = "word"  # Key for the text to be converted to audio
 

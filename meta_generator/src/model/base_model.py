@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import Dict, Any, Optional
+from omegaconf import DictConfig
 
 
 class BaseModel(ABC):
@@ -20,7 +21,7 @@ class BaseModel(ABC):
         Raises:
             TypeError: If config is not a dictionary
         """
-        if not isinstance(config, dict):
+        if not isinstance(config, dict | DictConfig):
             raise TypeError("Config must be a dictionary")
         self.config = config
     
