@@ -1,0 +1,5 @@
+ankiapi==0.1.0
+boilerplate-tools
+tqdm
+omegaconf
+PyYAML

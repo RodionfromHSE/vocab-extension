@@ -56,7 +56,7 @@ def smart_format(template: str, variables: Dict[str, Any]) -> str:
     # Use standard string formatting
     return template.format(**variables)
 
-
+# TO-DO: remove this function
 def format_with_fallbacks(template: str, variables: Dict[str, Any], 
                          fallbacks: Dict[str, Any] = None) -> str:
     """
