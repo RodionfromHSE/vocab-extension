@@ -14,7 +14,7 @@ from tqdm import tqdm
 from src.audio_generator import generate_audio
 import src.io_utils as io_utils
 
-TEXT_KEY = "word"  # Key for the text to be converted to audio
+TEXT_KEY = "example"  # Key for the text to be converted to audio
 
 def load_config(config_path: str) -> omegaconf.DictConfig:
     """

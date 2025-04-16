@@ -20,7 +20,7 @@ from boilerplate_tools import smart_format, load_config, read_json
 
 # Configure logging
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.ERROR,
     format="%(name)s - %(levelname)s - %(message)s\nLocation: %(pathname)s:%(lineno)d",
     handlers=[logging.StreamHandler(sys.stdout)]
 )

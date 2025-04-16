@@ -1,20 +1,23 @@
 # Vocabulary Extension Pipeline Configuration
-root: /Users/Rodion.Khvorostov/Desktop/Prog/Other/vocab_extension
+pipeline_name: "en_custom"
+data_folder: ${oc.env:VOCAB_EXTENSION_DATA_FOLDER}/${pipeline_name}
+
+root: "/Users/Rodion.Khvorostov/Desktop/Prog/Other/vocab_extension"
+
 dataset_converter:
-  input_dir: "${root}/integration_test/word_data"
-  output_file: "${root}/integration_test/data/words_raw.json"
+  input_dir: "${oc.env:WORD_SAVER_SAVE_DIRECTORY}"
+  output_file: "${data_folder}/words_raw.json"
 
 meta_generator:
   config_file: "${root}/meta_generator/config.yaml"
   input_file: ${dataset_converter.output_file}
-  output_file: "${root}/integration_test/data/words_enriched.json"
+  output_file: "${data_folder}/words_enriched.json"
 
 audio_generator:
   config_file: "${root}/audio_component/config.yaml"
   input_file: ${meta_generator.output_file}
-  output_file: "${root}/integration_test/data/words_enriched.json"
+  output_file: "${data_folder}/words_enriched_with_audio.json"
 
 flashcard_converter:
-  # config_file: "./config.yaml"
   config_file: "${root}/flashcard_converter/config.yaml"
   input_file: ${audio_generator.output_file}

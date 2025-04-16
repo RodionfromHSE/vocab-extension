@@ -83,14 +83,14 @@ tests-mypy = ["mypy (>=1.11.1) ; platform_python_implementation == \"CPython\" a
 
 [[package]]
 name = "boilerplate-tools"
-version = "0.1.3"
+version = "0.1.4"
 description = "A set of helper functions"
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "boilerplate_tools-0.1.3-py3-none-any.whl", hash = "sha256:5735a348bdaa66ec8556c367ede02980dfe673efdac4d82af135d09607750362"},
-    {file = "boilerplate_tools-0.1.3.tar.gz", hash = "sha256:951532c4781842b5300e53c3ecad92d36ce491a4ef284e8f198a3d0fe5b17e89"},
+    {file = "boilerplate_tools-0.1.4-py3-none-any.whl", hash = "sha256:c9b5132c0aa6a2193c6bb731321a81bcbefe9a7f3c7ae725a09da2c321086c8b"},
+    {file = "boilerplate_tools-0.1.4.tar.gz", hash = "sha256:291d114e377552011bd1ceda9d51b76d9b42d6da23cb4a040ccdaa39b9efcdf3"},
 ]
 
 [package.dependencies]
@@ -748,6 +748,21 @@ tomli = {version = ">=1", markers = "python_version < \"3.11\""}
 dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
 
 [[package]]
+name = "python-dotenv"
+version = "1.1.0"
+description = "Read key-value pairs from a .env file and set them as environment variables"
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+files = [
+    {file = "python_dotenv-1.1.0-py3-none-any.whl", hash = "sha256:d7c01d9e2293916c18baf562d95698754b0dbbb5e74d457c45d4f6561fb9d55d"},
+    {file = "python_dotenv-1.1.0.tar.gz", hash = "sha256:41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5"},
+]
+
+[package.extras]
+cli = ["click (>=5.0)"]
+
+[[package]]
 name = "pyyaml"
 version = "6.0.2"
 description = "YAML parser and emitter for Python"
@@ -1114,4 +1129,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "b1d7764ef0d992675596461257113d936b75abbbbf2f8c1e89e20cc5513049a4"
+content-hash = "1a3c7ef858d4975dd0580b4f61691354e3e34563f65242d18c255e44f63e63ed"

@@ -84,7 +84,7 @@ def run_subprocess(
         if DEBUG:
             print(f"Command: {' '.join(command)}")
             print(f"Output:\n{result.stdout}")
-            print(f"Error:\n{result.stderr}")
+            print(f"stderr (logs):\n{result.stderr}")
         return result
     except subprocess.CalledProcessError as e:
         print(f"ERROR in {description}:")
@@ -92,6 +92,23 @@ def run_subprocess(
         print(f"Standard output: {e.stdout}")
         print(f"Standard error: {e.stderr}")
         raise
+
+def get_shortened_path(path: str) -> str:
+    """
+    Get shortened version of a path containing only the base directory and filename/dirname.
+    
+    Args:
+        path: Full path to file or directory
+        
+    Returns:
+        Shortened path string
+    """
+    dirname = os.path.dirname(path)
+    basename = os.path.basename(path)
+    if basename == '':  # If path ends with separator
+        basename = os.path.basename(dirname)
+        dirname = os.path.dirname(dirname)
+    return os.path.join(os.path.basename(dirname), basename)
 
 def run_dataset_converter(config: Dict[str, Any]) -> str:
     """
@@ -111,7 +128,7 @@ def run_dataset_converter(config: Dict[str, Any]) -> str:
     
     run_subprocess(
         ["python", "other/dataset_convertor.py", input_dir, output_file],
-        f"dataset converter: {input_dir} -> {output_file}"
+        f"dataset converter: {get_shortened_path(input_dir)} -> {get_shortened_path(output_file)}"
     )
     return output_file
 
@@ -138,7 +155,7 @@ def run_meta_generator(config: Dict[str, Any]) -> str:
          "--input", input_file, 
          "--output", output_file, 
          "--config", meta_config],
-        f"meta generator: {input_file} -> {output_file}"
+        f"meta generator: {get_shortened_path(input_file)} -> {get_shortened_path(output_file)}"
     )
     return output_file
 
@@ -162,7 +179,7 @@ def run_audio_generator(config: Dict[str, Any]) -> str:
          input_file, 
          "--output-file", output_file, 
          "--config", audio_config],
-        f"audio generator: {input_file} -> {output_file}"
+        f"audio generator: {get_shortened_path(input_file)} -> {get_shortened_path(output_file)}"
     )
     return output_file
 
@@ -181,7 +198,7 @@ def run_flashcard_converter(config: Dict[str, Any]) -> None:
         ["python", "main.py", 
          "-i", input_file, 
          "--config", flashcard_config],
-        f"flashcard converter with {input_file}"
+        f"flashcard converter with {get_shortened_path(input_file)}"
     )
 
 def run_or_skip(

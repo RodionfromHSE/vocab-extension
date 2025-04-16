@@ -4,7 +4,7 @@
 input_file: "data/meta.json"
 
 # Name of the Anki deck to create/populate
-deck_name: "My Flashcard Deck"
+deck_name: "EnglishCustom"
 
 # Flashcard Templates
 # Each template includes:
