@@ -17,12 +17,14 @@ import logging
 from pathlib import Path
 from typing import Dict, Any, Callable, TypeVar, Optional, List, Union
 import click
+from dotenv import load_dotenv
 
 from boilerplate_tools import load_config
 
 
 
 # Type variable for the decorator
+load_dotenv()
 T = TypeVar('T')
 
 def change_directory(directory: str) -> Callable[[Callable[..., T]], Callable[..., T]]:
