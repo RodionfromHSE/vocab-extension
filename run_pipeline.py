@@ -11,6 +11,7 @@ Each stage can be run independently or as part of the complete pipeline,
 with options to skip individual stages as needed.
 """
 import os
+import sys
 import subprocess
 import functools
 import logging
@@ -26,6 +27,7 @@ from boilerplate_tools import load_config
 # Type variable for the decorator
 load_dotenv()
 T = TypeVar('T')
+PYTHON_EXECUTABLE = sys.executable
 
 def change_directory(directory: str) -> Callable[[Callable[..., T]], Callable[..., T]]:
     """
@@ -129,7 +131,7 @@ def run_dataset_converter(config: Dict[str, Any]) -> str:
     Path(output_file).parent.mkdir(parents=True, exist_ok=True)
     
     run_subprocess(
-        ["python", "other/dataset_convertor.py", input_dir, output_file],
+        [PYTHON_EXECUTABLE, "other/dataset_convertor.py", input_dir, output_file],
         f"dataset converter: {get_shortened_path(input_dir)} -> {get_shortened_path(output_file)}"
     )
     return output_file
@@ -153,7 +155,7 @@ def run_meta_generator(config: Dict[str, Any]) -> str:
     Path(output_file).parent.mkdir(parents=True, exist_ok=True)
     
     run_subprocess(
-        ["python", "main.py", 
+        [PYTHON_EXECUTABLE, "main.py", 
          "--input", input_file, 
          "--output", output_file, 
          "--config", meta_config],
@@ -177,7 +179,7 @@ def run_audio_generator(config: Dict[str, Any]) -> str:
     output_file = config['audio_generator']['output_file']
     
     run_subprocess(
-        ["python", "main.py", 
+        [PYTHON_EXECUTABLE, "main.py", 
          input_file, 
          "--output-file", output_file, 
          "--config", audio_config],
@@ -197,7 +199,7 @@ def run_flashcard_converter(config: Dict[str, Any]) -> None:
     input_file = config['flashcard_converter']['input_file']
     
     run_subprocess(
-        ["python", "main.py", 
+        [PYTHON_EXECUTABLE, "main.py", 
          "-i", input_file, 
          "--config", flashcard_config],
         f"flashcard converter with {get_shortened_path(input_file)}"
