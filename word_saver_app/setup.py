@@ -11,6 +11,11 @@ APP = ['main.py']
 DATA_FILES = []
 OPTIONS = {
     'packages': ['PyQt5', 'pynput'],
+    'plist': {
+        # 'CFBundleShortVersionString': '1.0.0',
+        'LSBackgroundOnly': True,  # Makes it a background app
+        'LSUIElement': True,       # Hides it from Dock
+    },
 }
 
 setup(

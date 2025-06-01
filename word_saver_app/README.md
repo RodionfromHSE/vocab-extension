@@ -56,6 +56,10 @@ For macOS application packaging:
 python setup.py py2app
 ```
 
+You can find the packaged application in the `dist` directory after running the above command. \
+For debugging and more details see [py2app tutorial](https://py2app.readthedocs.io/en/latest/tutorial.html). \
+After creating the application, you can safely move it to your Applications folder or any other location.
+
 ## Development Notes
 
 - The application uses PyQt5 for the UI components
