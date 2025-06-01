@@ -74,6 +74,7 @@ class ApplicationMonitor:
             bool: True if the active application is in the allowed list, False otherwise.
         """
         active_app = ApplicationMonitor.get_active_application()
+        print(f"Active application detected: {active_app}")
         
         if active_app is None:
             print("Could not determine active application, defaulting to not allowed")

@@ -8,5 +8,5 @@ dependencies = [
     "py2app>=0.28.8",
     "pynput>=1.8.1",
     "pyqt5>=5.15.11",
-    "setuptools==78.1.1",
+    "setuptools==70.3.0",
 ]

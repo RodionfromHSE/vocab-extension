@@ -74,7 +74,9 @@ def main() -> None:
     # Set up hotkey listener and connect the signal to show prompt dialog using partial.
     app_monitor = ApplicationMonitor()
     def show_dialog_callback() -> None:
+        print("Hotkey pressed, checking allowed applications...")
         if ApplicationMonitor.is_allowed_application(ALLOWED_APPLICATIONS):
+            print("Allowed application detected, showing dialog.")
             show_prompt_dialog(storage_manager)
     hotkey_emitter.hotkey_signal.connect(show_dialog_callback)
     
