@@ -1,0 +1,12 @@
+[project]
+name = "word-saver-app"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "py2app>=0.28.8",
+    "pynput>=1.8.1",
+    "pyqt5>=5.15.11",
+    "setuptools==78.1.1",
+]
