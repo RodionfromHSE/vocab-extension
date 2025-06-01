@@ -60,6 +60,8 @@ You can find the packaged application in the `dist` directory after running the 
 For debugging and more details see [py2app tutorial](https://py2app.readthedocs.io/en/latest/tutorial.html). \
 After creating the application, you can safely move it to your Applications folder or any other location.
 
+**Important Note**: After you ensured that your application works correctly, you can mess up with Mac OS permissions. Try to change the application's name (see pyproject.toml) **after** you moved the ready application to the Applications folder.
+
 ## Development Notes
 
 - The application uses PyQt5 for the UI components
