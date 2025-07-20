@@ -16,7 +16,7 @@ logging.basicConfig(
 )
 
 # Import our components
-from src.model.openai_model import OpenAIModel
+from src.model import create_model
 from src.prompter.template_prompter import TemplatePrompter
 from src.processors.codeblock_extractor_processor import CodeBlockExtractorProcessor
 from src.validators.json_response_validator import JsonResponseValidator
@@ -35,8 +35,8 @@ def create_components(config: Dict[str, Any]):
         tuple: (model, prompter, processor, validator, handler)
     """
     try:
-        # Create model
-        model = OpenAIModel(config)
+        # Create model based on configuration
+        model = create_model(config)
         
         # Create prompter
         prompter = TemplatePrompter(config)

@@ -5,8 +5,8 @@ api:
   params:
     temperature: 0.7
     max_tokens: 1000  # Increased from 100 to 1000 to allow for complete responses
-    timeout: 30
+    timeout: 30       # Request timeout in seconds for Nebius API
 prompt_path: "prompt.md"
 # Default input and output paths (optional)
-input: "data/words.json"
-output: "data/words_enriched.json"
+input: "example_input.json"
+output: "example_output.json" 

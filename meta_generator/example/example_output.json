@@ -2,30 +2,53 @@
   {
     "word": "ubiquitous",
     "part_of_speech": "adjective",
-    "definition": "Present, appearing, or found everywhere; omnipresent.",
+    "definition": "Present or existing everywhere at the same time; widespread.",
     "examples": [
-      "Cell phones have become ubiquitous in modern society.",
-      "The ubiquitous smell of coffee filled the entire office building.",
-      "Plastic pollution has become a ubiquitous problem in our oceans."
+      "Smartphones have become ubiquitous in modern society.",
+      "The sound of birds singing is ubiquitous in the forest.",
+      "Fast food chains are ubiquitous in urban areas."
     ],
     "synonyms": [
       "omnipresent",
       "pervasive",
-      "universal",
-      "widespread"
+      "universal"
     ],
     "antonyms": [
       "rare",
       "scarce",
-      "uncommon",
-      "infrequent"
+      "uncommon"
     ],
-    "etymology": "From Latin 'ubique' meaning 'everywhere', derived from 'ubi' meaning 'where'.",
+    "etymology": "From Latin 'ubique' (everywhere) + '-ous' (suffix forming adjectives).",
     "collocations": [
       "ubiquitous presence",
-      "ubiquitous technology",
-      "become ubiquitous",
-      "increasingly ubiquitous"
+      "ubiquitous nature",
+      "ubiquitous technology"
+    ]
+  },
+  {
+    "word": "juxtapose",
+    "part_of_speech": "verb",
+    "definition": "To place two or more things side by side, especially for comparison or contrast.",
+    "examples": [
+      "The artist chose to juxtapose bright colors with dark shadows to create a dramatic effect.",
+      "In her essay, she juxtaposes the lives of the rich and the poor to highlight societal inequality.",
+      "The documentary juxtaposes footage from the 1950s with modern scenes to show how much the city has changed."
+    ],
+    "synonyms": [
+      "compare",
+      "contrast",
+      "place side by side"
+    ],
+    "antonyms": [
+      "separate",
+      "isolate",
+      "disconnect"
+    ],
+    "etymology": "Derived from the French word 'juxtaposer', which combines 'juxta-' (meaning 'near') and 'poser' (meaning 'to place'). The term entered English in the mid-19th century.",
+    "collocations": [
+      "juxtapose images",
+      "juxtapose ideas",
+      "juxtapose styles"
     ]
   }
 ]

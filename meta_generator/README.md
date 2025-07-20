@@ -38,6 +38,7 @@ The Vocabulary Meta Generator enriches vocabulary words with comprehensive infor
 ## Features
 
 - **Powerful Enrichment**: Transform simple word entries into comprehensive vocabulary resources
+- **Multiple AI Providers**: Support for both OpenAI and Nebius AI Studio (DeepSeek models)
 - **Batch Processing**: Process entire word lists in JSON format
 - **Flexible Configuration**: Easy to configure with API settings and prompt adjustments
 - **Modular Architecture**: Well-structured codebase that's easy to extend and modify
@@ -67,9 +68,13 @@ poetry shell
 
 ## Configuration
 
-### OpenAI API Setup
+### API Setup
 
-You need an OpenAI API key to use this tool. You can provide it in one of two ways:
+This tool supports two AI providers:
+
+#### OpenAI API Setup
+
+You need an OpenAI API key to use OpenAI models. You can provide it in one of two ways:
 
 1. **Environment Variable (Recommended)**:
    ```bash
@@ -92,13 +97,41 @@ You need an OpenAI API key to use this tool. You can provide it in one of two wa
        max_tokens: 1000
    ```
 
+#### Nebius AI Studio Setup (DeepSeek Models)
+
+You need a Nebius AI Studio API key to use DeepSeek models. You can provide it in one of two ways:
+
+1. **Environment Variable (Recommended)**:
+   ```bash
+   # On macOS/Linux
+   export NEBIUS_API_KEY="your-nebius-api-key-here"
+   
+   # On Windows (PowerShell)
+   $env:NEBIUS_API_KEY="your-nebius-api-key-here"
+   ```
+
+2. **Configuration File**:
+   Edit `config.yaml` and add your API key:
+   ```yaml
+   api:
+     type: "nebius"
+     key: "your-nebius-api-key-here"
+     model: "deepseek-ai/DeepSeek-V3-0324"
+     base_url: "https://api.studio.nebius.ai/v1"  # Optional, this is the default
+     params:
+       temperature: 0.7
+       max_tokens: 1000
+       timeout: 30
+   ```
+
 ### Detailed Configuration Reference
 
 The `config.yaml` file includes essential API settings, the prompt path, and default input/output paths. This provides both flexibility and convenience.
 
+**OpenAI Configuration Example:**
 ```yaml
 api:
-  type: "openai"           # The API provider to use (currently only OpenAI is supported)
+  type: "openai"           # The API provider to use
   model: "gpt-3.5-turbo"   # The specific model to use for generation
   params:                  # Model-specific parameters
     temperature: 0.7       # Controls randomness (0.0 = deterministic, 1.0 = creative)
@@ -108,15 +141,32 @@ input: "data/words.json"   # Default input file path (optional)
 output: "data/words_enriched.json" # Default output file path (optional)
 ```
 
+**Nebius Configuration Example:**
+```yaml
+api:
+  type: "nebius"                              # The API provider to use
+  model: "deepseek-ai/DeepSeek-V3-0324"      # The specific DeepSeek model to use
+  base_url: "https://api.studio.nebius.ai/v1" # Nebius API endpoint (optional)
+  params:                                     # Model-specific parameters
+    temperature: 0.7                          # Controls randomness
+    max_tokens: 1000                          # Maximum length of the generated response
+    timeout: 30                               # Request timeout in seconds
+prompt_path: "prompt.md"   # Path to the prompt template file
+input: "data/words.json"   # Default input file path (optional)
+output: "data/words_enriched.json" # Default output file path (optional)
+```
+
 #### API Configuration Fields:
 
 | Field | Description | Default | Notes |
 |-------|-------------|---------|-------|
-| `api.type` | The API provider to use | `"openai"` | Currently only OpenAI is supported |
+| `api.type` | The API provider to use | `"openai"` | Supported: `"openai"`, `"nebius"` |
 | `api.key` | Your API key | None | Can be provided via environment variable instead |
-| `api.model` | The model to use | `"gpt-3.5-turbo"` | Options include `"gpt-3.5-turbo"`, `"gpt-4"`, etc. |
+| `api.model` | The model to use | `"gpt-3.5-turbo"` | OpenAI: `"gpt-3.5-turbo"`, `"gpt-4"`, etc.<br>Nebius: `"deepseek-ai/DeepSeek-V3-0324"` |
+| `api.base_url` | API endpoint URL | Auto-detected | Nebius: `"https://api.studio.nebius.ai/v1"`<br>OpenAI: Uses default OpenAI endpoint |
 | `api.params.temperature` | Controls output randomness | `0.7` | Range: 0.0-1.0 (lower is more deterministic) |
 | `api.params.max_tokens` | Maximum response length | `1000` | Increase for more complex/lengthy responses |
+| `api.params.timeout` | Request timeout in seconds | `30` | Nebius-specific, controls API call timeout |
 | `prompt_path` | Path to prompt template | `"prompt.md"` | Can be absolute or relative path |
 | `input` | Default input file path | `"data/words.json"` | Can be overridden with --input/-i option |
 | `output` | Default output file path | `"data/words_enriched.json"` | Can be overridden with --output/-o option |
@@ -247,17 +297,28 @@ The entry script uses Click for command-line interface management:
 1. **Incomplete JSON Responses**: If the model returns incomplete JSON:
    - Increase the `max_tokens` parameter in the configuration
    - Simplify the requested output structure in the prompt template
+   - For Nebius models, also try increasing the `timeout` parameter
 
 2. **Prompt Template Issues**: Ensure curly braces are properly escaped in JSON examples within the prompt template
 
-3. **API Rate Limiting**: When processing large datasets, you may need to modify the retry settings in the `src/handler/generation_handler.py` file by adjusting the `DEFAULT_RETRIES` and `DEFAULT_SLEEP_TIME` constants:
+3. **API Authentication Issues**:
+   - **OpenAI**: Ensure your `OPENAI_API_KEY` environment variable is set or provided in config
+   - **Nebius**: Ensure your `NEBIUS_API_KEY` environment variable is set or provided in config
+   - Check that your API keys have the necessary permissions and credits
+
+4. **API Rate Limiting**: When processing large datasets, you may need to modify the retry settings in the `src/handler/generation_handler.py` file by adjusting the `DEFAULT_RETRIES` and `DEFAULT_SLEEP_TIME` constants:
    ```python
    # For aggressive retry behavior with longer wait times
    DEFAULT_RETRIES = 5      # Increase number of attempts
    DEFAULT_SLEEP_TIME = 10  # Longer wait between retries (in seconds)
    ```
 
-4. **JSON Validation Issues**: If you need stricter JSON validation:
+5. **Model-Specific Considerations**:
+   - **DeepSeek models** (via Nebius) may have different response patterns compared to OpenAI models
+   - If switching between providers, test your prompt template to ensure consistent output quality
+   - Nebius models may require adjusting the `timeout` parameter for complex requests
+
+6. **JSON Validation Issues**: If you need stricter JSON validation:
    - Create a JSON schema file
    - Modify the `DEFAULT_REQUIRE_SCHEMA` and `DEFAULT_SCHEMA_PATH` constants in `json_response_validator.py`
 
@@ -265,9 +326,18 @@ The entry script uses Click for command-line interface management:
 
 The modular architecture makes the tool easy to extend:
 
-1. **Add New Models**: Implement a new model in `src/model/` by extending `BaseModel`
+1. **Add New Models**: Implement a new model in `src/model/` by extending `BaseModel` (see `openai_model.py` and `nebius_model.py` as examples)
 2. **Custom Processors**: Create additional processors in `src/processors/` by extending `BaseProcessor`
 3. **Different Validators**: Add new validators in `src/validators/` by extending `BaseValidator`
+
+### Available Models
+
+The tool currently includes two AI provider implementations:
+
+- **OpenAI Model** (`openai_model.py`): Supports GPT models including GPT-3.5-turbo, GPT-4, etc.
+- **Nebius Model** (`nebius_model.py`): Supports DeepSeek models via Nebius AI Studio's OpenAI-compatible API
+
+Both models implement the same `BaseModel` interface, making it easy to switch between providers or add new ones.
 
 ## Example Usage
 
