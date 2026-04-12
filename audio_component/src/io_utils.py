@@ -16,10 +16,11 @@ def _validate_json_data(data: Any) -> None:
         raise ValueError("Input JSON must contain a list of objects")
         
     for idx, item in enumerate(data):
+        obj_desc = str(item)
         if not isinstance(item, dict):
-            raise ValueError(f"Item at index {idx} is not an object")
+            raise ValueError(f"Item at index {idx} is not an object: {obj_desc}")
         if TEXT_KEY not in item:
-            raise ValueError(f"Object at index {idx} is missing the '{TEXT_KEY}' field")
+            raise ValueError(f"Object at index {idx} is missing the '{TEXT_KEY}' field: {obj_desc}")
 
 def read_input_json(file_path: str) -> List[Dict[str, Any]]:
     """
