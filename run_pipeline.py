@@ -15,6 +15,10 @@ import sys
 import subprocess
 import functools
 import logging
+import time
+import urllib.request
+import urllib.error
+import json
 from pathlib import Path
 from typing import Dict, Any, Callable, TypeVar, Optional, List, Union
 import click
@@ -187,6 +191,35 @@ def run_audio_generator(config: Dict[str, Any]) -> str:
     )
     return output_file
 
+def ensure_anki_running(timeout: int = 60, poll_interval: int = 3) -> None:
+    """Open Anki if needed and wait for AnkiConnect to become responsive."""
+    url = "http://127.0.0.1:8765"
+    payload = json.dumps({"action": "version", "version": 6}).encode()
+
+    def _ankiconnect_ok() -> bool:
+        try:
+            req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
+            with urllib.request.urlopen(req, timeout=2) as resp:
+                return resp.status == 200
+        except (urllib.error.URLError, OSError):
+            return False
+
+    if _ankiconnect_ok():
+        return
+
+    print("AnkiConnect not reachable — (re)launching Anki…")
+    subprocess.Popen(["open", "-a", "Anki"])
+
+    deadline = time.monotonic() + timeout
+    while time.monotonic() < deadline:
+        time.sleep(poll_interval)
+        if _ankiconnect_ok():
+            print("AnkiConnect is ready.")
+            return
+
+    raise RuntimeError(f"AnkiConnect did not become available within {timeout}s")
+
+
 @change_directory("flashcard_converter")
 def run_flashcard_converter(config: Dict[str, Any]) -> None:
     """
@@ -257,6 +290,8 @@ def main(
     run_or_skip(run_dataset_converter, skip_dataset, "Skipping dataset conversion", config_data)
     run_or_skip(run_meta_generator, skip_meta, "Skipping meta generation", config_data)
     run_or_skip(run_audio_generator, skip_audio, "Skipping audio generation", config_data)
+    if not skip_flashcard:
+        ensure_anki_running()
     run_or_skip(run_flashcard_converter, skip_flashcard, "Skipping flashcard creation", config_data)
     
     print("Pipeline completed successfully!")
