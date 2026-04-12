@@ -10,12 +10,21 @@ from typing import Dict
 from gtts import gTTS
 from gtts.tts import gTTSError
 from retry import retry
+import diskcache as dc
 
 # Global retry configuration
 MAX_RETRIES = 3
 # Use a very small delay during tests to speed up test execution
 RETRY_DELAY = 0.01 if os.environ.get('PYTEST_CURRENT_TEST') else 10  # seconds
 RETRY_BACKOFF = 2  # exponential backoff multiplier
+
+CACHE_DIR = ".cache_dir"
+EXPIRE_TIME = 60 * 60 * 24 * 5  # 5 days
+CACHE = dc.Cache(
+    CACHE_DIR,
+    size_limit=5 * (1024 ** 3),  # 5GB
+    eviction_policy="least-recently-used",
+)
 
 def _validate_tts_params(sentence: str, kwargs: Dict) -> Dict:
     """Validate input parameters for TTS and prepare gTTS parameters."""
@@ -31,6 +40,7 @@ def _validate_tts_params(sentence: str, kwargs: Dict) -> Dict:
     
     return gtts_params
 
+@CACHE.memoize(expire=EXPIRE_TIME)
 @retry(exceptions=gTTSError, tries=MAX_RETRIES, delay=RETRY_DELAY, backoff=RETRY_BACKOFF, logger=None)
 def generate_audio(sentence: str, **kwargs) -> bytes:
     """

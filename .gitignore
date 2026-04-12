@@ -1,6 +1,7 @@
 # Other
 *data/
 planning.md
+.cache_dir/
 
 # Mac OS
 .DS_Store
