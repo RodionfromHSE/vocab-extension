@@ -1,0 +1,32 @@
+# Flashcard Converter Configuration for English General Deck
+
+# Path to the input JSON file with meta information
+input_file: "../vocab_exploration/data/new_words_enriched_with_audio.json"
+
+# Name of the Anki deck to create/populate
+deck_name: "English General"
+
+# Flashcard Templates
+# Each template includes:
+# - front: Template string for the front of the flashcard
+# - back: Template string for the back of the flashcard
+flashcard_template:
+  # Original template (Russian front, English back with audio)
+  - front: |-
+      {word_ru} <br>
+      {example_ru} <br> <br>
+      Definition: {definition} 
+    back: |-
+      {word} <br>
+      {example} <br> <br>
+      [sound:{audio_relative_path}]
+  
+  # New template (English front, Russian back with audio)
+  - front: |-
+      {word} <br>
+      {example} <br> <br>
+      Definition: {definition}
+    back: |-
+      {word_ru} <br>
+      {example_ru} <br> <br>
+      [sound:{audio_relative_path}]

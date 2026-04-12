@@ -1,0 +1,5 @@
+language: en
+save_directory: ~/Library/Application Support/Anki2/User 1/collection.media
+media_subdirectory: english_general
+input_file: ../vocab_exploration/data/new_words_enriched.json
+output_file: ../vocab_exploration/data/new_words_enriched_with_audio.json

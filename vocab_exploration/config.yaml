@@ -1,0 +1,13 @@
+work_dir: "/Users/Rodion.Khvorostov/Desktop/Prog/Other/vocab_extension/vocab_exploration/"
+api:
+  type: "nebius"
+  model: "deepseek-ai/DeepSeek-V3-0324"
+  base_url: "https://api.studio.nebius.ai/v1"
+  params:
+    temperature: 0.7
+    max_tokens: 1000
+    timeout: 30
+prompt_path: "prompt.md"
+# Input and output paths for vocabulary exploration
+input: "${work_dir}/data/new_words.json"
+output: "${work_dir}/data/new_words_enriched.json"
