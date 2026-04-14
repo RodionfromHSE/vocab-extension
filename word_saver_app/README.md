@@ -24,6 +24,8 @@ app/
   gui.py                    # PyQt dialog interface
   hotkey_listener.py        # Global hotkey detection
   storage.py                # JSON data storage manager
+scripts/
+  reopen_word_saver.zsh     # Kill + restart the app cleanly
 tests/
   test_application_monitor.py
 main.py                     # Entry point
@@ -49,6 +51,13 @@ Edit `app/config.py` to change:
 
 ```bash
 python main.py
+```
+
+To restart the app (kills the old instance, waits, relaunches):
+```bash
+reopen_word_saver          # alias — add to your shell config
+# or directly:
+zsh scripts/reopen_word_saver.zsh
 ```
 
 For macOS application packaging:
