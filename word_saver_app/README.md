@@ -62,6 +62,10 @@ After creating the application, you can safely move it to your Applications fold
 
 **Important Note**: After you ensured that your application works correctly, you can mess up with Mac OS permissions. Try to change the application's name (see pyproject.toml) **after** you moved the ready application to the Applications folder.
 
+## Build Caveats
+
+See [BUILD_CAVEATS.md](BUILD_CAVEATS.md) for important notes on macOS permissions after rebuilds, the reopen script, and a known pynput event tap timeout issue.
+
 ## Development Notes
 
 - The application uses PyQt5 for the UI components

@@ -229,7 +229,7 @@ wheels = [
 ]
 
 [[package]]
-name = "word-saver-app"
+name = "word-saver"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
