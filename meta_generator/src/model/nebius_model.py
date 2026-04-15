@@ -71,7 +71,10 @@ class NebiusModel(BaseModel):
             }
 
             resp = self.client.chat.completions.create(**payload)
-            return resp.choices[0].message.content.strip()
+            content = resp.choices[0].message.content
+            if not content:
+                raise ValueError(f"Empty response (finish_reason={resp.choices[0].finish_reason})")
+            return content.strip()
 
         except Exception as err:
             logging.error("Nebius API error: %s", err)

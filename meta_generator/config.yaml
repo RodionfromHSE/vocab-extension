@@ -1,11 +1,11 @@
 api:
   type: "nebius"
-  model: "Qwen/Qwen3-235B-A22B-Instruct-2507"
+  model: "zai-org/GLM-5"
   base_url: "https://api.studio.nebius.ai/v1"
   params:
     temperature: 0.7
-    max_tokens: 1000  # Increased from 100 to 1000 to allow for complete responses
-    timeout: 30
+    max_tokens: 16000  # thinking model needs headroom for reasoning trace
+    timeout: 120
 prompt_path: "prompt.md"
 # Default input and output paths (optional)
 input: "data/words.json"
