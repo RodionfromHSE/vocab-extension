@@ -200,8 +200,9 @@ def ensure_anki_running(timeout: int = 60, poll_interval: int = 3) -> None:
         try:
             req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
             with urllib.request.urlopen(req, timeout=2) as resp:
-                return resp.status == 200
-        except (urllib.error.URLError, OSError):
+                data = json.loads(resp.read())
+                return "result" in data and data.get("error") is None
+        except (urllib.error.URLError, OSError, json.JSONDecodeError, KeyError):
             return False
 
     if _ankiconnect_ok():

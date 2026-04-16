@@ -2,18 +2,22 @@
 
 [[package]]
 name = "ankiapi"
-version = "0.1.0"
+version = "0.2.1"
 description = "A simple Python wrapper for interacting with the AnkiConnect API"
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
-files = [
-    {file = "ankiapi-0.1.0-py3-none-any.whl", hash = "sha256:fc51fd998152bdc3e1b4807f4bddcc984af5f6d2d53dc505eafdbcefce858c3e"},
-    {file = "ankiapi-0.1.0.tar.gz", hash = "sha256:4f77f80fbd8e71e93d23da139b68262a98cc79819d8a4a01420ae6370f8452fd"},
-]
+files = []
+develop = false
 
 [package.dependencies]
 requests = ">=2.31.0"
+
+[package.source]
+type = "git"
+url = "https://github.com/RodionfromHSE/AnkiAPI"
+reference = "main"
+resolved_reference = "d834a06ca922d2de2116347e21769828f1d4e77f"
 
 [[package]]
 name = "annotated-types"
@@ -1141,4 +1145,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "e5a0aa0c9a5e1fc4a4147216ce7f98ace17ab204ece69e1af053910e9852eafc"
+content-hash = "21b544cb8f3ab971a0c655d556c3f3f2ac1d2fddbcc1fddd5c7df321719d9186"
