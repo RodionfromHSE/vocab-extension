@@ -76,7 +76,7 @@ class StorageManager:
         file_path = os.path.join(self.save_directory, filename)
         # Save the data as a JSON file.
         with open(file_path, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=4)
+            json.dump(data, f, indent=4, ensure_ascii=False)
         print(f"Data saved to {file_path}")
         # Increment the counter after saving.
         self.counter += 1
