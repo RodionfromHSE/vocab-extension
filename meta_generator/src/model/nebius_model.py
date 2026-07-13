@@ -8,16 +8,16 @@ from src.model.base_model import BaseModel
 
 # Re-use DEFAULT_PARAMS from your module
 DEFAULT_PARAMS = {
-    "model": "deepseek-ai/DeepSeek-V3.2",  # Nebius model slug
-    "max_tokens": 1000,
+    "model": "zai-org/GLM-5.1",
+    "max_tokens": 4096,
     "temperature": 0.7,
-    "timeout": 30,
+    "timeout": 120,
 }
 
 class NebiusModel(BaseModel):
     """
     Nebius AI Studio client that uses the OpenAI-compatible /v1/chat/completions
-    endpoint to run DeepSeek-V3-0324 (or any other Nebius model).
+    endpoint to run a configured Nebius model.
     """
 
     def __init__(self, config: Dict[str, Any]):

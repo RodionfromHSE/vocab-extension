@@ -7,6 +7,7 @@ Rules:
 - Definition: one concise sentence.
 - Example: a natural short phrase (3–6 words).
 - Translate naturally into Russian. Avoid literal translation.
+- **`example` and `example_ru` must be in accordance:** the translation is a natural one of the original example (nothing is lost or added)
 - Output valid JSON only, matching the format below.
 
 User: slump (context: His shoulders slumped after bad news)

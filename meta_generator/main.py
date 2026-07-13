@@ -4,7 +4,7 @@ import os
 import sys
 import json
 import logging
-from typing import Dict, Any, List, Optional
+from typing import Any
 import click
 from tqdm import tqdm
 
@@ -24,7 +24,7 @@ from src.handler.generation_handler import GenerationHandler
 from src.utils.config import read_config
 
 
-def create_components(config: Dict[str, Any]):
+def create_components(config: dict[str, Any]):
     """
     Create and initialize all components required for text generation.
     
@@ -57,7 +57,7 @@ def create_components(config: Dict[str, Any]):
         sys.exit(1)
 
 
-def process_input_file(handler: GenerationHandler, input_path: str, output_path: str):
+def process_input_file(handler: GenerationHandler, input_path: str, output_path: str) -> None:
     """
     Process a JSON input file containing vocabulary words with a progress bar.
     
@@ -73,20 +73,26 @@ def process_input_file(handler: GenerationHandler, input_path: str, output_path:
         
         # Process each word entry with a progress bar
         results = []
+        failed_entries: list[str] = []
         for entry in tqdm(input_data, desc="Processing entries"):
             try:
                 # Generate enriched content
                 enriched = handler.handle(entry)
                 results.append(enriched)
             except Exception as e:
-                logging.error(f"Error processing entry {entry.get('word', 'Unknown')}: {e}")
-                # Add the original entry with an error flag
-                entry['error'] = str(e)
-                results.append(entry)
+                failed_word = entry.get('word', 'Unknown')
+                logging.error(f"Error processing entry {failed_word}: {e}")
+                failed_entries.append(failed_word)
+                results.append({**entry, 'error': str(e)})
+                break
         
         # Save results
         with open(output_path, 'w', encoding='utf-8') as file:
             json.dump(results, file, indent=2, ensure_ascii=False)
+
+        if failed_entries:
+            failed_words = ", ".join(failed_entries)
+            raise RuntimeError(f"Meta generation failed for {len(failed_entries)} entry: {failed_words}")
             
         logging.info(f"Processing complete. Results saved to {output_path}")
         

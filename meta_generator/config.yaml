@@ -1,10 +1,10 @@
 api:
   type: "nebius"
-  model: "zai-org/GLM-5"
+  model: "zai-org/GLM-5.1"
   base_url: "https://api.studio.nebius.ai/v1"
   params:
     temperature: 0.7
-    max_tokens: 16000  # thinking model needs headroom for reasoning trace
+    max_tokens: 4096
     timeout: 120
 prompt_path: "prompt.md"
 # Default input and output paths (optional)
