@@ -246,6 +246,7 @@ The main pipeline is configured via `pipeline_config.yaml`:
 ```yaml
 pipeline_name: "en_custom"  # Name of the pipeline configuration
 data_folder: ${oc.env:VOCAB_EXTENSION_DATA_FOLDER}/${pipeline_name}  # Where data will be stored
+archive_on_success: true  # Move submitted JSON files to WORD_SAVER_SAVE_DIRECTORY/old after Anki succeeds
 
 root: "/path/to/vocab_extension"  # Root directory of the project
 

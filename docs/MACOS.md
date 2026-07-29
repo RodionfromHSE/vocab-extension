@@ -1,114 +1,54 @@
-# Setting Up Automated Pipelines with LaunchAgents on macOS
+# macOS LaunchAgent
 
-## Overview
-This document describes the process of creating an automated pipeline using macOS LaunchAgents to run scripts on a schedule, along with common troubleshooting steps to address issues that might arise during setup.
+The vocabulary pipeline is installed as the per-user LaunchAgent
+`com.rodionkhvorostov.vocab-extension` and runs daily at 21:00.
 
-## Creating a LaunchAgent Service
+launchd does not inherit an interactive shell's environment. The installer
+therefore writes the required string values into the plist's
+`EnvironmentVariables` dictionary: `HOME`, `PATH`,
+`VOCAB_EXTENSION_DATA_FOLDER`, `WORD_SAVER_SAVE_DIRECTORY`, and
+`NEBIUS_API_KEY` (plus `OPENAI_API_KEY` when it is set). This follows the
+macOS `launchd.plist(5)` contract:
+https://keith.github.io/xcode-man-pages/launchd.plist.5.html
 
-LaunchAgents are XML property list files (`plist`) that define services that run at specific intervals or under specific conditions in macOS. To set up a LaunchAgent:
+The installed plist contains API keys, so the installer sets its permissions
+to `0600`. Reinstall it whenever a key or path changes.
 
-1. Create a `.plist` file in `~/Library/LaunchAgents/` (for user-specific services)
-2. Define the service configuration including the script to run and when to run it
-3. Load the service with `launchctl`
+## Install
 
-### Sample LaunchAgent Configuration
+Create the project environment and export the API variables in the shell used
+for installation. Then run:
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-  <dict>
-    <key>Label</key>
-    <string>com.example.run_word_addition_pipeline</string>
-    
-    <key>ProgramArguments</key>
-    <array>
-      <string>/bin/zsh</string>
-      <string>-c</string>
-      <string>/Users/username/Scripts/run_word_addition_pipeline.zsh</string>
-    </array>
-    
-    <key>EnvironmentVariables</key>
-    <dict>
-      <key>PATH</key>
-      <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
-      <key>HOME</key>
-      <string>/Users/username</string>
-      <key>OPENAI_API_KEY</key>
-      <string>sk-your-api-key-here</string>
-    </dict>
-    
-    <key>StartCalendarInterval</key>
-    <dict>
-      <key>Hour</key>
-      <integer>21</integer>
-      <key>Minute</key>
-      <integer>0</integer>
-    </dict>
-    
-    <key>StandardOutPath</key>
-    <string>/tmp/run_word_addition_pipeline.out</string>
-    <key>StandardErrorPath</key>
-    <string>/tmp/run_word_addition_pipeline.err</string>
-  </dict>
-</plist>
-```
-
-## Common Troubleshooting Steps
-
-### 1. Use Absolute Paths
-When working with LaunchAgents, always use full paths for:
-- Script locations
-- Python executable paths
-- Any files your scripts need to read or write
-
-```python
-# Example of using full paths in Python scripts
-PYTHON_PATH = "/Users/username/path/to/venv/bin/python"
-subprocess.run([PYTHON_PATH, "/Users/username/path/to/script.py"])
-```
-
-### 2. Environment Variables
-LaunchAgents run in a different environment than your terminal session. All required environment variables must be explicitly specified in the `plist` file:
-
-- Include `PATH` to ensure commands can be found
-- Set `HOME` to ensure proper user directory resolution
-- Include any API keys or configuration variables your scripts need
-
-### 3. API Key Formatting
-When adding API keys or other sensitive strings to the `plist` file:
-
-- Ensure there are no trailing newlines or spaces in the string
-- Incorrect: `<string>sk-your-api-key\n</string>`
-- Correct: `<string>sk-your-api-key</string>`
-
-Newlines in API keys will cause authentication errors like:
-```
-Illegal header value b'Bearer sk-your-api-key\n'
-```
-
-### 4. Testing and Debugging
-
-To manually test your LaunchAgent:
 ```bash
-# Unload existing service
-launchctl unload ~/Library/LaunchAgents/your-service.plist
-
-# Load the service
-launchctl load ~/Library/LaunchAgents/your-service.plist
-
-# Trigger the service manually (doesn't respect calendar intervals)
-launchctl start com.example.your-service
-
-# Check output files
-cat /tmp/your-service.out
-cat /tmp/your-service.err
+cd /Users/rodionkhvorostov/Desktop/prog/other/study_tools/vocab-extension
+.venv/bin/python scripts/install_launch_agent.py
+plutil -lint ~/Library/LaunchAgents/com.rodionkhvorostov.vocab-extension.plist
 ```
 
-## Summary of Key Points
+Load or reload the service with launchctl's modern bootstrap commands:
 
-1. Always use full, absolute paths in LaunchAgent scripts
-2. Explicitly define all required environment variables in the plist file
-3. Ensure API keys and other strings don't have trailing whitespace or newlines
-4. Use output and error log files for debugging
-5. Test your service by manually triggering it with launchctl
+```bash
+launchctl bootout "gui/$(id -u)/com.rodionkhvorostov.vocab-extension" 2>/dev/null || true
+launchctl bootstrap "gui/$(id -u)" ~/Library/LaunchAgents/com.rodionkhvorostov.vocab-extension.plist
+```
+
+## Test and inspect
+
+Trigger it immediately, independently of the calendar schedule:
+
+```bash
+launchctl kickstart -k "gui/$(id -u)/com.rodionkhvorostov.vocab-extension"
+launchctl print "gui/$(id -u)/com.rodionkhvorostov.vocab-extension"
+```
+
+Logs are written to:
+
+```text
+~/Library/Logs/VocabExtension/pipeline.out.log
+~/Library/Logs/VocabExtension/pipeline.err.log
+```
+
+The plist uses absolute paths for the virtualenv Python, repository script,
+working directory, pipeline config, and logs. Anki must be installed and the
+AnkiConnect add-on (code `2055492159`) must be available; the pipeline opens
+Anki and waits for the API when it is not already running.
