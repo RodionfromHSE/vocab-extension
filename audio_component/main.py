@@ -14,7 +14,7 @@ from tqdm import tqdm
 from src.audio_generator import generate_audio
 import src.io_utils as io_utils
 
-TEXT_KEY = "example"  # Key for the text to be converted to audio
+TEXT_KEY = io_utils.TEXT_KEY  # Key for the text to be converted to audio
 
 def load_config(config_path: str) -> omegaconf.DictConfig:
     """
@@ -38,10 +38,16 @@ def load_config(config_path: str) -> omegaconf.DictConfig:
     except Exception as e:
         raise omegaconf.errors.OmegaConfError(f"Error loading configuration: {str(e)}") from e
 
-def process_item(item: Dict[str, Any], idx: int, target_dir: str, language: str) -> Dict[str, Any]:
+def process_item(
+    item: Dict[str, Any],
+    idx: int,
+    target_dir: str,
+    language: str,
+    filename_prefix: str = "",
+) -> Dict[str, Any]:
     """Process a single item by generating audio and updating the item."""
     sentence = item[TEXT_KEY]
-    file_name = f"audio_{idx}.mp3"
+    file_name = f"{filename_prefix}audio_{idx}.mp3"
     
     try:
         # Generate audio for the sentence
@@ -58,7 +64,12 @@ def process_item(item: Dict[str, Any], idx: int, target_dir: str, language: str)
     
     return item
 
-def process_data(data: List[Dict[str, Any]], target_dir: str, language: str) -> List[Dict[str, Any]]:
+def process_data(
+    data: List[Dict[str, Any]],
+    target_dir: str,
+    language: str,
+    filename_prefix: str = "",
+) -> List[Dict[str, Any]]:
     """
     Process the data by generating audio files for each sentence and updating with file paths.
     
@@ -66,6 +77,7 @@ def process_data(data: List[Dict[str, Any]], target_dir: str, language: str) -> 
         data: The list of objects to process.
         target_dir: The target directory where audio files will be saved.
         language: The language to use for text-to-speech conversion.
+        filename_prefix: Configurable prefix prepended to every audio filename.
         
     Returns:
         The updated list of objects.
@@ -76,7 +88,7 @@ def process_data(data: List[Dict[str, Any]], target_dir: str, language: str) -> 
     tqdm.write(f"Target directory: {target_dir}")
     tqdm.write(f"Language: {language}")
     for idx, item in enumerate(tqdm(data, desc="Processing items", unit="item"), start=start_idx):
-        process_item(item, idx, target_dir, language)
+        process_item(item, idx, target_dir, language, filename_prefix)
     
     return data
 
@@ -131,7 +143,12 @@ def main(input_file: Optional[str], output_file: Optional[str], config: str):
         )
         
         # Process the data
-        updated_data = process_data(data, target_dir, cfg.language)
+        updated_data = process_data(
+            data,
+            target_dir,
+            cfg.language,
+            cfg.get("filename_prefix", ""),
+        )
         
         # Write the updated data to the output file
         io_utils.write_output_json(updated_data, output_path)

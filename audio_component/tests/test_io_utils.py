@@ -113,9 +113,7 @@ class TestSaveAudioFile:
             
             # Check the returned paths
             assert result["audio_absolute_path"] == expected_path
-            assert result["audio_relative_path"] == os.path.join(
-                os.path.basename(temp_dir), file_name + ".mp3"
-            )
+            assert result["audio_relative_path"] == file_name + ".mp3"
             
             # Check the file contents
             with open(expected_path, "rb") as f:

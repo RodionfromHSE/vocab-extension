@@ -198,7 +198,8 @@ The Audio Component generates MP3 files for vocabulary words.
 ```yaml
 language: en  # Language code for text-to-speech (e.g., en, fr, es, de)
 save_directory: ~/Library/Application Support/Anki2/User 1/collection.media  # Where audio files will be stored
-media_subdirectory: vocab_extension  # Subfolder for organizing generated files
+media_subdirectory: ""  # Keep empty: Anki indexes collection.media only at its root
+filename_prefix: "english_custom_"  # Generated files become english_custom_audio_<index>.mp3
 ```
 
 **Running Independently**:

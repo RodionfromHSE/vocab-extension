@@ -7,8 +7,8 @@ creating target directories, and writing output JSON with media file paths.
 import json
 import os
 from typing import Dict, List, Any
-# import TEXT_KEY from main.py
-from main import TEXT_KEY
+
+TEXT_KEY = "example"
 
 def _validate_json_data(data: Any) -> None:
     """Validate that JSON data contains a list of objects with sentence fields."""
@@ -88,7 +88,10 @@ def save_audio_file(target_dir: str, file_name: str, audio_data: bytes) -> Dict[
     
     # Create paths
     abs_path = os.path.join(target_dir, file_name)
-    rel_path = os.path.join(os.path.basename(target_dir), file_name)
+    # Anki's [sound:...] syntax addresses files from the collection.media root.
+    # Including the directory name makes the file invisible to AnkiConnect and
+    # prevents playback, even when the file exists on disk.
+    rel_path = file_name
     
     # Save the audio data to the file
     with open(abs_path, 'wb') as f:

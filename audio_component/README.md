@@ -46,14 +46,16 @@ The component uses a `config.yml` file to store settings. Example configuration:
 ```yaml
 language: en
 save_directory: ~/Library/Application Support/Anki2/User 1/collection.media
-media_subdirectory: decca1
+media_subdirectory: ""
+filename_prefix: "english_custom_"
 ```
 
 ### Configuration Parameters
 
 - `language`: The language code for text-to-speech (e.g., "en", "fr", "es")
 - `save_directory`: The base directory where audio files will be stored (defaults to Anki Media Directory)
-- `media_subdirectory`: A subfolder within the save directory for organizing generated files
+- `media_subdirectory`: Keep this empty for Anki; Anki indexes only the root of `collection.media`
+- `filename_prefix`: Optional prefix for generated MP3 names; defaults to an empty string
 
 ## Usage
 
@@ -112,13 +114,13 @@ The output JSON will include the original data plus two additional fields for ea
   {
     "sentence": "Hello, how are you?",
     "other_field": "other_value",
-    "audio_absolute_path": "/absolute/path/to/decca1/audio_0.mp3",
-    "audio_relative_path": "decca1/audio_0.mp3"
+    "audio_absolute_path": "/absolute/path/to/collection.media/audio_0.mp3",
+    "audio_relative_path": "audio_0.mp3"
   },
   {
     "sentence": "This is another sentence.",
-    "audio_absolute_path": "/absolute/path/to/decca1/audio_1.mp3",
-    "audio_relative_path": "decca1/audio_1.mp3"
+    "audio_absolute_path": "/absolute/path/to/collection.media/audio_1.mp3",
+    "audio_relative_path": "audio_1.mp3"
   }
 ]
 ```
