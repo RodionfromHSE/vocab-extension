@@ -10,6 +10,7 @@ ALLOWED_APPLICATIONS: list[str] = [
     "yandex",
     "yandex browser",
     "yandexbrowser",
+    "vivaldi",
 ]
 HOTKEY = "<cmd>+<shift>+p"  # Global hotkey for triggering the prompt dialog
 
