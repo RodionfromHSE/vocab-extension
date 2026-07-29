@@ -12,6 +12,7 @@ DEFAULT_PARAMS = {
     "max_tokens": 4096,
     "temperature": 0.7,
     "timeout": 120,
+    "reasoning_effort": None,
 }
 
 class NebiusModel(BaseModel):
@@ -49,6 +50,7 @@ class NebiusModel(BaseModel):
         params["max_tokens"]  = api_param.get("max_tokens", params["max_tokens"])
         params["temperature"] = api_param.get("temperature", params["temperature"])
         params["timeout"]     = api_param.get("timeout", params["timeout"])
+        params["reasoning_effort"] = api_param.get("reasoning_effort")
         return params
 
     # ---------- BaseModel interface ----------
@@ -69,6 +71,11 @@ class NebiusModel(BaseModel):
                 "temperature": kwargs.get("temperature", self.generation_params["temperature"]),
                 "timeout": kwargs.get("timeout", self.generation_params["timeout"]),
             }
+            reasoning_effort = kwargs.get(
+                "reasoning_effort", self.generation_params["reasoning_effort"]
+            )
+            if reasoning_effort is not None:
+                payload["reasoning_effort"] = reasoning_effort
 
             resp = self.client.chat.completions.create(**payload)
             content = resp.choices[0].message.content
