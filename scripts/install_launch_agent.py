@@ -55,8 +55,10 @@ def main() -> None:
         "PATH": "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
         "VOCAB_EXTENSION_DATA_FOLDER": data_folder,
         "WORD_SAVER_SAVE_DIRECTORY": word_saver,
-        "NEBIUS_API_KEY": required_environment("NEBIUS_API_KEY"),
+        "FIREWORKS_API_KEY": required_environment("FIREWORKS_API_KEY"),
     }
+    if os.environ.get("NEBIUS_API_KEY"):
+        environment["NEBIUS_API_KEY"] = required_environment("NEBIUS_API_KEY")
     if os.environ.get("OPENAI_API_KEY"):
         environment["OPENAI_API_KEY"] = required_environment("OPENAI_API_KEY")
 

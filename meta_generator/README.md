@@ -38,7 +38,7 @@ The Vocabulary Meta Generator enriches vocabulary words with comprehensive infor
 ## Features
 
 - **Powerful Enrichment**: Transform simple word entries into comprehensive vocabulary resources
-- **Multiple AI Providers**: Support for both OpenAI and Nebius AI Studio (DeepSeek models)
+- **Multiple AI Providers**: Native Fireworks SDK plus OpenAI and Nebius adapters
 - **Batch Processing**: Process entire word lists in JSON format
 - **Flexible Configuration**: Easy to configure with API settings and prompt adjustments
 - **Modular Architecture**: Well-structured codebase that's easy to extend and modify
@@ -70,7 +70,28 @@ poetry shell
 
 ### API Setup
 
-This tool supports two AI providers:
+This tool supports three AI providers:
+
+#### Fireworks AI Setup (Kimi K3)
+
+Export the API key:
+
+```bash
+export FIREWORKS_API_KEY="your-fireworks-api-key"
+```
+
+The production configuration uses the native Fireworks SDK:
+
+```yaml
+api:
+  type: "fireworks"
+  model: "accounts/fireworks/models/kimi-k3"
+  params:
+    temperature: 0.2
+    max_tokens: 4096
+    timeout: 120
+    reasoning_effort: "low"  # low, medium, or high
+```
 
 #### OpenAI API Setup
 
@@ -128,14 +149,16 @@ You need a Nebius AI Studio API key to use DeepSeek models. You can provide it i
 
 The `config.yaml` file includes essential API settings, the prompt path, and default input/output paths. This provides both flexibility and convenience.
 
-**OpenAI Configuration Example:**
+**Fireworks Configuration Example:**
 ```yaml
 api:
-  type: "openai"           # The API provider to use
-  model: "gpt-3.5-turbo"   # The specific model to use for generation
-  params:                  # Model-specific parameters
-    temperature: 0.7       # Controls randomness (0.0 = deterministic, 1.0 = creative)
-    max_tokens: 1000       # Maximum length of the generated response
+  type: "fireworks"
+  model: "accounts/fireworks/models/kimi-k3"
+  params:
+    temperature: 0.2
+    max_tokens: 4096
+    timeout: 120
+    reasoning_effort: "low"
 prompt_path: "prompt.md"   # Path to the prompt template file
 input: "data/words.json"   # Default input file path (optional)
 output: "data/words_enriched.json" # Default output file path (optional)
@@ -160,13 +183,14 @@ output: "data/words_enriched.json" # Default output file path (optional)
 
 | Field | Description | Default | Notes |
 |-------|-------------|---------|-------|
-| `api.type` | The API provider to use | `"openai"` | Supported: `"openai"`, `"nebius"` |
+| `api.type` | The API provider to use | `"fireworks"` | Supported: `"fireworks"`, `"openai"`, `"nebius"` |
 | `api.key` | Your API key | None | Can be provided via environment variable instead |
 | `api.model` | The model to use | `"gpt-3.5-turbo"` | OpenAI: `"gpt-3.5-turbo"`, `"gpt-4"`, etc.<br>Nebius: `"deepseek-ai/DeepSeek-V3-0324"` |
 | `api.base_url` | API endpoint URL | Auto-detected | Nebius: `"https://api.studio.nebius.ai/v1"`<br>OpenAI: Uses default OpenAI endpoint |
 | `api.params.temperature` | Controls output randomness | `0.7` | Range: 0.0-1.0 (lower is more deterministic) |
 | `api.params.max_tokens` | Maximum response length | `1000` | Increase for more complex/lengthy responses |
-| `api.params.timeout` | Request timeout in seconds | `30` | Nebius-specific, controls API call timeout |
+| `api.params.timeout` | Request timeout in seconds | `30` | Fireworks and Nebius request timeout |
+| `api.params.reasoning_effort` | Reasoning budget | None | Fireworks: `"low"`, `"medium"`, or `"high"` |
 | `prompt_path` | Path to prompt template | `"prompt.md"` | Can be absolute or relative path |
 | `input` | Default input file path | `"data/words.json"` | Can be overridden with --input/-i option |
 | `output` | Default output file path | `"data/words_enriched.json"` | Can be overridden with --output/-o option |
@@ -302,6 +326,7 @@ The entry script uses Click for command-line interface management:
 2. **Prompt Template Issues**: Ensure curly braces are properly escaped in JSON examples within the prompt template
 
 3. **API Authentication Issues**:
+   - **Fireworks**: Ensure your `FIREWORKS_API_KEY` environment variable is set or provided in config
    - **OpenAI**: Ensure your `OPENAI_API_KEY` environment variable is set or provided in config
    - **Nebius**: Ensure your `NEBIUS_API_KEY` environment variable is set or provided in config
    - Check that your API keys have the necessary permissions and credits
@@ -332,12 +357,13 @@ The modular architecture makes the tool easy to extend:
 
 ### Available Models
 
-The tool currently includes two AI provider implementations:
+The tool currently includes three AI provider implementations:
 
+- **Fireworks Model** (`fireworks_model.py`): Uses the native Fireworks SDK and supports Kimi K3 reasoning effort
 - **OpenAI Model** (`openai_model.py`): Supports GPT models including GPT-3.5-turbo, GPT-4, etc.
 - **Nebius Model** (`nebius_model.py`): Supports DeepSeek models via Nebius AI Studio's OpenAI-compatible API
 
-Both models implement the same `BaseModel` interface, making it easy to switch between providers or add new ones.
+All models implement the same `BaseModel` interface, making it easy to switch between providers or add new ones.
 
 ## Example Usage
 

@@ -42,7 +42,7 @@ Vocabulary Extension is a modular application designed to help you learn new wor
 The project consists of several interconnected components that can be used together as a pipeline or independently:
 
 - **Word Saver App**: A background application that captures words via a global hotkey
-- **Meta Generator**: Enriches basic word entries with detailed metadata using AI (OpenAI API)
+- **Meta Generator**: Enriches basic word entries with Kimi K3 through Fireworks AI
 - **Audio Component**: Generates audio files for vocabulary words using text-to-speech
 - **Flashcard Converter**: Transforms enriched vocabulary data into Anki flashcards
 - **Dataset Converter**: Utility for merging and validating JSON files
@@ -53,7 +53,7 @@ The project consists of several interconnected components that can be used toget
 
 - Python 3.10+ (recommended)
 - Poetry for dependency management
-- OpenAI API key (for meta generation)
+- Fireworks API key (for meta generation)
 - Anki desktop application with AnkiConnect add-on (for flashcard creation)
 
 ### Installation
@@ -77,7 +77,7 @@ Set the following environment variables:
 ```bash
 # Required for main pipeline
 export VOCAB_EXTENSION_DATA_FOLDER="~/Documents/vocab_extension_data"
-export OPENAI_API_KEY="your-openai-api-key"
+export FIREWORKS_API_KEY="your-fireworks-api-key"
 
 # Required for Word Saver App
 export WORD_SAVER_SAVE_DIRECTORY="~/Documents/word_saver"
@@ -91,7 +91,7 @@ Vocabulary Extension follows a modular architecture where each component handles
 
 2. **Data Aggregation**: The Dataset Converter merges individual JSON files created by the Word Saver App into a single dataset, validating that each contains the required fields.
 
-3. **Enrichment**: The Meta Generator uses the OpenAI API to transform basic word entries into comprehensive vocabulary resources with definitions, examples, synonyms, etc.
+3. **Enrichment**: The Meta Generator uses Fireworks Kimi K3 to transform basic word entries into structured definitions, examples, and translations.
 
 4. **Audio Creation**: The Audio Component converts text to speech using Google TTS, generating MP3 files for pronunciation practice and embedding in flashcards.
 
@@ -166,12 +166,13 @@ The Meta Generator enriches basic vocabulary words with detailed information.
 
 ```yaml
 api:
-  type: "openai"           # API provider (currently only OpenAI)
-  key: "your-api-key"      # Can use OPENAI_API_KEY env var instead
-  model: "gpt-3.5-turbo"   # Model to use for generation
+  type: "fireworks"
+  model: "accounts/fireworks/models/kimi-k3"
   params:
-    temperature: 0.7       # Controls randomness (0.0-1.0)
-    max_tokens: 1000       # Maximum response length
+    temperature: 0.2
+    max_tokens: 4096
+    timeout: 120
+    reasoning_effort: "low"  # low, medium, or high
 
 prompt_path: "prompt.md"   # Path to prompt template
 input: "data/words.json"   # Default input file path

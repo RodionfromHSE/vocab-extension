@@ -13,6 +13,7 @@ pyyaml = "^6.0.2"
 click = "^8.1.8"
 tqdm = "^4.67.1"
 omegaconf = "^2.3.0"
+fireworks-ai = "1.2.4"
 
 
 [tool.poetry.group.dev.dependencies]

@@ -7,7 +7,8 @@ launchd does not inherit an interactive shell's environment. The installer
 therefore writes the required string values into the plist's
 `EnvironmentVariables` dictionary: `HOME`, `PATH`,
 `VOCAB_EXTENSION_DATA_FOLDER`, `WORD_SAVER_SAVE_DIRECTORY`, and
-`NEBIUS_API_KEY` (plus `OPENAI_API_KEY` when it is set). This follows the
+`FIREWORKS_API_KEY` (plus `NEBIUS_API_KEY` and `OPENAI_API_KEY` when set).
+This follows the
 macOS `launchd.plist(5)` contract:
 https://keith.github.io/xcode-man-pages/launchd.plist.5.html
 
