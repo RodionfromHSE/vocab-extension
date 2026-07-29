@@ -239,6 +239,14 @@ def run_flashcard_converter(config: Dict[str, Any]) -> None:
         f"flashcard converter with {get_shortened_path(input_file)}"
     )
 
+def run_success_archive(config: Dict[str, Any]) -> None:
+    """Move submitted source JSON files to the configured ``old`` folder."""
+    input_dir = config['dataset_converter']['input_dir']
+    run_subprocess(
+        [PYTHON_EXECUTABLE, "other/remove_and_back_up_on_success.py", input_dir],
+        f"archive submitted words: {get_shortened_path(input_dir)} -> old/"
+    )
+
 def run_or_skip(
     action: Callable[[Dict[str, Any]], Optional[str]], 
     is_skip: bool, 
@@ -294,6 +302,10 @@ def main(
     if not skip_flashcard:
         ensure_anki_running()
     run_or_skip(run_flashcard_converter, skip_flashcard, "Skipping flashcard creation", config_data)
+    if not skip_flashcard and config_data.get("archive_on_success", True):
+        run_success_archive(config_data)
+    elif not skip_flashcard:
+        print("Preserving submitted word files (archive_on_success is false)")
     
     print("Pipeline completed successfully!")
 

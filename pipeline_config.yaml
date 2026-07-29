@@ -1,8 +1,9 @@
 # Vocabulary Extension Pipeline Configuration
 pipeline_name: "en_custom"
 data_folder: ${oc.env:VOCAB_EXTENSION_DATA_FOLDER}/${pipeline_name}
+archive_on_success: true
 
-root: "/Users/Rodion.Khvorostov/Desktop/Prog/Other/vocab_extension"
+root: "/Users/rodionkhvorostov/Desktop/prog/other/study_tools/vocab-extension"
 
 dataset_converter:
   input_dir: "${oc.env:WORD_SAVER_SAVE_DIRECTORY}"
