@@ -80,7 +80,7 @@ Generate enriched metadata using the metagenerator:
 cd /path/to/vocab_extension
 source venv/bin/activate
 cd meta_generator
-python main.py --config ../vocab_exploration/config.yaml --input ../vocab_exploration/your_words.json --output ../vocab_exploration/your_words_enriched.json
+python main.py --config ../vocab_exploration/en/config.yaml --input ../vocab_exploration/en/your_words.json --output ../vocab_exploration/en/your_words_enriched.json
 ```
 
 **Configuration**: The `config.yaml` uses:
@@ -94,7 +94,7 @@ Generate audio files for the vocabulary words:
 
 ```bash
 cd /path/to/vocab_extension/audio_component
-poetry run python main.py --config ../vocab_exploration/audio_config.yaml
+poetry run python main.py --config ../vocab_exploration/en/audio_config.yaml
 ```
 
 **Configuration**: The `audio_config.yaml`:
@@ -110,7 +110,7 @@ Convert the enriched data with audio to an Anki deck:
 cd /path/to/vocab_extension
 source venv/bin/activate
 cd flashcard_converter
-python main.py --config ../vocab_exploration/flashcard_config.yaml
+python main.py --config ../vocab_exploration/en/flashcard_config.yaml
 ```
 
 **Configuration**: The `flashcard_config.yaml` creates:

@@ -1,7 +1,7 @@
 # Flashcard Converter Configuration for English General Deck
 
 # Path to the input JSON file with meta information
-input_file: "../vocab_exploration/data/new_words_enriched_with_audio.json"
+input_file: "../vocab_exploration/en/data/new_words_enriched_with_audio.json"
 
 # Name of the Anki deck to create/populate
 deck_name: "English General"

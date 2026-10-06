@@ -1,4 +1,4 @@
-work_dir: "/Users/rodionkhvorostov/Desktop/prog/other/study_tools/vocab-extension/vocab_exploration/"
+work_dir: "/Users/rodionkhvorostov/Desktop/prog/other/study_tools/vocab-extension/vocab_exploration/en/"
 api:
   type: "nebius"
   model: "deepseek-ai/DeepSeek-V3-0324"
