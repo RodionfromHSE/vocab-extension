@@ -1,0 +1,35 @@
+.card {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  background-color: white;
+}
+.nightMode.card {
+  color: #e8e8e8;
+  background-color: #2f2f31;
+}
+.en, .de {
+  font-size: 26px;
+  font-weight: bold;
+}
+.grammar {
+  font-size: 16px;
+  margin-top: 4px;
+  opacity: 0.75;
+}
+.tag {
+  font-size: 13px;
+  padding: 1px 6px;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  opacity: 0.6;
+}
+.example {
+  font-size: 18px;
+  margin-top: 12px;
+}
+.example-en, .hint-line {
+  font-size: 15px;
+  margin-top: 4px;
+}

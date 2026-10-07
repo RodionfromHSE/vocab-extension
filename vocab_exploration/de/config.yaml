@@ -1,0 +1,16 @@
+work_dir: "/Users/rodionkhvorostov/Desktop/prog/other/study_tools/vocab-extension/vocab_exploration/de"
+api:
+  type: "fireworks"
+  model: "accounts/fireworks/models/deepseek-v4p1-flash"
+  params:
+    temperature: 0.2
+    max_tokens: 4096
+    timeout: 120
+    reasoning_effort: "low"
+prompt_path: "${work_dir}/prompt.md"
+validators:
+  json:
+    require_schema: true
+    schema_path: "${work_dir}/schema.json"
+input: "${work_dir}/data/new_words.json"
+output: "${work_dir}/data/new_words_enriched.json"

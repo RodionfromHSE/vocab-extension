@@ -1,0 +1,9 @@
+language: de
+# Speak the headword form ("der Bauch", "anrufen") rather than an example sentence.
+text_key: tts_text
+save_directory: ~/Library/Application Support/Anki2/User 1/collection.media
+# Anki indexes files only at the collection.media root.
+media_subdirectory: ""
+filename_prefix: "german_a1_b1_"
+input_file: ../vocab_exploration/de/data/new_words_enriched.json
+output_file: ../vocab_exploration/de/data/new_words_enriched_with_audio.json

@@ -1,0 +1,23 @@
+# German vocabulary pipeline: .txt word list → enriched JSON → audio → Anki package (deck.apkg).
+# Run (from repo root):  .venv/bin/python vocab_exploration/de/pipeline.py [--to-anki]
+# See README.md → "Run the full pipeline".
+
+work_dir: "/Users/rodionkhvorostov/Desktop/prog/other/study_tools/vocab-extension/vocab_exploration/de"
+
+input_txt: "/Users/rodionkhvorostov/Desktop/prog/other/creative_space/explorations/vocab_deduplication/data/de/common/a1_b1_words_extra.txt"
+run_name: "a1_b1_words_extra"  # outputs + caches go to data/runs/<run_name>/
+run_dir: "${work_dir}/data/runs/${run_name}"
+
+meta:
+  config_file: "${work_dir}/config.yaml"  # model, prompt, schema
+  workers: 8  # parallel Fireworks requests
+
+audio:
+  language: de
+  media_dir: "${run_dir}/media"  # mp3s are bundled into deck.apkg; Anki copies them on import
+  filename_prefix: "de_${run_name}_"  # unique per run, so files from different runs never clash in Anki
+
+cards:
+  deck_name: "German A1-B1"
+  tags: ["german", "a1_b1"]
+  # Note type + default card templates: cards.py + anki/{front,back}.html, anki/style.css

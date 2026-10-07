@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "German vocabulary entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "word",
+    "lemma",
+    "pos",
+    "article",
+    "plural",
+    "genitive",
+    "praesens_3sg",
+    "praeteritum",
+    "partizip_2",
+    "auxiliary",
+    "perfekt",
+    "separable",
+    "reflexive",
+    "comparative",
+    "superlative",
+    "word_en",
+    "definition_de",
+    "definition_en",
+    "examples",
+    "tts_text"
+  ],
+  "properties": {
+    "word": { "type": "string", "minLength": 1 },
+    "lemma": { "type": "string", "minLength": 1 },
+    "pos": {
+      "enum": [
+        "noun",
+        "verb",
+        "adjective",
+        "adverb",
+        "phrase",
+        "pronoun",
+        "preposition",
+        "conjunction",
+        "numeral",
+        "other"
+      ]
+    },
+    "article": { "enum": ["", "der", "die", "das", "der/die"] },
+    "plural": { "type": "string" },
+    "genitive": { "type": "string" },
+    "praesens_3sg": { "type": "string" },
+    "praeteritum": { "type": "string" },
+    "partizip_2": { "type": "string" },
+    "auxiliary": { "enum": ["", "haben", "sein"] },
+    "perfekt": { "type": "string" },
+    "separable": { "type": "boolean" },
+    "reflexive": { "type": "boolean" },
+    "comparative": { "type": "string" },
+    "superlative": { "type": "string" },
+    "word_en": { "type": "string", "minLength": 1 },
+    "definition_de": { "type": "string", "minLength": 1 },
+    "definition_en": { "type": "string", "minLength": 1 },
+    "examples": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["de", "en"],
+        "properties": {
+          "de": { "type": "string", "minLength": 1 },
+          "en": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "tts_text": { "type": "string", "minLength": 1 }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "pos": { "const": "noun" } } },
+      "then": { "properties": { "article": { "enum": ["der", "die", "das", "der/die"] } } }
+    },
+    {
+      "if": { "properties": { "pos": { "const": "verb" } } },
+      "then": {
+        "properties": {
+          "auxiliary": { "enum": ["haben", "sein"] },
+          "partizip_2": { "minLength": 1 },
+          "perfekt": { "minLength": 1 }
+        }
+      }
+    }
+  ]
+}
