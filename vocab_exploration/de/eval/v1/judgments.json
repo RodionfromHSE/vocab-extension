@@ -1,0 +1,2461 @@
+{
+  "words": [
+    "Handel",
+    "Trauung",
+    "stoßen",
+    "lesen",
+    "dumm",
+    "Nummer",
+    "Ausländer",
+    "bloß",
+    "traditionell",
+    "Rabatt",
+    "voraus",
+    "Kuh",
+    "vertreten",
+    "zerstören",
+    "Lebenslauf",
+    "Hauptbahnhof",
+    "wiegen",
+    "Ausbildung",
+    "Augenblick",
+    "setzen",
+    "vermissen",
+    "mitnehmen",
+    "weg sein",
+    "stehen bleiben",
+    "verpflichtet sein"
+  ],
+  "judges": {
+    "kimi-k3": {
+      "scores": [
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": false,
+            "grammar_errors": [],
+            "comment": "\"Sie arbeitet im Handel\" is better rendered as \"She works in retail/the retail trade\" than \"in commerce\"."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition is inaccurate: a church Trauung does not make a couple legally married in Germany, so 'rechtlich ein Ehepaar werden' is wrong."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Both examples are good; 'die Tür zustoßen' is fine but 'zudrücken' would be the more typical everyday choice."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 3,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Moving a table a short distance would normally be 'schieben' or 'rücken', not 'stoßen', which implies a short sharp shove."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": false,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [
+              "Example 2 uses the reflexive construction 'sich (den Kopf) stoßen', but the entry is marked reflexive: false."
+            ],
+            "comment": "The entry conflates transitive 'push/shove' with the reflexive 'sich stoßen' (to bump oneself), and 'to bump' in word_en belongs to that undeclared reflexive sense."
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "German definition says \"Text\" (singular) while the English says \"written words\", and \"anschauen\" is slightly less precise than \"ansehen/durchsehen\" for reading."
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "\"sich dumm anstellen\" often means 'to be clumsy/awkward at something', so the translation is slightly loose but acceptable."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": false,
+            "grammar_errors": [],
+            "comment": "\"take the help\" is unidiomatic English; better \"accept the help\" or \"take the offer of help\"."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "definition_en \"a figure or set of figures\" is slightly less natural than \"number\"; \"Ziffer\" in definition_de is a touch imprecise since a Nummer is usually a number/sequence, not a single digit."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Both examples are phone-number contexts; one non-telephone example (e.g. Hausnummer, Ticket) would show the meaning's range better."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition is slightly narrow, as an Ausländer need not live in the country in question."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "definition_en (\"comes from or belongs to\") does not match definition_de, which is based on nationality."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Correctly chooses the far more common adverb sense ('only/just') rather than Cambridge's adjective sense 'bare'."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": false,
+            "grammar_errors": [],
+            "comment": "'Ich habe das bloß so gesagt' means 'I just said it (without meaning anything by it)', not 'off the top of my head'."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Second example ('Komm bloß nicht zu spät!') illustrates the emphatic-particle use, which doesn't match the defined sense 'nur, nicht mehr als'."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "The German definition is slightly redundant (\"nach alter Art und Weise, wie es seit langer Zeit üblich ist\"), but still correct and clear."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "The definition describes the reduced price you pay, not the discount (price reduction) itself; 'einen niedrigeren Preis bekommen' is also slightly off idiomatically."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "The German definition defines the reduced price paid rather than the reduction itself and contradicts the (correct) English definition; also '20%' should be '20 %' in German."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Covers the most common everyday uses (spatial 'ahead' + 'im Voraus') rather than Cambridge's development sense, which is the right choice for A1–B1."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "definition_de covers only the spatial sense while definition_en adds a temporal sense ('before something happens') that the German definition lacks."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Second example is slightly redundant ('vor uns ... voraus'); the very common phrase 'im Voraus' is missing."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition does not mention that a Kuh is female, making it slightly less precise than ideal."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "English definition is slightly wordy/awkward (\"kept for milk that eats grass in fields\") but accurate."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Covers the 'represent' sense rather than Cambridge's 'stand in/deputize' sense, but both are core everyday meanings and the entry itself is clean."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition describes the 'stand in' sense, but the second example ('vor Gericht vertreten') illustrates the 'represent' sense, so definition and examples don't fully align."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "German definition is circular (uses 'vertreten' to define 'vertreten'), and the second example shows the 'stand in' sense, not the defined 'represent' sense."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "\"Der Sturm hat viele Bäume zerstört\" is grammatical but slightly less idiomatic than e.g. \"entwurzelt\" or \"umgestürzt\" for trees."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition only covers \"no longer usable\" and misses the frequent sense of complete annihilation (e.g. a destroyed city or forest)."
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "\"einen Lebenslauf schreiben\" is understandable but less idiomatic than \"erstellen\" or \"aktualisieren\"."
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "The second example (\"Wie viel wiegst du?\") illustrates the intransitive sense 'to have a weight', which the transitive-only definition does not cover."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "The definition covers both uses, but both examples show only the intransitive sense; a transitive example (weighing something on scales) is missing."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Slight mismatch: German definition says 'das Lernen' (process) while English says 'the period'."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Covers the transitive 'put/place' sense (arguably the most common meaning of setzen) rather than Cambridge's reflexive first sense; entry itself is fully correct."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Same transitive 'put/place' sense as A, not Cambridge's reflexive first sense; essentially a duplicate of A with equally natural examples."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": false,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Matches Cambridge's reflexive 'sit down' sense exactly and is very common, but the transitive 'put/place' sense is the single most common meaning of setzen overall."
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "„nicht mehr da ist“ / „not there anymore“ is too narrow — vermissen does not imply permanent absence (you can miss someone who is just away)."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "German definition (sich wünschen, dass jemand da ist) and English definition (to feel sad) describe different things; they should match."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 2,
+            "translations_ok": false,
+            "grammar_errors": [],
+            "comment": "Confuses mitnehmen with mitbringen: 'Soll ich dir was zu essen mitnehmen?' is unidiomatic (should be 'mitbringen'), and the definition wrongly uses 'mitbringen'."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": false,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "'to bring' is not an accurate equivalent for mitnehmen (that's mitbringen), and 'Ich habe dem Kind ein Buch mitgenommen' is less idiomatic than 'mitgebracht' for the given translation."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 2,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition covers only 'absent' while word_en also claims 'gone', and 'Eben war es noch weg' is unidiomatic (a native would say 'Eben war es noch da')."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Describes the 'stop moving' sense rather than Cambridge's 'stay/remain motionless' first sense, but that is the more common everyday meaning."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [
+              "separable: should be true — 'stehen bleiben' is separable ('bleibt stehen', 'ist stehen geblieben')"
+            ],
+            "comment": "The separable flag is wrong; otherwise a good entry with very natural examples."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition 'nicht weitergehen und an einer Stelle anhalten' is slightly narrow (walking only) and a touch awkward, though examples are excellent."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Covers the common 'obliged/required' sense, not Cambridge's first sense 'jmdm. zu Dank verpflichtet sein' (to be indebted), but that is the right choice for A1–B1."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Same correct sense choice as A; definition limited to 'Regel oder Gesetz' is slightly narrower than the word's full range (also moral duty), but acceptable."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Same correct sense choice; 'zur Verschwiegenheit verpflichtet' is a very natural, frequent collocation."
+          }
+        }
+      ],
+      "calls": 25,
+      "cost_usd": 0.388542
+    },
+    "glm-5p3": {
+      "scores": [
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Solid entry; 'Der Handel mit Kaffee ist sehr wichtig' is slightly textbook-like but acceptable."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 3,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "'Deutschland betreibt Handel mit vielen Ländern' is grammatical but stilted; a native speaker would say 'Handel treiben' or 'Deutschland handelt mit vielen Ländern'."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "\"ein großes Essen\" klingt etwas hausbacken; \"ein großes Fest\" oder \"ein festliches Essen\" wäre natürlicher, und die Definition schränkt die Trauung unnötig auf die rechtliche Ebene ein."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": false,
+            "grammar_errors": [],
+            "comment": "\"nudged\" is too soft for \"stoßen\" — a sharp accidental jab with the elbow should be \"jabbed/poked her with his elbow\"."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 3,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "\"Stoß den Tisch mal ein Stück nach links\" is unidiomatic — a native speaker would say \"Schieb den Tisch mal ein Stück nach links\"."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": false,
+            "definitions_ok": false,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [
+              "reflexive is false, but the second example uses the reflexive construction \"sich (Dativ) den Kopf stoßen\""
+            ],
+            "comment": "\"to bump\" and the definition \"schlagen\" drift into a different sense (sich stoßen/anstoßen), mixing two meanings in one entry."
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition is accurate but slightly wordy ('mit den Augen aufnehmen') for A1–B1 learners."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "'anschauen' in the German definition is slightly colloquial/regional; 'ansehen' would be more neutral, and the articleless singular 'geschriebenen Text' is a bit stiff."
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": false,
+            "grammar_errors": [],
+            "comment": "\"Stell dich nicht so dumm an!\" is natural German but means \"Stop acting so dumb/foolish\", so the translation \"Don't be so stupid!\" misses the sich-dumm-anstellen nuance and drifts toward a different sense."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": false,
+            "grammar_errors": [],
+            "comment": "\"Sei nicht dumm\" sounds slightly stilted without \"so\" (\"Sei nicht so dumm\"), and \"take the help\" is unidiomatic English; \"accept the help\" would be better."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Guter Eintrag; der Sinn (identifizierende Nummer, v. a. Telefonnummer) ist alltagstauglicher als Cambridges erste Bedeutung (Reihenfolge-/Platznummer), deckt sich mit dieser aber nicht exakt."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Die deutsche Definition mit „Ziffer“ (einzelne Ziffer) ist ungenau, und „a figure or set of figures“ klingt im Englischen unnatürlich; die Beispiele sind dagegen vorbildlich."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Stärkster Kandidat: klare Definition und zwei sehr natürliche, alltagsrelevante Beispiele (Handynummer, falsche Nummer wählen); weicht nur darin von Cambridge ab, dass die Reihenfolge-Bedeutung nicht explizit genannt wird."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "The English definition ('comes from or belongs to a different country') does not match the German definition ('does not have the nationality of the country they live in')."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Clean, consistent entry for the most common adverbial sense; both examples are perfectly natural."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": false,
+            "grammar_errors": [],
+            "comment": "The German examples are natural, but 'I just said that off the top of my head' mistranslates 'bloß so' (= 'I just said it like that, I didn't mean anything by it')."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Second example ('Komm bloß nicht zu spät!') belongs to the separate emphatic/imperative sense of 'bloß', not the defined 'only' sense, so the entry mixes two senses."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "definition_de is slightly clunky ('nach alter Art und Weise, wie es seit langer Zeit üblich ist') and could be simplified."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "definition_de is a bit long for A1–B1 learners but otherwise accurate."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition describes the reduced price rather than the reduction itself, but this is a minor imprecision acceptable for A1–B1 learners."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": false,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "'beim Kaufen von etwas' is stilted German (should be 'beim Kauf'), and 'reduction' is a less natural English equivalent than simply 'discount'."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Examples are perfectly natural and cover the two most common learner uses ('Geh schon mal voraus', 'im Voraus'), but definition_en 'before the actual time' is a literal, unidiomatic rendering (should be 'in advance')."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Solid entry; definition_de 'in eine Richtung, die vor einem liegt' is slightly clunky but acceptable."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": false,
+            "word_en_ok": false,
+            "definitions_ok": true,
+            "examples_naturalness": 3,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Misses the very common fixed phrase 'im Voraus' (= in advance), 'in front' is not a natural equivalent for 'voraus', and 'Das Auto vor uns ist schon weit voraus' is grammatical but stilted."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition omits that a Kuh is female (weibliches Rind), unlike Cambridge's first sense, but is otherwise accurate and learner-friendly."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition omits that a Kuh is female (weibliches Rind) and the 'grazes in fields' detail is redundant for a simple learner entry."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Solid entry for the most common sense ('represent'), but 'bei dem Termin' should be the more natural 'beim Termin'."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": false,
+            "word_en_ok": false,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Matches Cambridge's 'stand in for' sense, but word_en conflates two senses and the lawyer/court example actually illustrates 'represent', not 'stand in for'."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "definition_de is circular (uses the headword 'vertreten' to define 'vertreten') and the second example belongs to the 'stand in for' sense."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Der Beispielsatz 'Der Sturm hat viele Bäume zerstört' ist grammatisch korrekt, aber leicht unidiomatisch – ein Muttersprachler würde eher 'viele Bäume umgeworfen' sagen."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Die Definition mit 'kaputt machen' ist etwas umgangssprachlich und eng (nicht mehr benutzbar), während 'zerstören' oft völlige Vernichtung bedeutet – für A1–B1 aber noch akzeptabel."
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "First example is grammatical but slightly textbook-like; a native speaker would more likely say 'Ich habe meinen Lebenslauf für die Bewerbung neu geschrieben/aktualisiert'."
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition is slightly longer than needed but still accurate, simple and learner-friendly."
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Sauberer Eintrag zum transitiven Kernsinn, aber das zweite Beispiel ('Wie viel wiegst du denn jetzt?') ist intransitiv und passt nicht zur rein transitiven Definition; das 'jetzt' wirkt zudem leicht aufdringlich."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition vermengt zwei verschiedene Senses ('ein Gewicht haben' vs. 'Gewicht messen'), und die Beispiele illustrieren nur den intransitiven Sinn, nicht Cambridges transitiven Erstsinns."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Natürliche Beispiele, aber die Definition vermischt den transitiven und den intransitiven Sinn in einem einzigen Eintrag, was für ein Lernerwörterbuch unsauber ist."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Sehr solide; 'eine Ausbildung als Köchin' ist korrekt, wobei 'zur Köchin' häufiger wäre."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "word_en lässt 'apprenticeship' als wichtigste Entsprechung für das duale System vermissen."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "\"Im Augenblick\" in the sense of 'at the moment' is dated; a native speaker would say \"Im Moment\" or \"Gerade\"."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 3,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "\"Im nächsten Augenblick regnete es\" is grammatical but stilted/textbook-like; a native speaker would prefer \"Plötzlich regnete es\" or \"Im nächsten Moment\"."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Solid entry for the transitive 'put' sense, which is the most useful everyday meaning for learners, though it differs from Cambridge's first (reflexive) sense."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Mostly good, but 'den Koffer ... setzen' is unidiomatic; a native speaker would say 'gestellt' (or 'gelegt') for a suitcase."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": false,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Correct and natural reflexive entry matching Cambridge's first sense, but the transitive 'put' sense is more frequent in everyday use and should come first for A1–B1 learners."
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition and second example are slightly stilted/textbook-like ('dass er oder es da ist'; 'Hast du deine Freunde in Berlin vermisst?' would more naturally be 'Hast du deine Freunde in Berlin vermisst?' with different word order or context, e.g. 'Hast du deine Freunde in Berlin vermisst?' is acceptable but less idiomatic than 'Ich habe meine Freunde in Berlin sehr vermisst')."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": false,
+            "definitions_ok": false,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "definition_de is circular and semantically wrong (uses 'mitbringen', which means bringing TO the speaker's location, not taking FROM it), and 'to take with' is incomplete without 'you'."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": false,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "definition_de circularly uses the headword itself, and 'to bring' is an inaccurate equivalent (that is 'mitbringen'); examples themselves are natural and well translated."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Solid entry: covers both 'gone' (disappeared) and 'away' (absent) with two natural, distinct examples."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 3,
+            "translations_ok": false,
+            "grammar_errors": [],
+            "comment": "Second example is unidiomatic: a native speaker would say 'Eben war es noch da', not 'war es noch weg'; the English translation is equally awkward."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Good entry with two natural everyday examples; definition is simple and accurate."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Solid entry, but the chosen sense is 'to stop moving', not Cambridge's first sense 'to stay' (nicht anfangen, sich zu bewegen)."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [
+              "separable: false is wrong – 'stehen bleiben' behaves as a separable verb (er bleibt stehen, er ist stehen geblieben)"
+            ],
+            "comment": "Good examples and definitions, but the separable flag is incorrect and the sense differs from Cambridge's first sense ('to stay')."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Natural examples and correct grammar, but the sense is 'to stop moving' rather than Cambridge's first sense 'to stay'."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Solid entry, but definition_de 'weil es eine Pflicht oder Regel ist' is slightly stilted; 'weil eine Pflicht oder Regel es verlangt' would be more idiomatic."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Good entry; 'einen Ausweis mitzunehmen' is acceptable, though 'mitzuführen' would be the more idiomatic collocation for ID documents."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [
+              "definition_de: 'weil es eine Regel oder Pflicht vorschreibt' is unidiomatic/wrong argument structure; should be 'weil eine Regel oder Pflicht es vorschreibt'"
+            ],
+            "comment": "Most natural examples, but definition_de is grammatically flawed, and 'zur Verschwiegenheit verpflichtet' uses vocabulary above B1 level."
+          }
+        }
+      ],
+      "calls": 25,
+      "cost_usd": 0.120663
+    },
+    "deepseek-v4p1-flash": {
+      "scores": [
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition wrongly restricts Trauung to a legal marriage ceremony; it can also be a church ceremony."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": false,
+            "grammar_errors": [],
+            "comment": "Second example uses separable 'zustoßen' and its translation omits 'zu' (shut)."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Second example is understandable but 'schieben' would be more idiomatic for moving a table."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": false,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition uses 'schlagen'/'hit', which is too strong for 'stoßen'."
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition_de describes understanding texts rather than the act of reading."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition uses advanced 'Urteilsvermögen' for A1–B1."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 4,
+            "translations_ok": false,
+            "grammar_errors": [],
+            "comment": "Definition 'ohne guten Verstand' is awkward and 'take the help' is not idiomatic."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition wrongly includes 'Ziffer'; a Nummer is not a single digit."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "English definition 'belongs to a different country' is awkward; better 'is a citizen of another country'."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Chosen sense is the common adverb 'only/just', not Cambridge's first adjective sense 'bare'."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": false,
+            "grammar_errors": [],
+            "comment": "First example translation 'off the top of my head' is not faithful to 'bloß so'."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Second example uses 'bloß' as a modal particle, not the defined adverb sense 'only/just'."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Die deutsche Definition enthält die unidiomatische Formulierung „nach alter Art und Weise“."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition describes the lower price rather than the discount itself."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition_de is imprecise: Rabatt is the reduction, not the lower price."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": false,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition mixes spatial and temporal senses and 'vor anderen' is imprecise."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": false,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition_de only covers spatial 'ahead' and does not explain the temporal 'im Voraus' example."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 3,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Second example is slightly redundant/unnatural; definition 'weiter vorn' is not the best for 'voraus'."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "definition_de uses incorrect verb form 'grasst' (should be 'grast')."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Chosen sense is broader 'represent' rather than Cambridge's temporary stand-in."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": false,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Matches Cambridge's stand-in sense, but that is not the most common everyday meaning."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition is circular because it uses 'vertreten' to define itself."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Die Kollokation 'Bäume zerstören' ist weniger idiomatisch als 'Bäume umwerfen/entwurzeln'."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition uses 'wichtigste' rather than Cambridge's 'größte', but it is the common everyday sense."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": false,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Matches Cambridge's transitive sense, but the most common everyday sense is intransitive 'have weight'; second example uses that sense."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Covers the most common intransitive sense, but definition also adds transitive 'measure weight'."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": false,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Combines transitive and intransitive senses and leads with the less common transitive sense."
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Example 'als Köchin' is less idiomatic than 'zur Köchin'."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "definition_en 'learning a job' is not idiomatic."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 3,
+            "translations_ok": false,
+            "grammar_errors": [],
+            "comment": "Second example is unidiomatic and the English translation adds 'started' not present in the German."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": false,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 3,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Transitive 'setzen' is not the most common sense, and 'Setz das Buch...' is unidiomatic; use 'legen/stellen'."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": false,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 2,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Examples use 'setzen' with objects where 'stellen/legen' is more idiomatic; sense is not the most common."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": false,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition uses 'mitbringen' (bring) instead of 'mitnehmen', and 'to take with' is incomplete."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": true,
+            "sense_is_most_common": true,
+            "word_en_ok": false,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition is circular and 'to bring' is not a general equivalent for 'mitnehmen'."
+          }
+        },
+        {
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 4,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition is too narrow ('anwesend' does not cover objects) and the second example is slightly awkward."
+          },
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [
+              "separable is incorrectly marked false"
+            ],
+            "comment": "The verb is separable, so 'separable' should be true."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        },
+        {
+          "deepseek-v4p1-flash": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition_de is inaccurate: 'weil es eine Pflicht oder Regel ist' does not mean because a duty/rule requires it."
+          },
+          "glm-5p3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": false,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": "Definition_de is inaccurate: 'weil es eine Regel oder ein Gesetz ist' does not mean because a rule/law requires it."
+          },
+          "kimi-k3": {
+            "sense_matches_cambridge": false,
+            "sense_is_most_common": true,
+            "word_en_ok": true,
+            "definitions_ok": true,
+            "examples_naturalness": 5,
+            "translations_ok": true,
+            "grammar_errors": [],
+            "comment": ""
+          }
+        }
+      ],
+      "calls": 25,
+      "cost_usd": 0.259487
+    }
+  }
+}

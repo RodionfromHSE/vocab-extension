@@ -8,6 +8,8 @@ meta_generator/tests/*
 reports/
 planning.md
 .cache_dir/
+vocab_exploration/de/eval/cache/
+vocab_exploration/de/eval/judge_cache/
 
 
 

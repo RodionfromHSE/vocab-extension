@@ -1,0 +1,795 @@
+[
+  {
+    "query": "Handel",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "Handel",
+    "pos": "noun",
+    "article": "der",
+    "uncountable": true,
+    "genitive": "Handels",
+    "plural": "",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "das Kaufen und Verkaufen von Waren",
+    "translations_en": [
+      "trade"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "(mit Waren)",
+    "examples": [
+      {
+        "de": "Handel treiben",
+        "en": "to trade"
+      },
+      {
+        "de": "der illegale Handel mit Rauschgift",
+        "en": ""
+      },
+      {
+        "de": "Handelspartner",
+        "en": ""
+      },
+      {
+        "de": "Waffenhandel",
+        "en": ""
+      }
+    ],
+    "bucket": "noun"
+  },
+  {
+    "query": "Trauung",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "Trauung",
+    "pos": "noun",
+    "article": "die",
+    "uncountable": false,
+    "genitive": "Trauung",
+    "plural": "Trauungen",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "Hochzeitszeremonie",
+    "translations_en": [
+      "wedding (ceremony)"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "",
+    "examples": [
+      {
+        "de": "eine standesamtliche / kirchliche Trauung",
+        "en": "a civil/church wedding"
+      },
+      {
+        "de": "die Trauung vollziehen",
+        "en": ""
+      }
+    ],
+    "bucket": "noun"
+  },
+  {
+    "query": "stoßen",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "stoßen",
+    "pos": "verb",
+    "article": "",
+    "uncountable": false,
+    "genitive": "",
+    "plural": "",
+    "praesens_3sg": "stößt",
+    "praeteritum": "stieß",
+    "partizip_2": "gestoßen",
+    "definition_de": "jdm / etw. einen Stoß versetzen",
+    "translations_en": [
+      "to push",
+      "to shove"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "[ transitive ]",
+    "examples": [
+      {
+        "de": "jdn ins Wasser stoßen",
+        "en": "to push sb into the water"
+      },
+      {
+        "de": "Er stieß aus Versehen das Glas vom Tisch.",
+        "en": ""
+      },
+      {
+        "de": "Sie stieß ihn wütend von sich.",
+        "en": ""
+      }
+    ],
+    "bucket": "verb"
+  },
+  {
+    "query": "lesen",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "lesen",
+    "pos": "verb",
+    "article": "",
+    "uncountable": false,
+    "genitive": "",
+    "plural": "",
+    "praesens_3sg": "liest",
+    "praeteritum": "las",
+    "partizip_2": "gelesen",
+    "definition_de": "Geschriebenes ansehen und den Sinn entnehmen",
+    "translations_en": [
+      "to read"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "[ transitive-intransitive ] Brief, Buch, Zeitung",
+    "examples": [
+      {
+        "de": "Liest du gerne / viel?",
+        "en": "Do you like/do a lot of reading?"
+      },
+      {
+        "de": "Die winzige Schrift war kaum zu lesen.",
+        "en": ""
+      },
+      {
+        "de": "Arabisch / Noten lesen können",
+        "en": ""
+      },
+      {
+        "de": "Ich habe in der Zeitung gelesen, dass …",
+        "en": ""
+      }
+    ],
+    "bucket": "verb"
+  },
+  {
+    "query": "dumm",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "dumm",
+    "pos": "adjective",
+    "article": "",
+    "uncountable": false,
+    "genitive": "",
+    "plural": "",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "mit wenig Intelligenz",
+    "translations_en": [
+      "stupid",
+      "dumb"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "",
+    "examples": [
+      {
+        "de": "Sie stellt sich gern dumm, damit man ihr keine Verantwortung überträgt.",
+        "en": "She likes to act dumb so nobody gives her any responsibility."
+      },
+      {
+        "de": "sich wie ein dummer kleiner Junge benehmen",
+        "en": ""
+      }
+    ],
+    "bucket": "adjective_adverb"
+  },
+  {
+    "query": "Nummer",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "Nummer",
+    "pos": "noun",
+    "article": "die",
+    "uncountable": false,
+    "genitive": "Nummer",
+    "plural": "Nummern",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "Zahl, die den Platz in einer Reihenfolge angibt",
+    "translations_en": [
+      "number"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "Haus-, Platz-, Start-",
+    "examples": [
+      {
+        "de": "der Teilnehmer mit der Nummer 25",
+        "en": "competitor number 25"
+      }
+    ],
+    "bucket": "noun"
+  },
+  {
+    "query": "Ausländer",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "Ausländer",
+    "pos": "noun",
+    "article": "der",
+    "uncountable": false,
+    "genitive": "Ausländers",
+    "plural": "Ausländer",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "",
+    "translations_en": [
+      "foreigner"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "",
+    "examples": [
+      {
+        "de": "eine Schule mit hohem Ausländeranteil",
+        "en": "a school with a large number of foreign immigrants"
+      }
+    ],
+    "bucket": "noun"
+  },
+  {
+    "query": "bloß",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "bloß",
+    "pos": "adjective",
+    "article": "",
+    "uncountable": false,
+    "genitive": "",
+    "plural": "",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "nicht mit etw. bedeckt",
+    "translations_en": [
+      "bare"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "",
+    "examples": [
+      {
+        "de": "sich auf die bloße Erde setzen",
+        "en": "to sit on the bare ground"
+      },
+      {
+        "de": "Frierst du nicht mit bloßen Armen?",
+        "en": ""
+      }
+    ],
+    "bucket": "adjective_adverb"
+  },
+  {
+    "query": "traditionell",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "traditionell",
+    "pos": "adjective",
+    "article": "",
+    "uncountable": false,
+    "genitive": "",
+    "plural": "",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "",
+    "translations_en": [
+      "traditional"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "",
+    "examples": [
+      {
+        "de": "ein traditioneller Tanz",
+        "en": "a traditional dance"
+      }
+    ],
+    "bucket": "adjective_adverb"
+  },
+  {
+    "query": "Rabatt",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "Rabatt",
+    "pos": "noun",
+    "article": "der",
+    "uncountable": false,
+    "genitive": "Rabattes",
+    "plural": "Rabatte",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "Preisnachlass",
+    "translations_en": [
+      "discount"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "commerce",
+    "examples": [
+      {
+        "de": "Frühbucherrabatt",
+        "en": ""
+      },
+      {
+        "de": "Mengenrabatt",
+        "en": ""
+      },
+      {
+        "de": "Mitarbeiterrabatt",
+        "en": ""
+      },
+      {
+        "de": "jdm einen ordentlichen Rabatt gewähren",
+        "en": "to give sb a good discount"
+      }
+    ],
+    "bucket": "noun"
+  },
+  {
+    "query": "voraus",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "voraus",
+    "pos": "adverb",
+    "article": "",
+    "uncountable": false,
+    "genitive": "",
+    "plural": "",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "besser, schneller usw. als andere / anderes",
+    "translations_en": [
+      "ahead"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "(in der Entwicklung o. Ä.)",
+    "examples": [
+      {
+        "de": "Andere Länder sind uns in Sachen Bildungspolitik weit voraus.",
+        "en": "Other countries are way ahead of us in terms of educational policy."
+      },
+      {
+        "de": "seiner Zeit voraus sein",
+        "en": ""
+      }
+    ],
+    "bucket": "adjective_adverb"
+  },
+  {
+    "query": "Kuh",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "Kuh",
+    "pos": "noun",
+    "article": "die",
+    "uncountable": false,
+    "genitive": "Kuh",
+    "plural": "Kühe",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "weibliches Rind",
+    "translations_en": [
+      "cow"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "zoology",
+    "examples": [
+      {
+        "de": "Kühe geben Milch.",
+        "en": "Cows produce milk."
+      },
+      {
+        "de": "die Kühe melken",
+        "en": ""
+      }
+    ],
+    "bucket": "noun"
+  },
+  {
+    "query": "vertreten",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "vertreten",
+    "pos": "verb",
+    "article": "",
+    "uncountable": false,
+    "genitive": "",
+    "plural": "",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "jds Aufgaben für eine bestimmte Zeit übernehmen",
+    "translations_en": [
+      "to stand in / deputize for"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "(während eines Urlaubs o. Ä.)",
+    "examples": [
+      {
+        "de": "Er hat sich auf der Sitzung von seiner Assistentin vertreten lassen.",
+        "en": "He had his assistant stand in for him at the meeting."
+      }
+    ],
+    "bucket": "verb"
+  },
+  {
+    "query": "zerstören",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "zerstören",
+    "pos": "verb",
+    "article": "",
+    "uncountable": false,
+    "genitive": "",
+    "plural": "",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "etw. so stark beschädigen, dass man es nicht mehr benutzen kann",
+    "translations_en": [
+      "to destroy"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "Gebäude, Ozonschicht, Stadt",
+    "examples": [
+      {
+        "de": "Dresden wurde im Krieg fast völlig zerstört.",
+        "en": "Dresden was almost completely destroyed in the war."
+      }
+    ],
+    "bucket": "verb"
+  },
+  {
+    "query": "Lebenslauf",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "Lebenslauf",
+    "pos": "noun",
+    "article": "der",
+    "uncountable": false,
+    "genitive": "Lebenslaufes",
+    "plural": "Lebensläufe",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "schriftliche Darstellung des eigenen, bisherigen Lebensweges für eine Bewerbung",
+    "translations_en": [
+      "résumé"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "",
+    "examples": [
+      {
+        "de": "ein tabellarischer Lebenslauf",
+        "en": "a résumé in tabular form"
+      }
+    ],
+    "bucket": "noun"
+  },
+  {
+    "query": "Hauptbahnhof",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "Hauptbahnhof",
+    "pos": "noun",
+    "article": "der",
+    "uncountable": false,
+    "genitive": "Hauptbahnhofes",
+    "plural": "Hauptbahnhöfe",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "größter Bahnhof einer Stadt",
+    "translations_en": [
+      "main/central station"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "",
+    "examples": [],
+    "bucket": "noun"
+  },
+  {
+    "query": "wiegen",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "wiegen",
+    "pos": "verb",
+    "article": "",
+    "uncountable": false,
+    "genitive": "",
+    "plural": "",
+    "praesens_3sg": "",
+    "praeteritum": "wog",
+    "partizip_2": "gewogen",
+    "definition_de": "das Gewicht von jdm / etw. bestimmen",
+    "translations_en": [
+      "to weigh"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "[ transitive ] (mit einer Waage)",
+    "examples": [
+      {
+        "de": "Das Obst wird an der Kasse gewogen.",
+        "en": "The fruit is weighed at the checkout."
+      },
+      {
+        "de": "Sie wiegt sich jeden Morgen.",
+        "en": ""
+      }
+    ],
+    "bucket": "verb"
+  },
+  {
+    "query": "Ausbildung",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "Ausbildung",
+    "pos": "noun",
+    "article": "die",
+    "uncountable": false,
+    "genitive": "Ausbildung",
+    "plural": "Ausbildungen",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "eine Zeit, in der man einen Beruf in der Praxis erlernt",
+    "translations_en": [
+      "apprenticeship"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "Berufs-",
+    "examples": [
+      {
+        "de": "eine Ausbildung zum Elektriker machen",
+        "en": "to do an apprenticeship as an electrician"
+      },
+      {
+        "de": "noch in der Ausbildung sein",
+        "en": ""
+      },
+      {
+        "de": "Sie hat eine abgeschlossene Ausbildung als Hebamme.",
+        "en": ""
+      }
+    ],
+    "bucket": "noun"
+  },
+  {
+    "query": "Augenblick",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "Augenblick",
+    "pos": "noun",
+    "article": "der",
+    "uncountable": false,
+    "genitive": "Augenblickes",
+    "plural": "Augenblicke",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "sehr kurzer Zeitraum",
+    "translations_en": [
+      "moment"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "",
+    "examples": [
+      {
+        "de": "Einen Augenblick, bitte!",
+        "en": "Just a moment, please."
+      },
+      {
+        "de": "das Flugzeug im letzten Augenblick erreichen",
+        "en": ""
+      }
+    ],
+    "bucket": "noun"
+  },
+  {
+    "query": "setzen",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "setzen",
+    "pos": "verb",
+    "article": "",
+    "uncountable": false,
+    "genitive": "",
+    "plural": "",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "eine sitzende Stellung einnehmen",
+    "translations_en": [
+      "to sit (down)"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "[ reflexive ] (auf einen Stuhl usw.)",
+    "examples": [
+      {
+        "de": "sich aufs Pferd setzen",
+        "en": "to get into the saddle"
+      },
+      {
+        "de": "Sie setzte sich zu mir / neben mich.",
+        "en": ""
+      },
+      {
+        "de": "Bitte setzen Sie sich doch!",
+        "en": ""
+      }
+    ],
+    "bucket": "verb"
+  },
+  {
+    "query": "vermissen",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "vermissen",
+    "pos": "verb",
+    "article": "",
+    "uncountable": false,
+    "genitive": "",
+    "plural": "",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "Sehnsucht empfinden, weil jd / etw. fehlt",
+    "translations_en": [
+      "to miss"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "(voll Sehnsucht)",
+    "examples": [
+      {
+        "de": "Es ist schön, dass du wieder da bist; ich habe dich so vermisst!",
+        "en": "I’m glad you’re back. I really missed you!"
+      }
+    ],
+    "bucket": "verb"
+  },
+  {
+    "query": "mitnehmen",
+    "found": true,
+    "source": "global",
+    "match": "exact",
+    "headword": "mitnehmen",
+    "pos": "verb",
+    "article": "",
+    "uncountable": false,
+    "genitive": "",
+    "plural": "",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "definition_de": "jdn / etw. auf einen Weg mit sich nehmen",
+    "translations_en": [
+      "to take (with you)"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "(auf einen Weg)",
+    "examples": [
+      {
+        "de": "Kannst du mich ein Stück mit dem Auto mitnehmen?",
+        "en": "Can you give me a ride part of the way?"
+      },
+      {
+        "de": "Ich habe ihn zu einer Party mitgenommen.",
+        "en": ""
+      },
+      {
+        "de": "eine Brotzeit in die Arbeit mitnehmen",
+        "en": ""
+      }
+    ],
+    "bucket": "verb"
+  },
+  {
+    "query": "weg sein",
+    "found": true,
+    "source": "global",
+    "match": "phrase",
+    "article": "",
+    "uncountable": false,
+    "genitive": "",
+    "plural": "",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "headword": "weg sein",
+    "pos": "phrase",
+    "definition_de": "ohne Bewusstsein sein",
+    "translations_en": [
+      "to be out cold"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "",
+    "examples": [
+      {
+        "de": "Für einen kurzen Moment war sie weg.",
+        "en": "She was out cold for a brief moment."
+      }
+    ],
+    "bucket": "phrase"
+  },
+  {
+    "query": "stehen bleiben",
+    "found": true,
+    "source": "global",
+    "match": "phrase",
+    "article": "",
+    "uncountable": false,
+    "genitive": "",
+    "plural": "",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "headword": "stehen bleiben",
+    "pos": "phrase",
+    "definition_de": "nicht anfangen, sich zu bewegen",
+    "translations_en": [
+      "to stay"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "",
+    "examples": [
+      {
+        "de": "Egal, was ich machte, der Esel blieb wie angewurzelt stehen.",
+        "en": "Whatever I did, the donkey stayed rooted to the spot."
+      }
+    ],
+    "bucket": "phrase"
+  },
+  {
+    "query": "verpflichtet sein",
+    "found": true,
+    "source": "global",
+    "match": "phrase",
+    "article": "",
+    "uncountable": false,
+    "genitive": "",
+    "plural": "",
+    "praesens_3sg": "",
+    "praeteritum": "",
+    "partizip_2": "",
+    "headword": "zu etw. verpflichtet sein",
+    "pos": "phrase",
+    "definition_de": "",
+    "translations_en": [
+      "to owe sth"
+    ],
+    "perfekt_mit_sein": false,
+    "sense_info": "",
+    "examples": [
+      {
+        "de": "Ich bin Ihnen sehr zu Dank verpflichtet!",
+        "en": "I am deeply indebted to you!"
+      }
+    ],
+    "bucket": "phrase"
+  }
+]

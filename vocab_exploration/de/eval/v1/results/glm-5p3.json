@@ -1,0 +1,1186 @@
+{
+  "model": "glm-5p3",
+  "model_id": "accounts/fireworks/models/glm-5p3",
+  "pricing": {
+    "input_per_million": 1.4,
+    "cached_input_per_million": 0.26,
+    "output_per_million": 4.4
+  },
+  "results": [
+    {
+      "input": {
+        "word": "Handel",
+        "context": "capitalized"
+      },
+      "output": {
+        "word": "Handel",
+        "lemma": "Handel",
+        "pos": "noun",
+        "article": "der",
+        "plural": "",
+        "genitive": "des Handels",
+        "praesens_3sg": "",
+        "praeteritum": "",
+        "partizip_2": "",
+        "auxiliary": "",
+        "perfekt": "",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "trade, commerce",
+        "definition_de": "das Kaufen und Verkaufen von Waren, besonders zwischen Ländern oder Firmen",
+        "definition_en": "the buying and selling of goods, especially between countries or companies",
+        "examples": [
+          {
+            "de": "Deutschland betreibt Handel mit vielen Ländern.",
+            "en": "Germany trades with many countries."
+          },
+          {
+            "de": "Der internationale Handel wächst jedes Jahr.",
+            "en": "International trade grows every year."
+          }
+        ],
+        "tts_text": "der Handel"
+      },
+      "error": null,
+      "latency_seconds": 3.96,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1928,
+        "cached_prompt_tokens": 1927,
+        "completion_tokens": 236
+      },
+      "cost_usd": 0.0015408200000000003,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "Trauung",
+        "context": "capitalized"
+      },
+      "output": {
+        "word": "Trauung",
+        "lemma": "Trauung",
+        "pos": "noun",
+        "article": "die",
+        "plural": "die Trauungen",
+        "genitive": "der Trauung",
+        "praesens_3sg": "",
+        "praeteritum": "",
+        "partizip_2": "",
+        "auxiliary": "",
+        "perfekt": "",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "wedding ceremony",
+        "definition_de": "die feierliche Handlung, bei der zwei Menschen rechtlich ein Ehepaar werden",
+        "definition_en": "the official ceremony in which two people become legally married",
+        "examples": [
+          {
+            "de": "Die Trauung findet im Rathaus statt.",
+            "en": "The wedding ceremony is taking place at the registry office."
+          },
+          {
+            "de": "Nach der Trauung gab es ein großes Essen.",
+            "en": "There was a big meal after the ceremony."
+          }
+        ],
+        "tts_text": "die Trauung"
+      },
+      "error": null,
+      "latency_seconds": 4.46,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1930,
+        "cached_prompt_tokens": 1929,
+        "completion_tokens": 269
+      },
+      "cost_usd": 0.0016865400000000003,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "stoßen",
+        "context": "lowercase"
+      },
+      "output": {
+        "word": "stoßen",
+        "lemma": "stoßen",
+        "pos": "verb",
+        "article": "",
+        "plural": "",
+        "genitive": "",
+        "praesens_3sg": "stößt",
+        "praeteritum": "stieß",
+        "partizip_2": "gestoßen",
+        "auxiliary": "haben",
+        "perfekt": "hat gestoßen",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "to push, to shove",
+        "definition_de": "jemanden oder etwas mit Kraft kurz von sich weg bewegen",
+        "definition_en": "to move someone or something away from you with a short, sharp movement",
+        "examples": [
+          {
+            "de": "Er hat sie versehentlich mit dem Ellbogen gestoßen.",
+            "en": "He accidentally nudged her with his elbow."
+          },
+          {
+            "de": "Stoß die Tür doch mal zu, es zieht.",
+            "en": "Give the door a push, will you — there's a draft."
+          }
+        ],
+        "tts_text": "stoßen"
+      },
+      "error": null,
+      "latency_seconds": 4.99,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1929,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 273
+      },
+      "cost_usd": 0.0017152800000000002,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "lesen",
+        "context": "lowercase"
+      },
+      "output": {
+        "word": "lesen",
+        "lemma": "lesen",
+        "pos": "verb",
+        "article": "",
+        "plural": "",
+        "genitive": "",
+        "praesens_3sg": "liest",
+        "praeteritum": "las",
+        "partizip_2": "gelesen",
+        "auxiliary": "haben",
+        "perfekt": "hat gelesen",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "to read",
+        "definition_de": "geschriebene oder gedruckte Texte verstehen",
+        "definition_en": "to understand written or printed texts",
+        "examples": [
+          {
+            "de": "Ich lese jeden Abend ein paar Seiten.",
+            "en": "I read a few pages every evening."
+          },
+          {
+            "de": "Hast du dieses Buch schon gelesen?",
+            "en": "Have you read this book yet?"
+          }
+        ],
+        "tts_text": "lesen"
+      },
+      "error": null,
+      "latency_seconds": 4.62,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1928,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 234
+      },
+      "cost_usd": 0.0015422800000000003,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "dumm",
+        "context": "lowercase"
+      },
+      "output": {
+        "word": "dumm",
+        "lemma": "dumm",
+        "pos": "adjective",
+        "article": "",
+        "plural": "",
+        "genitive": "",
+        "praesens_3sg": "",
+        "praeteritum": "",
+        "partizip_2": "",
+        "auxiliary": "",
+        "perfekt": "",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "dümmer",
+        "superlative": "am dümmsten",
+        "word_en": "stupid, silly",
+        "definition_de": "nicht klug; ohne Verstand oder ohne gutes Urteilsvermögen",
+        "definition_en": "not intelligent or showing poor judgement",
+        "examples": [
+          {
+            "de": "Das war eine wirklich dumme Frage.",
+            "en": "That was a really silly question."
+          },
+          {
+            "de": "Wie konnte ich nur so dumm sein?",
+            "en": "How could I be so stupid?"
+          }
+        ],
+        "tts_text": "dumm"
+      },
+      "error": null,
+      "latency_seconds": 4.04,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1929,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 240
+      },
+      "cost_usd": 0.00157008,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "Nummer",
+        "context": "capitalized"
+      },
+      "output": {
+        "word": "Nummer",
+        "lemma": "Nummer",
+        "pos": "noun",
+        "article": "die",
+        "plural": "die Nummern",
+        "genitive": "der Nummer",
+        "praesens_3sg": "",
+        "praeteritum": "",
+        "partizip_2": "",
+        "auxiliary": "",
+        "perfekt": "",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "number",
+        "definition_de": "eine Zahl oder eine Folge von Zahlen, die etwas Bestimmtes kennzeichnet",
+        "definition_en": "a number or series of digits that identifies something",
+        "examples": [
+          {
+            "de": "Wie ist deine Handynummer?",
+            "en": "What's your mobile number?"
+          },
+          {
+            "de": "Ich habe die falsche Nummer gewählt.",
+            "en": "I dialled the wrong number."
+          }
+        ],
+        "tts_text": "die Nummer"
+      },
+      "error": null,
+      "latency_seconds": 3.88,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1929,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 240
+      },
+      "cost_usd": 0.0037565999999999997,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "Ausländer",
+        "context": "capitalized"
+      },
+      "output": {
+        "word": "Ausländer",
+        "lemma": "Ausländer",
+        "pos": "noun",
+        "article": "der",
+        "plural": "die Ausländer",
+        "genitive": "des Ausländers",
+        "praesens_3sg": "",
+        "praeteritum": "",
+        "partizip_2": "",
+        "auxiliary": "",
+        "perfekt": "",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "foreigner",
+        "definition_de": "eine Person, die nicht die Staatsangehörigkeit des Landes hat, in dem sie lebt",
+        "definition_en": "a person who comes from or belongs to a different country",
+        "examples": [
+          {
+            "de": "Viele Ausländer leben und arbeiten in Deutschland.",
+            "en": "Many foreigners live and work in Germany."
+          },
+          {
+            "de": "Als Ausländer braucht man hier ein Visum.",
+            "en": "As a foreigner, you need a visa here."
+          }
+        ],
+        "tts_text": "der Ausländer"
+      },
+      "error": null,
+      "latency_seconds": 4.22,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1930,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 262
+      },
+      "cost_usd": 0.0016682800000000003,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "bloß",
+        "context": "lowercase"
+      },
+      "output": {
+        "word": "bloß",
+        "lemma": "bloß",
+        "pos": "adverb",
+        "article": "",
+        "plural": "",
+        "genitive": "",
+        "praesens_3sg": "",
+        "praeteritum": "",
+        "partizip_2": "",
+        "auxiliary": "",
+        "perfekt": "",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "just, simply",
+        "definition_de": "drückt aus, dass etwas nur das Genannte ist und nichts weiter",
+        "definition_en": "used to say that something is only the thing mentioned and nothing more",
+        "examples": [
+          {
+            "de": "Ich habe das bloß so gesagt.",
+            "en": "I just said that off the top of my head."
+          },
+          {
+            "de": "Das ist bloß ein Missverständnis.",
+            "en": "It's just a misunderstanding."
+          }
+        ],
+        "tts_text": "bloß"
+      },
+      "error": null,
+      "latency_seconds": 4.36,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1929,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 238
+      },
+      "cost_usd": 0.0015612800000000002,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "traditionell",
+        "context": "lowercase"
+      },
+      "output": {
+        "word": "traditionell",
+        "lemma": "traditionell",
+        "pos": "adjective",
+        "article": "",
+        "plural": "",
+        "genitive": "",
+        "praesens_3sg": "",
+        "praeteritum": "",
+        "partizip_2": "",
+        "auxiliary": "",
+        "perfekt": "",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "traditioneller",
+        "superlative": "am traditionellsten",
+        "word_en": "traditional",
+        "definition_de": "so, wie es seit langem üblich ist und von Generation zu Generation weitergegeben wird",
+        "definition_en": "done in a way that has been passed down for a long time",
+        "examples": [
+          {
+            "de": "Wir feiern Weihnachten ganz traditionell.",
+            "en": "We celebrate Christmas in a very traditional way."
+          },
+          {
+            "de": "Das ist ein traditionelles Rezept von meiner Oma.",
+            "en": "That's a traditional recipe from my grandma."
+          }
+        ],
+        "tts_text": "traditionell"
+      },
+      "error": null,
+      "latency_seconds": 4.32,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1929,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 257
+      },
+      "cost_usd": 0.00164488,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "Rabatt",
+        "context": "capitalized"
+      },
+      "output": {
+        "word": "Rabatt",
+        "lemma": "Rabatt",
+        "pos": "noun",
+        "article": "der",
+        "plural": "die Rabatte",
+        "genitive": "des Rabatts",
+        "praesens_3sg": "",
+        "praeteritum": "",
+        "partizip_2": "",
+        "auxiliary": "",
+        "perfekt": "",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "discount, reduction",
+        "definition_de": "ein niedrigerer Preis, den man beim Kaufen von etwas bezahlt",
+        "definition_en": "a reduction in the usual price of something",
+        "examples": [
+          {
+            "de": "Auf diese Jacke gibt es 20 Prozent Rabatt.",
+            "en": "There's a 20% discount on this jacket."
+          },
+          {
+            "de": "Bekommen Studenten hier auch Rabatt?",
+            "en": "Do students get a discount here too?"
+          }
+        ],
+        "tts_text": "der Rabatt"
+      },
+      "error": null,
+      "latency_seconds": 4.12,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1929,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 252
+      },
+      "cost_usd": 0.0016228800000000002,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "voraus",
+        "context": "lowercase"
+      },
+      "output": {
+        "word": "voraus",
+        "lemma": "voraus",
+        "pos": "adverb",
+        "article": "",
+        "plural": "",
+        "genitive": "",
+        "praesens_3sg": "",
+        "praeteritum": "",
+        "partizip_2": "",
+        "auxiliary": "",
+        "perfekt": "",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "ahead, in advance",
+        "definition_de": "vor jemandem oder etwas; in eine Richtung, die vor einem liegt",
+        "definition_en": "in front; before something happens",
+        "examples": [
+          {
+            "de": "Geh du doch schon mal voraus, ich komme später.",
+            "en": "Go on ahead, I'll come later."
+          },
+          {
+            "de": "Vielen Dank im Voraus für deine Hilfe.",
+            "en": "Many thanks in advance for your help."
+          }
+        ],
+        "tts_text": "voraus"
+      },
+      "error": null,
+      "latency_seconds": 4.25,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1929,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 237
+      },
+      "cost_usd": 0.00155688,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "Kuh",
+        "context": "capitalized"
+      },
+      "output": {
+        "word": "Kuh",
+        "lemma": "Kuh",
+        "pos": "noun",
+        "article": "die",
+        "plural": "die Kühe",
+        "genitive": "der Kuh",
+        "praesens_3sg": "",
+        "praeteritum": "",
+        "partizip_2": "",
+        "auxiliary": "",
+        "perfekt": "",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "cow",
+        "definition_de": "ein großes Nutztier, das Milch gibt und auf Wiesen grasst",
+        "definition_en": "a large farm animal kept for milk that eats grass in fields",
+        "examples": [
+          {
+            "de": "Die Kühe grasen auf der Wiese.",
+            "en": "The cows are grazing in the field."
+          },
+          {
+            "de": "Auf dem Bauernhof gibt es zwanzig Kühe.",
+            "en": "There are twenty cows on the farm."
+          }
+        ],
+        "tts_text": "die Kuh"
+      },
+      "error": null,
+      "latency_seconds": 3.93,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1929,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 252
+      },
+      "cost_usd": 0.0016228800000000002,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "vertreten",
+        "context": "lowercase"
+      },
+      "output": {
+        "word": "vertreten",
+        "lemma": "vertreten",
+        "pos": "verb",
+        "article": "",
+        "plural": "",
+        "genitive": "",
+        "praesens_3sg": "vertritt",
+        "praeteritum": "vertrat",
+        "partizip_2": "vertreten",
+        "auxiliary": "haben",
+        "perfekt": "hat vertreten",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "to represent",
+        "definition_de": "die Interessen oder Meinungen einer anderen Person vertreten und für sie sprechen",
+        "definition_en": "to act and speak on behalf of someone else",
+        "examples": [
+          {
+            "de": "Mein Anwalt vertritt mich vor Gericht.",
+            "en": "My lawyer is representing me in court."
+          },
+          {
+            "de": "Sie hat ihren Kollegen in der Sitzung vertreten.",
+            "en": "She stood in for her colleague at the meeting."
+          }
+        ],
+        "tts_text": "vertreten"
+      },
+      "error": null,
+      "latency_seconds": 4.84,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1929,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 282
+      },
+      "cost_usd": 0.0017548800000000001,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "zerstören",
+        "context": "lowercase"
+      },
+      "output": {
+        "word": "zerstören",
+        "lemma": "zerstören",
+        "pos": "verb",
+        "article": "",
+        "plural": "",
+        "genitive": "",
+        "praesens_3sg": "zerstört",
+        "praeteritum": "zerstörte",
+        "partizip_2": "zerstört",
+        "auxiliary": "haben",
+        "perfekt": "hat zerstört",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "to destroy",
+        "definition_de": "etwas so beschädigen, dass es nicht mehr existiert oder nicht mehr benutzt werden kann",
+        "definition_en": "to damage something so badly that it no longer exists or cannot be used",
+        "examples": [
+          {
+            "de": "Der Sturm hat viele Häuser zerstört.",
+            "en": "The storm destroyed many houses."
+          },
+          {
+            "de": "Der Krieg hat die ganze Stadt zerstört.",
+            "en": "The war destroyed the whole city."
+          }
+        ],
+        "tts_text": "zerstören"
+      },
+      "error": null,
+      "latency_seconds": 4.52,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1930,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 267
+      },
+      "cost_usd": 0.0016902800000000002,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "Lebenslauf",
+        "context": "capitalized"
+      },
+      "output": {
+        "word": "Lebenslauf",
+        "lemma": "Lebenslauf",
+        "pos": "noun",
+        "article": "der",
+        "plural": "die Lebensläufe",
+        "genitive": "des Lebenslaufs",
+        "praesens_3sg": "",
+        "praeteritum": "",
+        "partizip_2": "",
+        "auxiliary": "",
+        "perfekt": "",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "CV, résumé",
+        "definition_de": "eine schriftliche Übersicht über den beruflichen Werdegang einer Person",
+        "definition_en": "a written summary of a person's education and work history",
+        "examples": [
+          {
+            "de": "Für die Bewerbung brauchst du einen Lebenslauf.",
+            "en": "You need a CV for the application."
+          },
+          {
+            "de": "Ich habe meinen Lebenslauf aktualisiert.",
+            "en": "I've updated my CV."
+          }
+        ],
+        "tts_text": "der Lebenslauf"
+      },
+      "error": null,
+      "latency_seconds": 4.21,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1929,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 254
+      },
+      "cost_usd": 0.0016316800000000004,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "Hauptbahnhof",
+        "context": "capitalized"
+      },
+      "output": {
+        "word": "Hauptbahnhof",
+        "lemma": "Hauptbahnhof",
+        "pos": "noun",
+        "article": "der",
+        "plural": "die Hauptbahnhöfe",
+        "genitive": "des Hauptbahnhofs",
+        "praesens_3sg": "",
+        "praeteritum": "",
+        "partizip_2": "",
+        "auxiliary": "",
+        "perfekt": "",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "main station, central station",
+        "definition_de": "der wichtigste Bahnhof einer Stadt",
+        "definition_en": "the most important railway station in a city",
+        "examples": [
+          {
+            "de": "Ich warte auf dich am Hauptbahnhof.",
+            "en": "I'll wait for you at the main station."
+          },
+          {
+            "de": "Wie komme ich zum Hauptbahnhof?",
+            "en": "How do I get to the main station?"
+          }
+        ],
+        "tts_text": "der Hauptbahnhof"
+      },
+      "error": null,
+      "latency_seconds": 3.67,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1930,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 250
+      },
+      "cost_usd": 0.00161548,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "wiegen",
+        "context": "lowercase"
+      },
+      "output": {
+        "word": "wiegen",
+        "lemma": "wiegen",
+        "pos": "verb",
+        "article": "",
+        "plural": "",
+        "genitive": "",
+        "praesens_3sg": "wiegt",
+        "praeteritum": "wog",
+        "partizip_2": "gewogen",
+        "auxiliary": "haben",
+        "perfekt": "hat gewogen",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "to weigh",
+        "definition_de": "mit einer Waage feststellen, wie schwer etwas oder jemand ist",
+        "definition_en": "to measure how heavy something or someone is",
+        "examples": [
+          {
+            "de": "Der Verkäufer hat das Fleisch gewogen.",
+            "en": "The assistant weighed the meat."
+          },
+          {
+            "de": "Wie viel wiegst du denn jetzt?",
+            "en": "How much do you weigh now?"
+          }
+        ],
+        "tts_text": "wiegen"
+      },
+      "error": null,
+      "latency_seconds": 4.35,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1929,
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 243
+      },
+      "cost_usd": 0.0037698000000000002,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "Ausbildung",
+        "context": "capitalized"
+      },
+      "output": {
+        "word": "Ausbildung",
+        "lemma": "Ausbildung",
+        "pos": "noun",
+        "article": "die",
+        "plural": "die Ausbildungen",
+        "genitive": "der Ausbildung",
+        "praesens_3sg": "",
+        "praeteritum": "",
+        "partizip_2": "",
+        "auxiliary": "",
+        "perfekt": "",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "training, apprenticeship",
+        "definition_de": "das Lernen eines Berufs in einem Betrieb oder einer Schule",
+        "definition_en": "the period of learning a job or profession",
+        "examples": [
+          {
+            "de": "Sie macht eine Ausbildung zur Krankenschwester.",
+            "en": "She's training to be a nurse."
+          },
+          {
+            "de": "Nach der Schule beginnt er seine Ausbildung.",
+            "en": "After school he's starting his apprenticeship."
+          }
+        ],
+        "tts_text": "die Ausbildung"
+      },
+      "error": null,
+      "latency_seconds": 4.08,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1928,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 244
+      },
+      "cost_usd": 0.0015862800000000002,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "Augenblick",
+        "context": "capitalized"
+      },
+      "output": {
+        "word": "Augenblick",
+        "lemma": "Augenblick",
+        "pos": "noun",
+        "article": "der",
+        "plural": "die Augenblicke",
+        "genitive": "des Augenblicks",
+        "praesens_3sg": "",
+        "praeteritum": "",
+        "partizip_2": "",
+        "auxiliary": "",
+        "perfekt": "",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "moment",
+        "definition_de": "eine sehr kurze Zeitspanne",
+        "definition_en": "a very short period of time",
+        "examples": [
+          {
+            "de": "Einen Augenblick, ich bin gleich fertig.",
+            "en": "Just a moment, I'll be done in a second."
+          },
+          {
+            "de": "Im nächsten Augenblick regnete es.",
+            "en": "The next moment it started raining."
+          }
+        ],
+        "tts_text": "der Augenblick"
+      },
+      "error": null,
+      "latency_seconds": 3.69,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1929,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 241
+      },
+      "cost_usd": 0.00157448,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "setzen",
+        "context": "lowercase"
+      },
+      "output": {
+        "word": "setzen",
+        "lemma": "setzen",
+        "pos": "verb",
+        "article": "",
+        "plural": "",
+        "genitive": "",
+        "praesens_3sg": "setzt",
+        "praeteritum": "setzte",
+        "partizip_2": "gesetzt",
+        "auxiliary": "haben",
+        "perfekt": "hat gesetzt",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "to put, to place",
+        "definition_de": "etwas an eine bestimmte Stelle legen oder stellen",
+        "definition_en": "to put something in a particular place or position",
+        "examples": [
+          {
+            "de": "Setz die Blumen bitte auf den Tisch.",
+            "en": "Please put the flowers on the table."
+          },
+          {
+            "de": "Er hat den Koffer neben die Tür gesetzt.",
+            "en": "He put the suitcase next to the door."
+          }
+        ],
+        "tts_text": "setzen"
+      },
+      "error": null,
+      "latency_seconds": 4.18,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1928,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 249
+      },
+      "cost_usd": 0.0016082800000000001,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "vermissen",
+        "context": "lowercase"
+      },
+      "output": {
+        "word": "vermissen",
+        "lemma": "vermissen",
+        "pos": "verb",
+        "article": "",
+        "plural": "",
+        "genitive": "",
+        "praesens_3sg": "vermisst",
+        "praeteritum": "vermisste",
+        "partizip_2": "vermisst",
+        "auxiliary": "haben",
+        "perfekt": "hat vermisst",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "to miss",
+        "definition_de": "traurig sein, weil jemand oder etwas nicht mehr da ist",
+        "definition_en": "to feel sad because someone or something is not there anymore",
+        "examples": [
+          {
+            "de": "Ich vermisse meine Familie sehr.",
+            "en": "I really miss my family."
+          },
+          {
+            "de": "Nach dem Umzug habe ich meine Freunde vermisst.",
+            "en": "After moving, I missed my friends."
+          }
+        ],
+        "tts_text": "vermissen"
+      },
+      "error": null,
+      "latency_seconds": 3.97,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1930,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 254
+      },
+      "cost_usd": 0.00163308,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "mitnehmen",
+        "context": "lowercase"
+      },
+      "output": {
+        "word": "mitnehmen",
+        "lemma": "mitnehmen",
+        "pos": "verb",
+        "article": "",
+        "plural": "",
+        "genitive": "",
+        "praesens_3sg": "nimmt mit",
+        "praeteritum": "nahm mit",
+        "partizip_2": "mitgenommen",
+        "auxiliary": "haben",
+        "perfekt": "hat mitgenommen",
+        "separable": true,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "to take along, to bring",
+        "definition_de": "eine Person oder Sache mitnehmen, wenn man irgendwo hingeht",
+        "definition_en": "to take someone or something with you when you go somewhere",
+        "examples": [
+          {
+            "de": "Nimmst du deinen Regenschirm mit?",
+            "en": "Are you taking your umbrella with you?"
+          },
+          {
+            "de": "Ich habe dem Kind ein Buch mitgenommen.",
+            "en": "I brought a book for the child."
+          }
+        ],
+        "tts_text": "mitnehmen"
+      },
+      "error": null,
+      "latency_seconds": 4.27,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1929,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 256
+      },
+      "cost_usd": 0.00164048,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "weg sein",
+        "context": "multi-word, lowercase"
+      },
+      "output": {
+        "word": "weg sein",
+        "lemma": "weg sein",
+        "pos": "phrase",
+        "article": "",
+        "plural": "",
+        "genitive": "",
+        "praesens_3sg": "ist weg",
+        "praeteritum": "war weg",
+        "partizip_2": "weg gewesen",
+        "auxiliary": "sein",
+        "perfekt": "ist weg gewesen",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "to be gone, to be out",
+        "definition_de": "nicht an einem bestimmten Ort anwesend sein",
+        "definition_en": "to not be present at a place",
+        "examples": [
+          {
+            "de": "Gestern war Papa den ganzen Tag weg.",
+            "en": "Dad was out all day yesterday."
+          },
+          {
+            "de": "Wo ist mein Handy? Eben war es noch weg... nein, hier!",
+            "en": "Where's my phone? It was just gone... no, here it is!"
+          }
+        ],
+        "tts_text": "weg sein"
+      },
+      "error": null,
+      "latency_seconds": 4.46,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1932,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 262
+      },
+      "cost_usd": 0.0016710800000000001,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "stehen bleiben",
+        "context": "multi-word, lowercase"
+      },
+      "output": {
+        "word": "stehen bleiben",
+        "lemma": "stehen bleiben",
+        "pos": "verb",
+        "article": "",
+        "plural": "",
+        "genitive": "",
+        "praesens_3sg": "bleibt stehen",
+        "praeteritum": "blieb stehen",
+        "partizip_2": "stehen geblieben",
+        "auxiliary": "sein",
+        "perfekt": "ist stehen geblieben",
+        "separable": true,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "to stop, to stand still",
+        "definition_de": "nicht weitergehen und an einer Stelle anhalten",
+        "definition_en": "to stop moving and stay in one place",
+        "examples": [
+          {
+            "de": "Wir sind vor dem Schaufenster stehen geblieben.",
+            "en": "We stopped in front of the shop window."
+          },
+          {
+            "de": "Bleib doch mal kurz stehen, ich muss etwas sagen.",
+            "en": "Stop for a moment, I need to tell you something."
+          }
+        ],
+        "tts_text": "stehen bleiben"
+      },
+      "error": null,
+      "latency_seconds": 5.02,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1932,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 282
+      },
+      "cost_usd": 0.00175908,
+      "calls": 1
+    },
+    {
+      "input": {
+        "word": "verpflichtet sein",
+        "context": "multi-word, lowercase"
+      },
+      "output": {
+        "word": "verpflichtet sein",
+        "lemma": "verpflichtet sein",
+        "pos": "phrase",
+        "article": "",
+        "plural": "",
+        "genitive": "",
+        "praesens_3sg": "ist verpflichtet",
+        "praeteritum": "war verpflichtet",
+        "partizip_2": "verpflichtet gewesen",
+        "auxiliary": "sein",
+        "perfekt": "ist verpflichtet gewesen",
+        "separable": false,
+        "reflexive": false,
+        "comparative": "",
+        "superlative": "",
+        "word_en": "to be obliged, to be required",
+        "definition_de": "etwas tun müssen, weil es eine Regel oder ein Gesetz ist",
+        "definition_en": "to have to do something because of a rule or law",
+        "examples": [
+          {
+            "de": "Wir sind verpflichtet, die Daten zu schützen.",
+            "en": "We are required to protect the data."
+          },
+          {
+            "de": "Man ist verpflichtet, einen Ausweis mitzunehmen.",
+            "en": "You have to bring an ID card."
+          }
+        ],
+        "tts_text": "verpflichtet sein"
+      },
+      "error": null,
+      "latency_seconds": 4.61,
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1934,
+        "cached_prompt_tokens": 1918,
+        "completion_tokens": 286
+      },
+      "cost_usd": 0.00177948,
+      "calls": 1
+    }
+  ]
+}

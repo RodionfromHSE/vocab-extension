@@ -1,0 +1,102 @@
+[
+  {
+    "word": "Handel",
+    "context": "capitalized"
+  },
+  {
+    "word": "Trauung",
+    "context": "capitalized"
+  },
+  {
+    "word": "stoßen",
+    "context": "lowercase"
+  },
+  {
+    "word": "lesen",
+    "context": "lowercase"
+  },
+  {
+    "word": "dumm",
+    "context": "lowercase"
+  },
+  {
+    "word": "Nummer",
+    "context": "capitalized"
+  },
+  {
+    "word": "Ausländer",
+    "context": "capitalized"
+  },
+  {
+    "word": "bloß",
+    "context": "lowercase"
+  },
+  {
+    "word": "traditionell",
+    "context": "lowercase"
+  },
+  {
+    "word": "Rabatt",
+    "context": "capitalized"
+  },
+  {
+    "word": "voraus",
+    "context": "lowercase"
+  },
+  {
+    "word": "Kuh",
+    "context": "capitalized"
+  },
+  {
+    "word": "vertreten",
+    "context": "lowercase"
+  },
+  {
+    "word": "zerstören",
+    "context": "lowercase"
+  },
+  {
+    "word": "Lebenslauf",
+    "context": "capitalized"
+  },
+  {
+    "word": "Hauptbahnhof",
+    "context": "capitalized"
+  },
+  {
+    "word": "wiegen",
+    "context": "lowercase"
+  },
+  {
+    "word": "Ausbildung",
+    "context": "capitalized"
+  },
+  {
+    "word": "Augenblick",
+    "context": "capitalized"
+  },
+  {
+    "word": "setzen",
+    "context": "lowercase"
+  },
+  {
+    "word": "vermissen",
+    "context": "lowercase"
+  },
+  {
+    "word": "mitnehmen",
+    "context": "lowercase"
+  },
+  {
+    "word": "weg sein",
+    "context": "multi-word, lowercase"
+  },
+  {
+    "word": "stehen bleiben",
+    "context": "multi-word, lowercase"
+  },
+  {
+    "word": "verpflichtet sein",
+    "context": "multi-word, lowercase"
+  }
+]
