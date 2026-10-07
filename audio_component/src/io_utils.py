@@ -10,7 +10,7 @@ from typing import Dict, List, Any
 
 TEXT_KEY = "example"
 
-def _validate_json_data(data: Any) -> None:
+def _validate_json_data(data: Any, text_key: str = TEXT_KEY) -> None:
     """Validate that JSON data contains a list of objects with sentence fields."""
     if not isinstance(data, list):
         raise ValueError("Input JSON must contain a list of objects")
@@ -19,10 +19,10 @@ def _validate_json_data(data: Any) -> None:
         obj_desc = str(item)
         if not isinstance(item, dict):
             raise ValueError(f"Item at index {idx} is not an object: {obj_desc}")
-        if TEXT_KEY not in item:
-            raise ValueError(f"Object at index {idx} is missing the '{TEXT_KEY}' field: {obj_desc}")
+        if text_key not in item:
+            raise ValueError(f"Object at index {idx} is missing the '{text_key}' field: {obj_desc}")
 
-def read_input_json(file_path: str) -> List[Dict[str, Any]]:
+def read_input_json(file_path: str, text_key: str = TEXT_KEY) -> List[Dict[str, Any]]:
     """
     Read input JSON file and validate that each object has a "sentence" field.
     
@@ -41,7 +41,7 @@ def read_input_json(file_path: str) -> List[Dict[str, Any]]:
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
             
-        _validate_json_data(data)
+        _validate_json_data(data, text_key)
         return data
     except FileNotFoundError:
         raise FileNotFoundError(f"Input file not found: {file_path}")

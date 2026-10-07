@@ -44,9 +44,11 @@ def process_item(
     target_dir: str,
     language: str,
     filename_prefix: str = "",
+    text_key: str = TEXT_KEY,
+    output_key_prefix: str = "",
 ) -> Dict[str, Any]:
     """Process a single item by generating audio and updating the item."""
-    sentence = item[TEXT_KEY]
+    sentence = item[text_key]
     file_name = f"{filename_prefix}audio_{idx}.mp3"
     
     try:
@@ -56,8 +58,8 @@ def process_item(
         # Save the audio file and get the paths
         paths = io_utils.save_audio_file(target_dir, file_name, audio_data)
         
-        # Update the item with the paths
-        item.update(paths)
+        # Update the item with the paths (prefixed, so one item can carry several audios)
+        item.update({f"{output_key_prefix}{key}": value for key, value in paths.items()})
     except Exception as e:
         # Log error to stderr but continue processing other items
         print(f"Error processing item {idx}: {str(e)}", file=sys.stderr)
@@ -69,6 +71,8 @@ def process_data(
     target_dir: str,
     language: str,
     filename_prefix: str = "",
+    text_key: str = TEXT_KEY,
+    output_key_prefix: str = "",
 ) -> List[Dict[str, Any]]:
     """
     Process the data by generating audio files for each sentence and updating with file paths.
@@ -78,6 +82,8 @@ def process_data(
         target_dir: The target directory where audio files will be saved.
         language: The language to use for text-to-speech conversion.
         filename_prefix: Configurable prefix prepended to every audio filename.
+        text_key: Field of each object that is converted to speech.
+        output_key_prefix: Prefix for the added audio path keys (e.g. "word_").
         
     Returns:
         The updated list of objects.
@@ -88,7 +94,7 @@ def process_data(
     tqdm.write(f"Target directory: {target_dir}")
     tqdm.write(f"Language: {language}")
     for idx, item in enumerate(tqdm(data, desc="Processing items", unit="item"), start=start_idx):
-        process_item(item, idx, target_dir, language, filename_prefix)
+        process_item(item, idx, target_dir, language, filename_prefix, text_key, output_key_prefix)
     
     return data
 
@@ -134,7 +140,8 @@ def main(input_file: Optional[str], output_file: Optional[str], config: str):
         output_path = determine_output_file(output_file, cfg, input_path)
         
         # Read input JSON
-        data = io_utils.read_input_json(input_path)
+        text_key = cfg.get("text_key", TEXT_KEY)
+        data = io_utils.read_input_json(input_path, text_key)
         
         # Create the target directory
         target_dir = io_utils.create_target_directory(
@@ -148,6 +155,8 @@ def main(input_file: Optional[str], output_file: Optional[str], config: str):
             target_dir,
             cfg.language,
             cfg.get("filename_prefix", ""),
+            text_key,
+            cfg.get("output_key_prefix", ""),
         )
         
         # Write the updated data to the output file
